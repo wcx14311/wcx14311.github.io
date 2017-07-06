@@ -1,1 +1,1449 @@
-<h1>simew</h1>
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="renderer" content="webkit">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui">
+    <link rel="stylesheet" type="text/css" href="css/element-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/index-bai.css">
+</head>
+<body> 
+    <div id="app" style="height:100%">
+        <transition name="fade"><router-view></router-view></transition>
+    </div>
+    <!-- 公共模板 -->
+    <template id="home">
+        <div>
+            <div class="head-bar">
+                <div class="logo"><router-link to="/home/index"><img src="images/logo.jpg" alt=""></router-link></div>
+                <div class="m-logo"><img src="images/logo.jpg" alt=""></div>
+                <div class="personaloperate">
+                    <div class="operateicon operateicon5" onClick="fullScreen()">
+                        <span class="von icon"></span>
+                    </div>
+                    <div class="operateicon operateicon1">
+                        <span class="icon"><i></i></span>
+                    </div>
+                    <div class="operateicon operateicon2">
+                        <span class="icon"></span>
+                    </div>
+                    <div class="operateicon operateicon3">
+                        <span class="icon"></span>
+                    </div>
+                    <div class="operateicon operateicon4">
+                        <span class="icon"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="body-box">
+                <div class="left-bar">
+                    <div class="user-info">
+                        <div class="f-left"><img src="images/touxiang.png"/></div>
+                        <div class="f-left user-info-test">
+                            <div>
+                                <h4>{{user.name}}</h4><i class="ds1"></i>
+                            </div>
+                            <p>{{user.type}}</p>
+                        </div>
+                    </div>
+                    <el-menu :default-active="$route.path" class="el-menu-vertical-demo" unique-opened router theme="dark">
+                        <!-- <p>{{$route.path}}</p> -->
+                        <template v-for="(item,index) in $router.options.routes" v-if="!item.hidden">
+                            <template v-for="child in item.children" v-if="item.show">
+                                <el-submenu class="fccc" :index="child.path" v-if="(!child.hidden)&&(!child.leaf)">
+                                    <template slot="title"><span class="icon" :class="child.iconCls"></span>{{child.name}}</template>
+                                    <el-menu-item  class="zccc" v-for="Gchild in child.children" v-if="!child.hidden" :index="Gchild.path" :router="Gchild.path">{{Gchild.name}}</el-menu-item>
+                                </el-submenu>
+                                <el-menu-item class="fccc" v-if="(!child.hidden)&&(child.leaf)" :index="child.path" :router="child.path">
+                                    <span class="icon" :class="child.iconCls"></span>{{child.name}}
+                                </el-menu-item>
+                            </template>
+                        </template>
+                    </el-menu>
+                </div>
+                <div class="right-content">
+                    <div class="c-center-warp">
+                        <transition name="fade"><router-view></router-view></transition>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="login">
+        <div class="loginpage">
+            <div class="header">
+                <div class="w1200">
+                    <div class="left">
+                        <div class="logo">
+                            <!--首页链接-->
+                            <a href="#/home/index"></a>
+                        </div>
+                    </div>
+                    <div class="right links">
+                        <ul>
+                            <li><a href="sever.html">首页</a></li>
+                            <li><a href="map.html">加盟合作</a></li>
+                            <li><a href="aboutus.html">解决方案</a></li>
+                            <li><a href="aboutus.html">永乐产品</a></li>
+                            <li><a href="aboutus.html">开放API</a></li>          
+                            <li><a href="aboutus.html">关于我们</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="banner">
+                <div class="bannerslide" style="background:url(images/imgbanner-1.jpg)"></div>
+                <div class="weizhi">
+                    <div class="loginbox">
+                        <h4>代理商登录</h4>
+                        <div class="input">
+                            <div class="dinput as1"><input v-model="user.username" type="text" name="" placeholder="账号"></div>
+                            <div class="dinput as2"><input v-model="user.password" type="password" name="" placeholder="密码"></div>
+                            <div style="height:42px;margin-bottom:10px;position:relative;">
+                                <div class="jianyan">
+                                    <div class="dinput as3"><input v-model="user.vCode" type="text" name="" placeholder="验证码"></div>
+                                    <div class="checkcode"><img src="images/verifyCodeImage.jpg"></div>
+                                </div>
+                                <div class="jianyan" style="display:none;">
+                                    <div class="dinput as3"><input type="text" id="namse" name="" placeholder="验证码"></div>
+                                    <a class="getCheckNo">重新获取验证码88秒</a>
+                                </div>
+                            </div>
+                            <div class="lgbtn"><a v-on:click="handleSubmit">立即登录</a></div>
+                            <div class="option">
+                                <a class="letf"><label><input type="checkbox" name="">记住密码</label></a>
+                                <a class="right" href="">忘记密码？</a>
+                            </div>
+                            <p>没有帐号？<span class="red">立即注册</span>，或使用合作平台登录</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="w1200">
+                    <div class="s-dac">
+                        <div class="l-links">
+                            <h4>关于我们</h4>
+                            <p><a>集团介绍</a></p>
+                            <p><a>平台介绍</a></p>
+                            <p><a>平台优势</a></p>
+                            <p><a>服务承诺</a></p>
+                        </div>
+                        <div class="l-links">
+                            <h4>购物指南</h4>
+                            <p><a>帮您找到商品</a></p>
+                            <p><a>帮您购买商品</a></p>
+                            <p><a>帮您跟踪订单</a></p>
+                        </div>
+                        <div class="l-links">
+                            <h4>账号管理</h4>
+                            <p><a>如何注册</a></p>
+                            <p><a>找回密码</a></p>
+                            <p><a>修改地址</a></p>
+                            <p><a>修改手机号</a></p>
+                        </div>
+                        <div class="l-links">
+                            <h4>售后服务</h4>
+                            <p><a>申请售后退款说明</a></p>
+
+
+                            <p><a>取消订单退款说明</a></p>
+                            <p><a>手机寄修服务</a></p>
+                            <p><a>退换货流程</a></p>
+                        </div>
+                        <div class="r-company-info">
+                            <h4>联系我们</h4>
+                            <p class="tell-no">0531-55599118</p>
+                            <p>工作日：24小时接受订单，因公司周日休息，周日可接受订单，但无法发货；</p>
+                            <p>客服在线：早8：30 - 18：00；</p>
+                            <p>配送说明：订货次日下午18：00前配送到店</p>
+                            <div class="qq-server">
+                                <a class="kefu1" href="tencent://message/?uin=3372981578&amp;Site=有事Q我&amp;Menu=yes"></a>
+                                <a class="kefu2" href="tencent://message/?uin=267024119&amp;Site=有事Q我&amp;Menu=yes"></a>
+                                <a class="kefu3" href="tencent://message/?uin=3516588861&amp;Site=有事Q我&amp;Menu=yes"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ftbm">
+                        <p class="dc">Copyright © 2015 Yolly.Co,Ltd ALL Rights Reserved<br/>鄂B2-20090028-1</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="reg">
+        <div>
+            <div class="breadcrumb">
+                <span class="breadcrumb_item"><router-link to="/home/index">首页</router-link><span class="breadcrumb_separator">/</span></span><span class="breadcrumb_item"><a>充值中心</a><span class="breadcrumb_separator">/</span></span>
+            </div>
+            <div class="top-nav-tabs">
+                <div>
+                    <ul class="clearfix">
+                        <li><router-link to="/home/recharge/huafei"><span class="icon icon1">话费充值</span></router-link></li>
+                        <li><router-link to="/home/recharge/liuliang"><span class="icon icon2">流量充值</span></router-link></li>
+                        <li><router-link to="/home/recharge/qq"><span class="icon icon3">QQ充值</span></router-link></li>
+                        <li><router-link to="/home/recharge/game"><span class="icon icon4">网游充值</span></router-link></li>
+                        <li><router-link to="/home/recharge/guhua"><span class="icon icon5">固话充值</span></router-link></li>
+                        <li><router-link to="/home/recharge/kuandai"><span class="icon icon6">宽带充值</span></router-link></li>
+                        <li><router-link to="/home/recharge/alipay"><span class="icon icon7">支付宝充值</span></router-link></li>
+                        <li><router-link to="/home/recharge/xycard"><span class="icon icon8">信用卡还款</span></router-link></li>
+                        <li><router-link to="/home/recharge/jycard"><span class="icon icon9">加油卡</span></router-link></li>
+                        <li><router-link to="/home/recharge/hfcard"><span class="icon icon10">话费卡</span></router-link></li>
+                        <li><router-link to="/home/recharge/shjiaofei"><span class="icon icon11">生活缴费</span></router-link></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="overflow: hidden;width:100%">
+                <!-- <transition name="slide-fade"> -->
+                <transition name="no-mode-translate-fade">
+                    <router-view></router-view>
+                </transition>
+            </div>
+        </div>
+    </template>
+    <template id="order">
+        <div>
+            <div class="breadcrumb">
+                <span class="breadcrumb_item"><router-link to="/home/index">首页</router-link><span class="breadcrumb_separator">/</span></span><span class="breadcrumb_item"><a>订单统计</a><span class="breadcrumb_separator">/</span></span>
+            </div>
+            <div>
+                <div class="order-statistics-head">
+                    <div class="clearfix order-search-options p-l-40" style="position:relative;">
+                        <el-input placeholder="关键字" style="max-width:200px;"></el-input>
+                        <el-date-picker
+                            v-model="value4"
+                            type="daterange"
+                            :picker-options="pickerOptions2"
+                            placeholder="选择时间范围">
+                        </el-date-picker>
+                        <el-select v-model="value" placeholder="请选择状态" style="margin-right:10px;">
+                            <el-option v-for="item in selectoptions":key="item.value" :label="item.label" :value="item.value"></el-option>
+                        </el-select>
+                        <el-button type="danger">查询</el-button>
+                    </div>
+                </div>
+            </div>
+            <div style="overflow: hidden;width:100%">
+                <transition name="no-mode-translate-fade">
+                    <router-view></router-view>
+                </transition>
+            </div>
+        </div>
+    </template>
+    <template id="total">
+        <div class="order-statistics-box">
+            <div class="order-statistics-body">
+                <ul class="clearfix line2">
+                   <li v-on:click="goDetial"><div class="order-statistics-item txdd"><div class="item-top"><h3>通讯订单</h3><p>话费、流量、固话、宽带</p></div><p class="m-t-15">总笔数：<span class="txtcolorred">1340</span><span class="f-right">总金额：<span class="txtcolorred">56568.00</span>元</span></p></div></li>
+                   <li v-on:click="goDetial"><div class="order-statistics-item wlcz"><div class="item-top"><h3>网络充值</h3><p>QQ、网游、支付宝</p></div><p class="m-t-15">总笔数：<span class="txtcolorred">1340</span><span class="f-right">总金额：<span class="txtcolorred">56568.00</span>元</span></p></div></li>
+                   <li v-on:click="goDetial"><div class="order-statistics-item txdd"><div class="item-top"><h3>通讯订单</h3><p>话费、流量、固话、宽带</p></div><p class="m-t-15">总笔数：<span class="txtcolorred">1340</span><span class="f-right">总金额：<span class="txtcolorred">56568.00</span>元</span></p></div></li>
+                   <li v-on:click="goDetial"><div class="order-statistics-item shfw"><div class="item-top"><h3>生活服务</h3><p>话费、流量、固话、宽带</p></div><p class="m-t-15">总笔数：<span class="txtcolorred">1340</span><span class="f-right">总金额：<span class="txtcolorred">56568.00</span>元</span></p></div></li>
+                   <li v-on:click="goDetial"><div class="order-statistics-item czka"><div class="item-top"><h3>充值卡</h3><p>话费充值卡、中石化加油卡</p></div><p class="m-t-15">总笔数：<span class="txtcolorred">1340</span><span class="f-right">总金额：<span class="txtcolorred">56568.00</span>元</span></p></div></li>
+                   <li v-on:click="goDetial"><div class="order-statistics-item xyka"><div class="item-top"><h3>信用卡还款</h3><p>信用卡还款</p></div><p class="m-t-15">总笔数：<span class="txtcolorred">1340</span><span class="f-right"> 总金额：<span class="txtcolorred">56568.00</span>元</span></p></div></li>
+                   <li><div class="order-statistics-item ywbl"><div class="item-top"><h3>业务办理</h3><p>话费、宽带、流量、ITV</p></div><p class="m-t-15"> 总笔数：<span class="txtcolorred">1340</span><span class="f-right">总金额：<span class="txtcolorred">56568.00</span>元</span></p></div></li>
+                   <li v-on:click="goDetial"><div class="order-statistics-item slfw"><div class="item-top"><h3>商旅服务</h3><p>火车、汽车、飞机</p></div><p class="m-t-15">总笔数：<span class="txtcolorred">1340</span><span class="f-right">总金额：<span class="txtcolorred">56568.00</span>元</span></p></div></li>
+                   <li v-on:click="goDetial"><div class="order-statistics-item txdd"><div class="item-top"><h3>通讯订单</h3><p>话费、流量、固话、宽带</p></div><p class="m-t-15">总笔数：<span class="txtcolorred">1340</span><span class="f-right">总金额：<span class="txtcolorred">56568.00</span>元</span></p></div></li>
+                </ul>
+            </div>
+        </div>
+    </template>
+    <template id="huafei">
+        <div class="rechange-panner">
+            <div class="panner-head">
+                <a class="lps on" data-link="手机充值.html">话费充值</a>
+                <a class="lps" data-link="批量充值.html">批量充值</a>
+                <span class="f-right near-order-link iconq">查看近期订单</span>
+            </div>
+            <div class="panner-body">
+                <div class="lines">
+                    <div class="p-left-title"><span>充值号码：</span></div>
+                    <div class="p-right-box">
+                        <el-input size="large" placeholder="请输入内容"></el-input>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>充值金额：</span></div>
+                    <div class="p-right-box">
+                        <div class="miane-list clearfix">
+                            <a>10元</a><a>10元</a><a>10元</a><a>10元</a><br>
+                            <a>10元</a><a class="on">10元</a><a>10元</a><a>10元</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>是否冲正：</span></div>
+                    <div class="p-right-box">
+                        <el-radio-group>
+                            <el-radio label="否"></el-radio>
+                            <el-radio label="是"></el-radio>
+                        </el-radio-group>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>折扣进价：</span></div>
+                    <div class="p-right-box">
+                        <div class="zhekoujinjia zkeffect">
+                            <span class="bacx2" style="display:none;">进价折扣99.6%</span>
+                            <a class="bacx3">查询</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>应付金额：</span></div>
+                    <div class="p-right-box">
+                        <span class="txtcolorred pirce">88.60元</span>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"></div>
+                    <div class="p-right-box">
+                        <div>
+                            <el-button type="danger">立即充值</el-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="liuliang">
+        <div class="rechange-panner">
+            <div class="panner-head">
+                <a class="lps on" data-link="流量充值.html">流量充值</a>
+                <span class="f-right near-order-link iconq">查看近期订单</span>
+                <div class="order-list-dialogbox" style="display:none;">
+                    
+                </div>
+            </div>
+            <div class="panner-body">
+                <div class="lines">
+                    <div class="p-left-title"><span>充值号码：</span></div>
+                    <div class="p-right-box">
+                        <el-input size="large" placeholder="请输入内容"></el-input>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>适用范围：</span></div>
+                    <div class="p-right-box">
+                        <el-radio-group>
+                            <el-radio label="省内"></el-radio>
+                            <el-radio label="全国"></el-radio>
+                        </el-radio-group>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>充值金额：</span></div>
+                    <div class="p-right-box">
+                        <div class="miane-list clearfix">
+                            <a>10元</a><a>10元</a><a>10元</a><a>10元</a><br>
+                            <a>10元</a><a class="on">10元</a><a>10元</a><a>10元</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>折扣进价：</span></div>
+                    <div class="p-right-box">
+                        <div class="zhekoujinjia zkeffect">
+                            <span class="bacx2" style="display:none;">进价折扣99.6%</span>
+                            <a class="bacx3">查询</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>应付金额：</span></div>
+                    <div class="p-right-box">
+                        <span class="txtcolorred pirce">88.60元</span>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"></div>
+                    <div class="p-right-box">
+                        <div class="submitbtn">
+                            <el-button type="danger">立即充值</el-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="qq">
+        <div class="rechange-panner">
+            <div class="panner-head">
+                <a class="lps on" data-link="流量充值.html">Q币充值</a><a class="lps" data-link="流量充值.html">QQ服务</a>
+                <span class="f-right near-order-link iconq">查看近期订单</span>
+                <div class="order-list-dialogbox" style="display:none;">
+                </div>
+            </div>
+            <div class="panner-body">
+                <div class="lines">
+                    <div class="p-left-title"><span>QQ号码：</span></div>
+                    <div class="p-right-box">
+                        <div>
+                            <div class="input">
+                                <el-input size="large" placeholder="请输入内容"></el-input>
+                            </div>
+                            <span id="information"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>充值数量：</span></div>
+                    <div class="p-right-box">
+                        <div class="buy-count goumaishuliang-input">
+                            <el-input placeholder="请输入内容" style="width:100px;"></el-input>
+                            <span class="m-l-20">Q币 <span style="color:#999;">（1Q币=10Q点）</span><span class="txtcolorblue m-l-10">Q币交易安全设置</span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span></span></div>
+                    <div class="p-right-box">
+                        <div class="miane-list clearfix">
+                            <a class="on">10个</a><a>20个</a><a>30个</a><a>50个</a><br/><a>100个</a><a>300个</a><a>500个</a><a class="other">其他数量</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>折扣进价：</span></div>
+                    <div class="p-right-box">
+                        <div class="zhekoujinjia zkeffect">
+                            <span class="bacx2" style="display:none;">进价折扣99.6%</span>
+                            <a class="bacx3">查询</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>支付金额：</span></div>
+                    <div class="p-right-box">
+                        <span class="txtcolorred pirce">88.6元</span>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span></span></div>
+                    <div class="p-right-box">
+                        <div class="submitbtn">
+                            <el-button type="danger">提交订单</el-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="game">
+        <div class="rechange-panner">
+            <div class="panner-head">
+                <a class="lps on" data-link="流量充值.html">网游充值</a>
+                <span class="f-right near-order-link iconq">查看近期订单</span>
+                <div class="order-list-dialogbox" style="display:none;"></div>
+            </div>
+            <div class="panner-body">
+                <div class="lines">
+                    <div class="p-left-title"></div>
+                    <div class="p-right-box">
+                        <div class="netgamehead clearfix">
+                            <div class="gameimg">
+                                <img src="images/gameimg.jpg">
+                            </div>
+                            <div class="gametxt">
+                                <h3>英雄联盟点券自动充值<a class="txtcolorblue">重新选择</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>充值金额：</span></div>
+                    <div class="p-right-box">
+                        <div class="miane-list clearfix">
+                            <a>10元</a><a>10元</a><a>10元</a><a>10元</a><br>
+                            <a>10元</a><a class="on">10元</a><a>10元</a><a>10元</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>充值账号：</span></div>
+                    <div class="p-right-box">
+                        <div class="rechange-accmont">
+                            <div class="input-style">
+                                <el-input placeholder="请输入内容"></el-input>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>游戏区：</span></div>
+                    <div class="p-right-box">
+                        <el-select placeholder="选择游戏区">
+                            <el-option label="电信一区" value="shanghai"></el-option>
+                            <el-option label="电信一区" value="beijing"></el-option>
+                        </el-select>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>服务器：</span></div>
+                    <div class="p-right-box">
+                        <el-select placeholder="选择游戏服">
+                            <el-option label="电信一区" value="shanghai"></el-option>
+                            <el-option label="电信一区" value="beijing"></el-option>
+                        </el-select>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>折扣进价：</span></div>
+                    <div class="p-right-box">
+                        <div class="zhekoujinjia zkeffect">
+                            <span class="bacx2" style="display:none;">进价折扣99.6%</span>
+                            <a class="bacx3">查询</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>支付金额：</span></div>
+                    <div class="p-right-box">
+                        <span class="txtcolorred pirce">88.6元</span>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span></span></div>
+                    <div class="p-right-box">
+                        <div class="submitbtn">
+                            <el-button type="danger">立即充值</el-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="guhua">
+        <div class="rechange-panner">
+            <div class="panner-head">
+                <a class="lps on" data-link="流量充值.html">固话充值</a>
+                <span class="f-right near-order-link iconq">查看近期订单</span>
+                <div class="order-list-dialogbox" style="display:none;">
+                </div>
+            </div>
+            <div class="panner-body">
+                <div class="lines">
+                    <div class="p-left-title"><span>选择服务商：</span></div>
+                    <div class="p-right-box">
+                        <el-select placeholder="电信固话">
+                            <el-option label="联通固话" value="shanghai"></el-option>
+                            <el-option label="移动固话" value="beijing"></el-option>
+                            <el-option label="AT&T" value="beijing"></el-option>
+                            <el-option label="电信固话" value="beijing"></el-option>
+                        </el-select>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>充值号码：</span></div>
+                    <div class="p-right-box"></div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>充值金额：</span></div>
+                    <div class="p-right-box">
+                        <div class="miane-list clearfix">
+                            <a>10元</a><a>10元</a><a>10元</a><a>10元</a>
+                            <br/><a>10元</a><a class="on">10元</a><a>10元</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>是否冲正：</span></div>
+                    <div class="p-right-box">
+                        <el-radio-group>
+                            <el-radio label="否"></el-radio>
+                            <el-radio label="是"></el-radio>
+                        </el-radio-group>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>折扣进价：</span></div>
+                    <div class="p-right-box">
+                        <span class="bacx2" style="display:none;">进价折扣99.6%</span>
+                        <a class="bacx3">查询</a>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>支付金额：</span></div>
+                    <div class="p-right-box">
+                        <span class="txtcolorred pirce">88.6元</span>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span></span></div>
+                    <div class="p-right-box">
+                        <div class="submitbtn">
+                            <el-button type="danger">立即充值</el-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="kuandai">
+        <div class="rechange-panner">
+            <div class="panner-head">
+                <a class="lps on" data-link="流量充值.html">宽带充值</a>
+                <span class="f-right near-order-link iconq">查看近期订单</span>
+                <div class="order-list-dialogbox" style="display:none;">
+                </div>
+            </div>
+            <div class="panner-body">
+                <div class="lines">
+                    <div class="p-left-title"><span>选择服务商：</span></div>
+                    <div class="p-right-box">
+                        <el-select placeholder="电信固话">
+                            <el-option label="联通固话" value="shanghai"></el-option>
+                            <el-option label="移动固话" value="beijing"></el-option>
+                            <el-option label="AT&T" value="beijing"></el-option>
+                            <el-option label="电信固话" value="beijing"></el-option>
+                        </el-select>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>充值号码：</span></div>
+                    <div class="p-right-box">
+                        <span class="txtcolorred pirce">88.6元</span>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>充值金额：</span></div>
+                    <div class="p-right-box">
+                        <div class="miane-list clearfix">
+                            <a>10元</a><a>10元</a><a>10元</a><a>10元</a>
+                            <br/><a>10元</a><a class="on">10元</a><a>10元</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>是否冲正：</span></div>
+                    <div class="p-right-box">
+                        <el-radio-group>
+                            <el-radio label="否"></el-radio>
+                            <el-radio label="是"></el-radio>
+                        </el-radio-group>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>折扣进价：</span></div>
+                    <div class="p-right-box">
+                        <span class="bacx2" style="display:none;">进价折扣99.6%</span>
+                        <a class="bacx3">查询</a>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>支付金额：</span></div>
+                    <div class="p-right-box">
+                        <span class="txtcolorred pirce">88.6元</span>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span></span></div>
+                    <div class="p-right-box">
+                        <div class="submitbtn">
+                            <el-button type="danger">立即充值</el-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="alipay">
+        <div class="rechange-panner">
+            <div class="panner-head">
+                <a class="lps on" data-link="流量充值.html">支付宝充值</a>
+                <span class="f-right near-order-link iconq">查看近期订单</span>
+                <div class="order-list-dialogbox" style="display:none;">
+                </div>
+            </div>
+            <div class="panner-body">
+                
+                <div class="lines">
+                    <div class="p-left-title"><span>支付金额：</span></div>
+                    <div class="p-right-box">
+                        <span class="txtcolorred pirce">88.6元</span>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span></span></div>
+                    <div class="p-right-box">
+                        <div class="submitbtn">
+                            <el-button type="danger">立即充值</el-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="xycard">
+        <div class="rechange-panner">
+            <div class="panner-head">
+                <a class="lps on" data-link="流量充值.html">信用卡还款</a>
+                <span class="f-right near-order-link iconq">查看近期订单</span>
+                <div class="order-list-dialogbox" style="display:none;">
+                </div>
+            </div>
+            <div class="panner-body">
+                <div class="lines">
+                    <div class="p-left-title"><span>发卡银行：</span></div>
+                    <div class="p-right-box">
+                        <el-select placeholder="选择发卡银行">
+                            <el-option label="中国银行" value="shanghai"></el-option>
+                            <el-option label="农业银行" value=""></el-option>
+                            <el-option label="浦发银行" value=""></el-option>
+                            <el-option label="中国银行" value=""></el-option>
+                            <el-option label="农业银行" value=""></el-option>
+                            <el-option label="浦发银行" value=""></el-option>
+                            <el-option label="中国银行" value=""></el-option>
+                            <el-option label="农业银行" value=""></el-option>
+                            <el-option label="浦发银行" value=""></el-option>
+                            <el-option label="中国银行" value=""></el-option>
+                            <el-option label="农业银行" value=""></el-option>
+                            <el-option label="浦发银行" value=""></el-option>
+                            <el-option label="中国银行" value=""></el-option>
+                            <el-option label="农业银行" value=""></el-option>
+                            <el-option label="浦发银行" value=""></el-option>
+                            <el-option label="中国银行" value=""></el-option>
+                            <el-option label="农业银行" value=""></el-option>
+                            <el-option label="浦发银行" value=""></el-option>
+                        </el-select>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>信用卡卡号：</span></div>
+                    <div class="p-right-box">
+                        <input type="text" class="phone-no" onkeydown="this.value = this.value.replace(/[\s]/g, '').replace(/(\d{4})(?=\d)/g, '$1 ')" maxlength="25" placeholder="信用卡号码"/>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>持卡人姓名：</span></div>
+                    <div class="p-right-box">
+                        <input type="text" name="" id="" value="" placeholder="某某某"/>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>联系电话：</span></div>
+                    <div class="p-right-box">
+                        <input type="text" name="" id="" value="" />
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>还款金额：</span></div>
+                    <div class="p-right-box">
+                        <div class="rechange-accmont">
+                            <div class="input-style f-left">
+                                <input type="text" name="" id="" value="" />
+                            </div>
+                            <span class="txtcolor999 m-l-10">金额必须为51~49999的整数</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>服务费：</span></div>
+                    <div class="p-right-box">
+                        <span class="bacx2">5.00元</span>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>支付金额：</span></div>
+                    <div class="p-right-box">
+                        <span class="txtcolorred pirce">88.60元</span>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span></span></div>
+                    <div class="p-right-box">
+                        <div class="submitbtn">
+                            <el-button type="danger">查询</el-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="jycard">
+        <div class="rechange-panner">
+            <div class="panner-head">
+                <a class="lps on" data-link="流量充值.html">加油卡</a>
+                <span class="f-right near-order-link iconq">查看近期订单</span>
+                <div class="order-list-dialogbox" style="display:none;">
+                </div>
+            </div>
+            <div class="panner-body">
+                <div class="lines">
+                    <div class="p-left-title"><span>支付金额：</span></div>
+                    <div class="p-right-box">
+                        <span class="txtcolorred pirce">88.6元</span>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span></span></div>
+                    <div class="p-right-box">
+                        <div class="submitbtn">
+                            <el-button type="danger">立即充值</el-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="hfcard">
+        <div class="rechange-panner">
+            <div class="panner-head">
+                <a class="lps on" data-link="流量充值.html">话费卡</a>
+                <span class="f-right near-order-link iconq">查看近期订单</span>
+            </div>
+            <div class="panner-body">
+                <div class="lines">
+                    <div class="p-left-title"><span>选择服务商：</span></div>
+                    <div class="p-right-box">
+                        <el-select placeholder="选择运营商">
+                            <el-option label="中国电信" value="shanghai"></el-option>
+                            <el-option label="中国移动" value="shanghai"></el-option>
+                            <el-option label="中国联通" value="shanghai"></el-option>
+                        </el-select>
+                    </div>
+                </div>
+                <div class="lines"><div class="p-left-title"><span>充值金额：</span></div> <div class="p-right-box"><div class="miane-list clearfix"><a>10元</a><a>10元</a><a>10元</a><a>10元</a> <br><a>10元</a><a class="on">10元</a><a>10元</a></div></div></div>
+                <div class="lines">
+                    <div class="p-left-title"><span>库存：</span></div>
+                    <div class="p-right-box">
+                        <span>111</span>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>折扣进价：</span></div>
+                    <div class="p-right-box">
+                        <span class="bacx2" style="display:none;">进价折扣99.6%</span>
+                        <a class="bacx3">查询</a>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>支付金额：</span></div>
+                    <div class="p-right-box">
+                        <span class="txtcolorred pirce">88.6元</span>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span></span></div>
+                    <div class="p-right-box">
+                        <div class="submitbtn">
+                            <el-button type="danger">立即充值</el-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="shjiaofei">
+        <div class="rechange-panner">
+            <div class="panner-head">
+                <a class="lps on" data-link="生活缴费.html">缴电费</a>
+                <a class="lps" data-link="生活缴费.html">缴水费</a>
+                <a class="lps" data-link="生活缴费.html">缴燃气费</a>
+                <span class="f-right near-order-link iconq">查看近期订单</span>
+                <div class="order-list-dialogbox" style="display:none;"></div>
+            </div>
+            <div class="panner-body">
+                <div class="lines">
+                    <div class="p-left-title"><span>选择城市：</span></div>
+                    <div class="p-right-box">
+                        <div class="selectgameeqr select-ctiy">
+                            <span class="select-val" data-code="420000">湖北省</span>
+                            <div class="hideOption select-ctiy-box" style="display:none;">
+                                
+                            </div>
+                        </div>
+                        <div class="selectgameeqr m-l-10 select-ctiyer">
+                            <span class="select-val">武汉市</span>
+                            <div class="hideOption select-ctiyer-box" style="display:none;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>缴费单位：</span></div>
+                    <div class="p-right-box">
+                        <div class="selectgameeqr">
+                            <span class="select-val">武汉市电力有限公司</span>
+                            <ul class="hideOption" style="display:none;">
+                                <li>武汉市电力有限公司1</li>
+                                <li>武汉市电力有限公司2</li>
+                                <li>武汉市电力有限公司3</li>
+                                <li>武汉市电力有限公司4</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>用户编号：</span></div>
+                    <div class="p-right-box">
+                        <div>
+                            <div class="input">
+                                <el-input placeholder="缴费单编号"></el-input>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span>联系电话：</span></div>
+                    <div class="p-right-box">
+                        <div class="rechange-accmont">
+                            <div class="input-style">
+                                <el-input placeholder="缴费单编号"></el-input>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="p-left-title"><span></span></div>
+                    <div class="p-right-box">
+                        <div class="submitbtn">
+                            <el-button type="danger">查询</el-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="otosy">
+        <div>
+            <div class="breadcrumb">
+                <span class="breadcrumb_item"><router-link to="/home/index">首页</router-link><span class="breadcrumb_separator">/</span></span><span class="breadcrumb_item"><a>O2O收银台</a><span class="breadcrumb_separator">/</span></span>
+            </div>
+            <div class="center-content">
+                <p>O2O收银台</p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </template>
+    <template id="accont">
+        <div>
+            <div class="breadcrumb">
+                <span class="breadcrumb_item"><router-link to="/home/index">首页</router-link><span class="breadcrumb_separator">/</span></span><span class="breadcrumb_item"><a>财务管理</a><span class="breadcrumb_separator">-</span></span>
+            </div>
+            <div class="cw-manange-box clearfix">
+                <el-row>
+                    <el-col :span="16" class="cw-account-num">
+                        <el-row class="p-b">
+                            <el-col :span="24">
+                                <div class="grid-content-yue bg-purple-yue">
+                                    <p class="cw-title">余额账户</p>
+                                    <div class="cw-number">
+                                        <span class="jine">568089.00</span>
+                                        <el-button type="danger">转入</el-button>
+                                        <el-button type="info">转出</el-button>
+                                    </div>
+                                </div>
+                            </el-col>
+                        </el-row>
+                        <el-row class="b-t p-t">
+                            <el-col :span="12">
+                                <div class="grid-content bg-purple-one">
+                                    <p class="cw-title">余额账户</p>
+                                    <p class="cw-number"><span class="jine">568089.00</span></p>
+                                </div>
+                            </el-col>
+                            <el-col :span="12">
+                                <div class="grid-content bg-purple-two">
+                                    <p class="cw-title">余额账户</p>
+                                    <p class="cw-number"><span class="jine">568089.00</span></p>
+                                </div>
+                            </el-col>
+                        </el-row>
+                        <el-row class="b-t">
+                            <el-col :span="12">
+                                <div class="grid-content bg-purple-three">
+                                    <p class="cw-title">余额账户</p>
+                                    <p class="cw-number"><span class="jine">568089.00</span></p>
+                                </div>
+                            </el-col>
+                            <el-col :span="12">
+                                <div class="grid-content bg-purple-four">
+                                    <p class="cw-title">余额账户</p>
+                                    <p class="cw-number"><span class="jine">568089.00</span></p>
+                                </div>
+                            </el-col>
+                        </el-row>
+                    </el-col>
+                    <el-col :span="8" class="cw-account-card">
+                        <el-row>
+                            <el-col :span="24">
+                                <div class="grid-content  bg-purple-dark">
+                                   <p class="p-icon">银行卡</p> 
+                                   <p class="p-text">6</p> 
+                                </div>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col :span="24">
+                                <div class="grid-content bg-purple-dark">
+                                   <p class="p-icon">银行卡</p> 
+                                   <p class="p-text">6</p> 
+                                </div>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col :span="24">
+                                <div class="grid-content bg-purple-dark">
+                                   <p class="p-icon">银行卡</p> 
+                                   <p class="p-text">6</p> 
+                                </div>
+                            </el-col>
+                        </el-row>
+                    </el-col>
+                </el-row>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p>账户变动记录</p>
+                <br>
+                <el-table :data="tableData" border style="width:100%">
+                    <el-table-column prop="date" label="账户分类"></el-table-column>
+                    <el-table-column prop="name" label="业务类型"></el-table-column>
+                    <el-table-column prop="address" label="交易金额"></el-table-column>
+                    <el-table-column prop="address" label="操作时间"></el-table-column>
+                    <el-table-column prop="address" label="业务流水号"></el-table-column>
+                    <el-table-column prop="address" label="状态"></el-table-column>
+                </el-table>
+            </div>
+        </div>
+    </template>
+    <template id="setting">
+        <div>
+            <div class="breadcrumb">
+                <span class="breadcrumb_item"><router-link to="/home/index">首页</router-link><span class="breadcrumb_separator">/</span></span><span class="breadcrumb_item"><a>系统设置</a><span class="breadcrumb_separator">/</span></span>
+            </div>
+            <div class="setting-content">
+                <transition name="no-mode-translate-fade">
+                    <router-view></router-view>
+                </transition>
+            </div>
+        </div>
+    </template>
+    <template id="totalTableDetial">
+        <div class="accont-mt20 tableDetial-content">
+            <el-table :data="tableData" border style="width: 100%">
+                <el-table-column prop='sid' label="流水号"></el-table-column>
+                <el-table-column prop='phone' label="账号"></el-table-column>
+                <el-table-column prop='product' label="产品"></el-table-column>
+                <el-table-column prop='spirce' label="单价" width="100"></el-table-column>
+                <el-table-column prop='rcount' label="数量" width="70"></el-table-column>
+                <el-table-column prop='' label="总价"></el-table-column>
+                <el-table-column prop="date" label="时间"></el-table-column>
+                <el-table-column prop='status' label="状态" width="100"></el-table-column>
+                <el-table-column label="操作">
+                    <template scope="scope">
+                        <el-button size="small" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+                        <el-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                    </template>
+                </el-table-column>
+                <el-table-column label="操作" width="100">
+                    <template scope="scope">
+                        <el-button type="text"><router-link style="color:#20a0ff" :to="{name:'订单详情',params:{ id: scope.row.sid }}">查看详情</router-link></el-button>
+                    </template>
+                </el-table-column>
+            </el-table>
+            <div class="block" style="text-align:center; margin:40px 0 30px;">
+                <el-pagination
+                    @size-change="handleSizeChange"
+                    @current-change="handleCurrentChange"
+                    :current-page="currentPage4"
+                    :page-sizes="[10, 20, 50, 100]"
+                    :page-size="10"
+                    layout="total, sizes, prev, pager, next, jumper"
+                    :total="400">
+                </el-pagination>
+            </div>
+        </div>
+    </template>
+    <!-- 首页模板 -->
+    <template id="index">
+        <div>
+            <div style="margin-right:250px">
+                <el-row :gutter="20">
+                    <el-col :span="6"><div class="demo-color-box bg-info">Blue<div class="value">#20A0FF</div><br><br><br></div></el-col>
+                    <el-col :span="6"><div class="demo-color-box bg-success">Success<div class="value">#13CE66</div><br><br><br></div></el-col>
+                    <el-col :span="6"><div class="demo-color-box bg-warning">Warning<div class="value">#F7BA2A</div><br><br><br></div></el-col>
+                    <el-col :span="6"><div class="demo-color-box bg-danger">Danger<div class="value">#FF4949</div><br><br><br></div></el-col>
+                </el-row>
+                <br>
+                <el-row :gutter="20">
+                    <el-col :span="6"><el-progress type="circle" :percentage="0"></el-progress></el-col>
+                    <el-col :span="6"><el-progress type="circle" :percentage="25"></el-progress></el-col>
+                    <el-col :span="6"><el-progress type="circle" :percentage="100" status="success"></el-progress></el-col>
+                    <el-col :span="6"><el-progress type="circle" :percentage="50" status="exception"></el-progress></el-col>
+                </el-row>
+            </div>
+            <div class="rightbarcontent">
+                <div class="rightbox rightbox1"><h5>客服热线</h5><p class="telnumber">400 7366 118</p><a class="qqservice">在线客服</a><p class="servertime txtcolor999">服务时间 8:00-22:00</p></div><div class="rightbox rightbox4"><a><img src="images/app-download-phone.png" alt=""/></a><a style="margin-top:10px;"><img src="images/app-download-erweima.png" alt=""/></a></div><div class="rightbox rightbox2"><h5>常用工具</h5></div><div class="rightbox rightbox3"><div class="toollist clearfix"><a class="toolitem toolitem1"><span class="icon"></span><br/><span>列车时刻</span></a><a class="toolitem toolitem2"><span class="icon"></span><br/><span>公交查询</span></a><a class="toolitem toolitem3"><span class="icon"></span><br/><span>交通违章</span></a><a class="toolitem toolitem4"><span class="icon"></span><br/><span>机票查询</span></a><a class="toolitem toolitem5"><span class="icon"></span><br/><span>天气预报</span></a><a class="toolitem toolitem6"><span class="icon"></span><br/><span>万年历</span></a><a class="toolitem toolitem7"><span class="icon"></span><br/><span>外卖订餐</span></a><a class="toolitem toolitem8"><span class="icon"></span><br/><span>物流快递</span></a><a class="toolitem toolitem9"><span class="icon"></span><br/><span>股票行情</span></a><a class="toolitem toolitem10"><span class="icon"></span><br/><span>房贷计算器</span></a></div></div>
+            </div>
+        </div>
+    </template>
+    <template id="s1">
+        <div>
+            <div class="account-box sub-mod" data-event="cancelTelEditView" data-id="userinfoview" style="">    
+                <h2 class="title">账号信息</h2>        
+                <dl class="approve-dl" data-id="user-account-wrap">        
+                    <dt><label for="">注册账号：</label></dt>        
+                    <dd><span class="info-text-group"><span data-id="user-account"><i class="info-text-icon qq"></i>1055127249</span></span></dd>    
+                </dl>        
+                <dl class="approve-dl">            
+                    <dt><label for="">关联账号：</label></dt>        
+                    <dd id="accountBindWrap">
+                        <div class="info-text"><span style="margin-right:20px;"><i class="info-text-icon"></i>关联后可使用邮箱登录</span><el-button type="primary" size="small">关联</el-button></div>
+                        <div class="info-text"><span style="margin-right:20px;"><i class="info-text-icon"></i>关联后可使用微信登录</span><el-button type="primary" size="small">关联</el-button></div>
+                    </dd>    
+                </dl>        
+                <dl class="approve-dl">        
+                    <dt><label for="">账号ID：</label></dt>
+                    <dd><span style="margin-right:20px;">1055127249</span></dd>
+                </dl>    
+                <dl class="approve-dl">
+                    <dt><label for="">APPID：</label></dt>
+                    <dd><span style="margin-right:20px;">1253317302</span></dd>
+                </dl>        
+                <dl class="approve-dl" data-perm-desc="">        
+                    <dt><label for="">角色：</label></dt>        
+                    <dd><span style="margin-right:20px;">创建者</span></dd>    
+                </dl>
+                <dl class="approve-dl J-rowItem">        
+                    <dt><label for="">昵称：</label></dt>        
+                    <dd class="viewNicknameModule">
+                        <span style="margin-right:20px;">火腿肠炖萝卜</span>
+                        <a class="change-btn">修改</a>
+                    </dd> 
+                </dl>    
+                <dl class="approve-dl" data-perm-desc="">        
+                    <dt class="top"><label for="">权限：</label></dt>        
+                    <dd><span style="margin-right:20px;">全局<b class="gray-text">（管理云资源、管理财务、管理协作者）</b></span></dd>    
+                </dl>  
+                <dl class="approve-dl" data-perm-desc="">        
+                    <dt class="top"><label for="">收货地址：</label></dt>        
+                    <dd>
+                        <span style="margin-right:20px;">湖北省武汉市江汉区</span>
+                        <el-button type="primary" size="small">修改</el-button>
+                    </dd>    
+                </dl> 
+            </div>  
+            <div class="account-box sub-mod" data-id="securityinfo" style="padding-bottom:50px;">    
+                <h2 class="title">安全信息</h2>  
+                <dl class="approve-dl J-rowItem J-rowMFA">        
+                    <dt><label for="">MFA设备 ：</label></dt>        
+                    <dd>
+                        <el-button type="primary" size="small">绑定</el-button>
+                    </dd>    
+                </dl>    
+                <dl class="approve-dl">        
+                    <dt><label for="">安全设置：</label></dt>        
+                    <dd>
+                        <span style="margin-right:20px;">登录保护</span>
+                        <el-button type="primary" size="small">设置</el-button>      
+                    </dd>    
+                </dl>    
+                <dl class="approve-dl" id="phoneWrap">        
+                    <dt><label for="">绑定手机：</label></dt>                
+                    <dd>
+                        <span style="margin-right:20px;">+86 151****2817</span>
+                        <el-button type="primary" size="small">修改</el-button>
+                    </dd>           
+                </dl>    
+                <dl class="approve-dl" id="emailWrap">        
+                    <dt><label for="">绑定邮箱：</label></dt>                
+                    <dd>
+                        <span style="margin-right:20px;">105512****@qq.com</span>
+                        <el-button type="primary" size="small">修改</el-button>
+                    </dd>            
+                </dl>
+            </div>
+        </div>
+    </template>
+    <template id="s2">
+        <div>s2</div>
+    </template>
+    <template id="s3">
+        <div>s3</div>
+    </template>
+    <template id="cavse">
+        <div class="accont-mt20 tableDetial-content">
+            <el-card class="box-card">
+                <div slot="header" class="clearfix">
+                    <span style="line-height:36px;">订单号：<span style="font-size:25px;">{{cs}}</span></span>
+                    <el-button style="float: right;" type="primary"><router-link :to="{name:'订单列表'}" style="color:#fff;">返回列表</router-link></el-button>
+                </div>
+                <div v-for="o in 10" :key="o" class="text item">
+                    {{'列表内容 ' + o }}
+                </div>
+            </el-card>
+        </div>
+    </template>
+    <template id="voucher">
+    	<div>
+            <div class="breadcrumb">
+                <span class="breadcrumb_item"><router-link to="/home/index">首页</router-link><span class="breadcrumb_separator">/</span></span><span class="breadcrumb_item"><a>卡券核销</a><span class="breadcrumb_separator">/</span></span>
+            </div>
+            <div class="voucher-content">
+                <transition name=" fade">
+                    <router-view></router-view>
+                </transition>
+            </div>
+        </div>
+    </template>
+    <template id="vcs1">
+    	<div class="voucher-consume"> 
+	        <div class="vc-line">
+	            <label>代理商账号</label>
+	            <div class="r-vc-panrl">
+	                <span class="vc-input"><input type="text" name="" placeholder="请输入账号"></span>
+	            </div>
+	        </div>
+	        <div class="vc-line">
+	            <label>券名称</label>
+	            <div class="r-vc-panrl">
+	                <span class="vc-input"><input type="text" name="" placeholder="请输入券名称"></span>
+	            </div>
+	        </div>
+	        <div class="vc-line">
+	            <label>券类型</label>
+	            <div class="r-vc-panrl">
+	                <span class="vc-select">
+	                    <input type="text" name="" readonly="readonly" vc-key="0" placeholder="选择券类型">
+	                    <i></i>
+	                    <ul>
+	                        <li value="1">满减券</li>
+	                        <li value="2">折扣券</li>
+	                    </ul>
+	                </span>
+	            </div>
+	        </div>
+	        <div class="vc-line">
+	            <label>满减金额</label>
+	            <div class="r-vc-panrl">
+	                <span class="vc-input"><input type="text" name="" placeholder="请输入金额"></span>
+	            </div>
+	        </div>
+	        <div class="vc-line">
+	            <label>减免金额</label>
+	            <div class="r-vc-panrl">
+	                <span class="vc-input"><input type="text" name="" placeholder="请输入金额"></span>
+	            </div>
+	        </div>
+	        <div class="vc-line">
+	            <label>使用业务</label>
+	            <div class="r-vc-panrl">
+	                <div class="ml-list clearfix">
+	                    <span class="ml-list">话费</span>
+	                    <span class="ml-list on">话费</span>
+	                    <span class="ml-list">话费</span>
+	                    <span class="ml-list">话费</span>
+	                    <span class="ml-list">话费</span>
+	                    <span class="ml-list">话费</span>
+	                    <span class="ml-list">话费</span>
+	                    <span class="ml-list">话费</span>
+	                    <span class="ml-list">话费</span>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="vc-line">
+	            <label>有效期</label>
+	            <div class="r-vc-panrl">
+	                <div class="date-input-block clearfix">
+	                    <span class="vc-input"><input type="text" name="" readonly="readonly" placeholder="请输入金额"><i></i></span>
+	                    <span class="vc-time-fuhao">至</span>
+	                    <span class="vc-input"><input type="text" name="" readonly="readonly" placeholder="请输入金额"><i></i></span>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="vc-line">
+	            <label>发券方式</label>
+	            <div class="r-vc-panrl">
+	                <span class="vc-select">
+	                    <input type="text" name="" readonly="readonly" vc-key="0" placeholder="选择发券方式">
+	                    <i></i>
+	                    <ul>
+	                        <li value="1">短信</li>
+	                        <li value="2">活动</li>
+	                    </ul>
+	                </span>
+	            </div>
+	        </div>
+	        <div class="vc-line">
+	            <label>制券数量</label>
+	            <div class="r-vc-panrl">
+	                <span class="vc-input"><input type="text" name=""></span>
+	            </div>
+	        </div>
+	        <div class="vc-line">
+	            <div class="r-vc-panrl">
+	                <div class="btn-block clearfix">
+	                    <a class="vc-f-btn">保存</a>
+	                    <a class="vc-b-btn">取消</a>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+    </template>
+    <template id="vcs2">
+    	<div class="voucher-consume"> 
+            <div class="clearfix">
+                <div class="input-l-block">
+                    <label>批次号</label>
+                    <input type="text" placeholder="请输入批次号" name="">
+                </div>
+                <div class="input-l-block">
+                    <label>券类型</label>
+                    <select>
+                        <option value="0">全部</option>
+                        <option value="0">全部</option>
+                        <option value="0">全部</option>
+                        <option value="0">全部</option>
+                    </select>
+                </div>
+                <div class="input-l-block">
+                    <label>适用业务</label>
+                    <select>
+                        <option value="0">全部</option>
+                        <option value="0">全部</option>
+                        <option value="0">全部</option>
+                        <option value="0">全部</option>
+                    </select>
+                </div>
+                <div class="input-l-block">
+                    <label>发券方式</label>
+                    <select>
+                        <option value="0">全部</option>
+                        <option value="0">全部</option>
+                        <option value="0">全部</option>
+                        <option value="0">全部</option>
+                    </select>
+                </div>
+                <div class="input-l-block">
+                    <label>充值产品</label>
+                    <select>
+                        <option value="0">全部</option>
+                        <option value="0">全部</option>
+                        <option value="0">全部</option>
+                        <option value="0">全部</option>
+                    </select>
+                </div>
+                <div class="input-l-block">
+                    <label>充值产品</label>
+                    <span class="date-input"></span>
+                    <span class="vc-time-fuhao">至</span>
+                    <span class="date-input"></span>
+                </div>
+                <div class="input-l-block">
+                    <label>制券账号</label>
+                    <input type="text" placeholder="请输制券账号" name="">
+                </div>
+                <a class="vc-button btn-red">查询</a>
+                <a class="vc-button btn-blur">清空</a>
+            </div>
+	        <el-table :data="tableData" border style="width: 100%">
+                <el-table-column type="selection" width="45"></el-table-column>
+                <el-table-column prop='a2' label="券名称"></el-table-column>
+                <el-table-column prop='a3' label="券类型" width="80"></el-table-column>
+                <el-table-column prop='a4' label="优惠内容"></el-table-column>
+                <el-table-column prop='a5' label="适用业务"></el-table-column>
+                <el-table-column prop='a6' label="有效期" width="320"></el-table-column>
+                <el-table-column prop='a7' label="发券方式" width="95"></el-table-column>
+                <el-table-column prop='a8' label="制券数量" width="95"></el-table-column>
+                <el-table-column prop='a9' label="创建时间" width="170"></el-table-column>
+                <el-table-column prop='a10' label="明细" width="70"></el-table-column>
+                <el-table-column prop='a11' label="操作"></el-table-column>
+            </el-table>
+            <div class="block" style="text-align:center; margin:40px 0 30px;">
+                <el-pagination
+                    :current-page="currentPage4"
+                    :page-sizes="[10, 20, 50, 100]"
+                    :page-size="10"
+                    layout="total, sizes, prev, pager, next, jumper"
+                    :total="100">
+                </el-pagination>
+            </div>
+	    </div>
+    </template>
+    <template id="vcs3">
+    	<div class="voucher-consume"> 
+            <div class="clearfix">
+                <div class="input-l-block">
+                    <label>批次号</label>
+                    <input type="text" placeholder="请输入批次号" name="">
+                </div>
+                <div class="input-l-block">
+                    <label>券类型</label>
+                    <select>
+                        <option value="0">全部</option>
+                    </select>
+                </div>
+                <div class="input-l-block">
+                    <label>适用业务</label>
+                    <select>
+                        <option value="0">全部</option>
+                    </select>
+                </div>
+                <div class="input-l-block">
+                    <label>发券方式</label>
+                    <select>
+                        <option value="0">全部</option>
+                    </select>
+                </div>
+                <div class="input-l-block">
+                    <label>充值产品</label>
+                    <select>
+                        <option value="0">全部</option>
+                    </select>
+                </div>
+                <div class="input-l-block">
+                    <label>充值产品</label>
+                    <span class="date-input"></span>
+                    <span class="vc-time-fuhao">至</span>
+                    <span class="date-input"></span>
+                </div>
+                <div class="input-l-block">
+                    <label>制券账号</label>
+                    <input type="text" placeholder="请输制券账号" name="">
+                </div>
+                <a class="vc-button btn-red">查询</a>
+                <a class="vc-button btn-blur">清空</a>
+            </div>
+	        <el-table :data="tableData" border style="width: 100%">
+                <el-table-column type="selection" width="55"></el-table-column>
+                <el-table-column prop='a2' label="券号"></el-table-column>
+                <el-table-column prop='a3' label="优惠金额"></el-table-column>
+                <el-table-column prop='a4' label="券状态"></el-table-column>
+                <el-table-column prop='a5' label="销券订单"></el-table-column>
+                <el-table-column prop='a6' label="销券时间"></el-table-column>
+                <el-table-column prop='a7' label="操作">禁用</el-table-column>
+            </el-table>
+            <div class="block" style="text-align:center; margin:40px 0 30px;">
+                <el-pagination
+                    :current-page="currentPage4"
+                    :page-sizes="[10, 20, 50, 100]"
+                    :page-size="10"
+                    layout="total, sizes, prev, pager, next, jumper"
+                    :total="100">
+                </el-pagination>
+            </div>
+	    </div>
+    </template>
+</body>
+<script type="text/javascript" src="js/vue.min.js"></script>
+<script type="text/javascript" src="js/vue-router.min.js"></script>
+<script type="text/javascript" src="js/vue-resource.min.js"></script>
+<script type="text/javascript" src="js/element-ui.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+</html>
+
+
+
+
+
+
