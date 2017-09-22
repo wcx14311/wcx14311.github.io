@@ -36,7 +36,7 @@
             	bingOpriate();
             },
             error: function(xhr, type) {
-                alert('Ajax error!')
+                // alert('Ajax error!')
             }
         })
     }
