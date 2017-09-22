@@ -15,10 +15,7 @@
         $.ajax({
             type: 'GET',
             url: './data.json',
-            data: { name: 'Zepto.js' },
             dataType: 'json',
-            timeout: 300,
-            context: $('body'),
             success: function(data) {
             	listView.empty();
             	var daxiezimu = "A";
