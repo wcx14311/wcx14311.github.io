@@ -59,7 +59,7 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
     position: relative;
     padding: 40px 20px 40px 40px;
     display: flex;
-    background: #eb5153;
+    background: #ff475e;
     color: #fff;
     opacity: 0;
     -webkit-animation: moveIn 1s 3.1s ease forwards;
@@ -111,39 +111,29 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
 	position: relative;
 	height: 140px;
 	box-sizing: border-box;
-	padding-top:7px;
 	font-size: 12px;
 	-webkit-animation: moveIn 1s 3.1s ease forwards;
     animation: moveIn 1s 3.1s ease forwards
 }
-// .profile-card .card-body::before{
-//     position: absolute;
-//     left: 62px;
-//     top: -8px;
-//     width: 15px;
-//     height: 15px;
-//     border-radius: 20px;
-//     content: '';
-//     background: #eb5153;
-// }
 .profile-card .card-body .card-body-line{
 	display: flex;
 }
 .profile-card .card-body .card-body-line .l{
 	text-align: center;
 	width:69px;
-	border-right: 1px solid #eb5153;
-	padding-top:11px;
+	border-right: 1px solid #ff475e;
+	padding-top:13px;
 }
 .profile-card .card-body .card-body-line .r{
 	flex: 1;
 	padding-left: 10px;
 	padding-right: 20px;
-	padding-top:10px;
+	padding-top:12px;
     font-size: 14px;
 }
 .bi-title{
-    color:#fff;
+    color:#ff4259;
+    font-weight:bold;
     font-size:18px;
     margin-top:5px;
 }
@@ -175,6 +165,16 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
 .profile-card:hover .card-body{
 	height:280px;
 	overflow: auto;
+}
+.skill-targ{
+    display: inline-block;
+    background: #29c8cf;
+    color: #fff;
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 0 7px 2px;
+    line-height: 1;
 }
 @-webkit-keyframes init {
     0% {
@@ -287,7 +287,7 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
     100% {
         width: 450px;
         height: 280px;
-        background: #283949;
+        background: #1f1f2a;
         -webkit-border-radius: 0;
         border-radius: 0
     }
@@ -304,7 +304,7 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
     100% {
         width:450px;
         height:280px;
-        background: #283949;
+        background: #1f1f2a;
         -webkit-border-radius: 0;
         border-radius: 0
     }
@@ -359,6 +359,14 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
 
 
 .full-layout{
+    font-family: Helvetica Neue For Number,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    background: #f0f0f0;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    -webkit-print-color-adjust: exact;
     position: absolute;
     left: 0;
     width:100%;
@@ -368,7 +376,7 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
 }
 .full-layout .panel-left{
     width:300px;
-    background: #000;
+    background: #2a2b39;
 }
 .full-layout .panel-right{
     flex:1;
@@ -377,7 +385,7 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
     overflow-y:scroll;
     box-sizing: border-box;
     padding: 20px 20px 0;
-    background: #efefef;
+    background: #f1f2f6;
 }
 .background-card{
     color: #707070;
@@ -387,10 +395,32 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
     margin:0 0 20px; 
 }
 .background-card .mobile-title{
+    font-weight:bolder;
     font-size: 18px;
     margin-left: 20px;
 }
+.background-card ul{
+    padding-left:0;
+}
+.background-card ul li{
+    list-style-type: circle;
+}
 .background-card .content{
-    padding: 0;
     margin-left: 37px;
 }
+.background-card .content .header p{
+    color: #29c8cf;
+    font-size:16px;
+    margin:0;
+}
+.background-card .content .header p span{
+    color: #707070;
+    font-size: 14px;
+    margin-left:20px;
+}
+.background-card .content .header p.text-muted{
+    font-size:12px;
+    color:#707070;
+}
+
+

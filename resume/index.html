@@ -34,7 +34,7 @@
                     <div class="icon">
                         <i class="fs-lg icon-graduation-cap"></i><span class="mobile-title">教育经历</span>
                     </div>
-                    <p class="info content">景德镇学院 数学与信息工程系</p>
+                    <p class="info content">景德镇学院 —— 数学与信息工程系 —— 数字多媒体专业</p>
                 </div>
                 <div class="card background-card">
                     <div class="icon">
@@ -42,15 +42,8 @@
                     </div>
                     <dl class="info content">
                         <dt class="header">
-                            <p>美味不用等（上海）信息科技股份有限公司 <span>web前端工程师</span></p>
-                            <p class="text-muted">2017-06 - 至今</p>
-                        </dt>
-                        <dd>供应链项目组</dd>
-                    </dl>
-                    <dl class="info content">
-                        <dt class="header">
-                            <p>上海毅兆信息科技有限公司<span>web前端工程师</span></p>
-                            <p class="text-muted">2016.04 - 2017-05</p>
+                            <p>武汉永乐永乐云商 <span>web前端工程师</span></p>
+                            <p class="text-muted">2015-12 - 至今</p>
                         </dt>
                         <dd>
                             <ul>
@@ -65,17 +58,31 @@
                     </dl>
                     <dl class="info content">
                         <dt class="header">
-                            <p>上海连趣跑信息技术有限公司</p>
-                            <p class="text-muted">2015.10 - 2016.04</p>
+                            <p>武汉纺友网<span>web前端工程师</span></p>
+                            <p class="text-muted">2015.03 - 2015-12</p>
                         </dt>
                         <dd>
                             <ul>
-                                <li>Photoshop 对设计图进行切片</li>
+                                <li>根据产品需求文档，进行 web 前端开发，前端主体框架选型，搭建基础框架</li>
+                                <li>根据设计提供的设计稿编写静态页面</li>
+                                <li>Javascript 数据处理、Ajax 交互开发、前端公共组件开发</li>
+                                <li>负责配合后台开发人员，完成页面的交互及接口对接</li>
+                                <li>负责团队的前端开发质量，提高效率，实施前后端分离</li>
+                                <li>负责前端技术的完善，以用户为中心，不断尝试前端新技术，提升团队水平</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="info content">
+                        <dt class="header">
+                            <p>上海昕鼎网络科技有限公司<span>web前端工程师</span></p>
+                            <p class="text-muted">2013.11 - 2015.02</p>
+                        </dt>
+                        <dd>
+                            <ul>
+                                <li>Photoshop对设计图进行切片</li>
                                 <li>根据设计提供的设计稿编写静态页面</li>
                                 <li>负责配合后台开发人员，完成页面的交互及接口对接</li>
                                 <li>负责网站功能模块及后台管理系统的设计</li>
-                                <li>上海艺术伙伴有限公司</li>
-                                <li>Photoshop 对设计图进行切片</li>
                                 <li>HTML5 + CSS3 编写网站页面，并保证浏览器的兼容性</li>
                                 <li>负责配合后台开发人员，完成页面的交互及接口对接</li>
                                 <li>负责电脑端及移动端 web 项目的前端开发</li>
@@ -87,19 +94,18 @@
                     <div class="icon">
                         <i class="fs-lg icon-tools"></i><span class="mobile-title">技能评价</span>
                     </div>
-                    <div class="content">
-                        <span class="label label-info">HTML</span>
-                        <span class="label label-info">CSS</span>
-                        <span class="label label-info">Javascript</span>
-                        <span class="label label-info">Sass</span>
-                        <span class="label label-info">Postcss</span>
-                        <span class="label label-info">Gulp</span>
-                        <span class="label label-info">Webpack</span>
-                        <span class="label label-info">Angular</span>
-                        <span class="label label-info">React</span>
-                        <span class="label label-info">Nodejs</span>
-                        <span class="label label-info">Python</span>
-                    </div>
+                    <p class="content">
+                        <span class="skill-targ">HTML</span>
+                        <span class="skill-targ">CSS</span>
+                        <span class="skill-targ">Javascript</span>
+                        <span class="skill-targ">Sass</span>
+                        <span class="skill-targ">Postcss</span>
+                        <span class="skill-targ">Gulp</span>
+                        <span class="skill-targ">Webpack</span>
+                        <span class="skill-targ">Angular</span>
+                        <span class="skill-targ">React</span>
+                        <span class="skill-targ">Nodejs</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -132,7 +138,9 @@
                         <div class="l"></div><div class="r bi-title">个人技能</div>
                     </div>
                     <div class="card-body-line">
-                        <div class="l"></div><div class="r"><span>{{skills}}</span></div>
+                        <div class="l"></div><div class="r">
+                            <span v-for="skill in skills" class="skill-targ">{{skill}}</span>
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -143,7 +151,7 @@
                         <div class="l time">2016.04</div><div class="r"><span>武汉市江小区</span></div>
                     </div>
                 </div> 
-                <div class="card-body-line"><div class="l"><br><br></div><div class="r"></div></div>
+                <div class="card-body-line"><div class="l"><br></div><div class="r"></div></div>
             </section>
         </aside>
     </div>  
@@ -159,7 +167,7 @@
         data: function () {
             return {
                 user:{
-                    name:'花千骨炖萝卜',
+                    name:'炖萝卜',
                     location:'武汉',
                     job:'挨踢民工'
                 },
@@ -178,8 +186,8 @@
                         text:'武汉市江汉区新华小区'
                     }
                 ],
-                skills:'html、css、js、vue.js、underscore.js、webpack、gulp、mongoose、node.js、react、react-native',
-                profile:'本人毕业于景德镇学院数学与信息工程系，有4年的前端开发工作经验，从事什么工作，曾经在 XXXX 公司担任 XXXX职位，工作内容是什么，取得了哪些成绩。再写一下个人擅长什么，在专业领域有什么专长，等等',
+                skills:['html','css','js','less/scss','vue.js','underscore.js','webpack','gulp','mongoose','node.js','react','react-native'],
+                profile:'本人毕业于景德镇学院数学与信息工程系，有4年的前端开发工作经验，喜欢关注 web 前端相关新技术，对于新技术有很强的学习兴趣。',
                 experience:[
                     {data:'',job:'',content:'',conpany:''}
                 ],
