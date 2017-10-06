@@ -502,5 +502,14 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
         overflow-y: hidden;
         height: auto;
     }
+    .background-card .mobile-title{
+        margin-left:5px;
+    }
+    .background-card .content{
+        margin-left:15px;
+    }
+    .background-card .content dd{
+        margin-left:16px;
+    }
 }
 
