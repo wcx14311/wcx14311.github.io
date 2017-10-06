@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="renderer" content="webkit">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui">
+    <link rel="stylesheet" href="../css/resume.css">
+    <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body> 
+    <div id="app" style="height:100%">
+        <transition name="fade"><router-view></router-view></transition>
+    </div>
+    <template id="profile">
+        <div class="full-layout">
+            <div class="panel-left">
+                <img class="media-object img-circle center-block" src="">
+            </div>
+            <div class="panel-right">
+                <div class="card background-card">
+                    <div class="icon">
+                        <i class="fs-lg icon-board"></i><span class="mobile-title">自我描述</span>
+                    </div>
+                    <ul class="info content mop-wrapper">
+                        <li>个人主攻 web 前端和 nodejs 开发，2年+前端开发经验。</li>
+                        <li>喜欢关注 web 前端相关新技术，对于新技术有很强的学习兴趣。</li>
+                        <li>喜欢折腾造轮子，不定时更新 github 小项目。</li>
+                        <li>热爱前端这份工作，也热爱一切美好的事物，对于我来说，是一种责任、是一种快乐。</li>
+                    </ul>
+                </div>
+                <div class="card background-card">
+                    <div class="icon">
+                        <i class="fs-lg icon-graduation-cap"></i><span class="mobile-title">教育经历</span>
+                    </div>
+                    <p class="info content">景德镇学院 数学与信息工程系</p>
+                </div>
+                <div class="card background-card">
+                    <div class="icon">
+                        <i class="fs-lg icon-office"></i><span class="mobile-title">工作经历</span>
+                    </div>
+                    <dl class="info content">
+                        <dt class="header">
+                            <p>美味不用等（上海）信息科技股份有限公司 <span>web前端工程师</span></p>
+                            <p class="text-muted">2017-06 - 至今</p>
+                        </dt>
+                        <dd>供应链项目组</dd>
+                    </dl>
+                    <dl class="info content">
+                        <dt class="header">
+                            <p>上海毅兆信息科技有限公司<span>web前端工程师</span></p>
+                            <p class="text-muted">2016.04 - 2017-05</p>
+                        </dt>
+                        <dd>
+                            <ul>
+                                <li>根据产品需求文档，进行 web 前端开发，前端主体框架选型，搭建基础框架</li>
+                                <li>根据设计提供的设计稿编写静态页面</li>
+                                <li>Javascript 数据处理、Ajax 交互开发、前端公共组件开发</li>
+                                <li>负责配合后台开发人员，完成页面的交互及接口对接</li>
+                                <li>负责团队的前端开发质量，提高效率，实施前后端分离</li>
+                                <li>负责前端技术的完善，以用户为中心，不断尝试前端新技术，提升团队水平</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="info content">
+                        <dt class="header">
+                            <p>上海连趣跑信息技术有限公司</p>
+                            <p class="text-muted">2015.10 - 2016.04</p>
+                        </dt>
+                        <dd>
+                            <ul>
+                                <li>Photoshop 对设计图进行切片</li>
+                                <li>根据设计提供的设计稿编写静态页面</li>
+                                <li>负责配合后台开发人员，完成页面的交互及接口对接</li>
+                                <li>负责网站功能模块及后台管理系统的设计</li>
+                                <li>上海艺术伙伴有限公司</li>
+                                <li>Photoshop 对设计图进行切片</li>
+                                <li>HTML5 + CSS3 编写网站页面，并保证浏览器的兼容性</li>
+                                <li>负责配合后台开发人员，完成页面的交互及接口对接</li>
+                                <li>负责电脑端及移动端 web 项目的前端开发</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="card background-card">
+                    <div class="icon">
+                        <i class="fs-lg icon-tools"></i><span class="mobile-title">技能评价</span>
+                    </div>
+                    <div class="content">
+                        <span class="label label-info">HTML</span>
+                        <span class="label label-info">CSS</span>
+                        <span class="label label-info">Javascript</span>
+                        <span class="label label-info">Sass</span>
+                        <span class="label label-info">Postcss</span>
+                        <span class="label label-info">Gulp</span>
+                        <span class="label label-info">Webpack</span>
+                        <span class="label label-info">Angular</span>
+                        <span class="label label-info">React</span>
+                        <span class="label label-info">Nodejs</span>
+                        <span class="label label-info">Python</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="index">
+        <div class="about-body">
+        <aside class="profile-card" @click="viewDetials">
+            <header>
+                <div class="profile-card-photo"><img src="../images/tx.gif"></div>
+                <div class="profile-card-text">
+                    <h1>{{user.name}}</h1>
+                    <h2>{{user.location}} {{user.job}}</h2>
+                </div>
+            </header>
+            <section class="card-body">
+                <div v-for="info in baseInfo">
+                    <div class="card-body-line">
+                        <div class="l"><span class="icon"><img :src="info.icon"></span></div>
+                        <div class="r"><span>{{info.text}}</span></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card-body-line">
+                        <div class="l"></div><div class="r bi-title">个人简介</div>
+                    </div>
+                    <div class="card-body-line">
+                        <div class="l"></div><div class="r"><span>{{profile}}</span></div>
+                    </div>
+                    <div class="card-body-line">
+                        <div class="l"></div><div class="r bi-title">个人技能</div>
+                    </div>
+                    <div class="card-body-line">
+                        <div class="l"></div><div class="r"><span>{{skills}}</span></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card-body-line">
+                        <div class="l"></div><div class="r bi-title">工作经历</div>
+                    </div>
+                    <div class="card-body-line">
+                        <div class="l time">2016.04</div><div class="r"><span>武汉市江小区</span></div>
+                    </div>
+                </div> 
+                <div class="card-body-line"><div class="l"><br><br></div><div class="r"></div></div>
+            </section>
+        </aside>
+    </div>  
+    </template>
+</body>
+<script type="text/javascript" src="../js/vue.min.js"></script>
+<script type="text/javascript" src="../js/vue-router.min.js"></script>
+<script type="text/javascript" src="../js/vue-resource.min.js"></script>
+<script type="text/javascript">
+    "use strict";
+    var resume = { 
+        template: '#index',
+        data: function () {
+            return {
+                user:{
+                    name:'花千骨炖萝卜',
+                    location:'武汉',
+                    job:'挨踢民工'
+                },
+                baseInfo:[
+                    {
+                        icon:'../images/about/icon-email.png',
+                        text:'176 7163 5808'
+                    },{
+                        icon:'../images/about/icon-phone.png',
+                        text:'1055127249@qq.com'
+                    },{
+                        icon:'../images/about/icon-qq.png',
+                        text:'https://github.com/wcx14311'
+                    },{
+                        icon:'../images/about/icon-net.png',
+                        text:'武汉市江汉区新华小区'
+                    }
+                ],
+                skills:'html、css、js、vue.js、underscore.js、webpack、gulp、mongoose、node.js、react、react-native',
+                profile:'本人毕业于景德镇学院数学与信息工程系，有4年的前端开发工作经验，从事什么工作，曾经在 XXXX 公司担任 XXXX职位，工作内容是什么，取得了哪些成绩。再写一下个人擅长什么，在专业领域有什么专长，等等',
+                experience:[
+                    {data:'',job:'',content:'',conpany:''}
+                ],
+                project:[]
+            }
+        },
+        methods:{
+            viewDetials:function() {
+                router.push('profile')
+            }
+        }
+    };
+    var profile = {
+        template:'#profile',
+        data:function(){
+            return {}
+        },
+    }
+    var routes = [
+        { 
+            path: '/', 
+            component: resume,
+            name:'简历'
+        },{ 
+            path: '/profile', 
+            component: profile,
+            name:'简历明细'
+        }
+    ];
+
+    var router = new VueRouter({
+        routes
+    });
+
+    var app = new Vue({
+        router:router
+    }).$mount('#app');
+</script>
+</html>
