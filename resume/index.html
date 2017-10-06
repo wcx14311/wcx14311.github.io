@@ -16,7 +16,35 @@
     <template id="profile">
         <div class="full-layout">
             <div class="panel-left">
-                <img class="media-object img-circle center-block" src="">
+                <div class="profile-card-photo">
+                    <img src="https://avatars2.githubusercontent.com/u/9925435?v=4&s=400&u=0a2b1bbb9e804619070e9f020f34db30f63d7902">
+                </div>
+                <div class="profile-card-text">
+                    <p class="bt">吴长新</p>
+                    <p>web前端工程师</p>
+                </div>
+                <div class="contact-details">
+                    <div class="detail">
+                        <span class="icon"><i class="icon fs-lg icon-profile"></i></span>
+                        <span class="info">男 26岁 4年工作经验</span>
+                    </div>
+                    <div class="detail">
+                        <span class="icon"><i class="icon fs-lg icon-location"></i></span>
+                        <span class="info">武汉市江汉区</span>
+                    </div>
+                    <div class="detail">
+                        <span class="icon"><i class="icon fs-lg icon-phone"></i></span>
+                        <span class="info">18521708248</span>
+                    </div>
+                    <div class="detail">
+                        <span class="icon"><i class="icon fs-lg icon-mail"></i></span>
+                        <span class="info"><a class="link-disguise" href="mailto:724355924@qq.com">724355924@qq.com</a></span>
+                    </div>
+                    <div class="detail">
+                        <span class="icon"><i class="icon fs-lg icon-link"></i></span>
+                        <span class="info"><a href="https://github.com/wcx14311" target="_blank">https://github.com/wcx14311</a></span>
+                    </div>
+                </div>
             </div>
             <div class="panel-right">
                 <div class="card background-card">
@@ -24,7 +52,7 @@
                         <i class="fs-lg icon-board"></i><span class="mobile-title">自我描述</span>
                     </div>
                     <ul class="info content mop-wrapper">
-                        <li>个人主攻 web 前端和 nodejs 开发，2年+前端开发经验。</li>
+                        <li>个人主攻 web 前端和 nodejs 开发，4年+前端开发经验。</li>
                         <li>喜欢关注 web 前端相关新技术，对于新技术有很强的学习兴趣。</li>
                         <li>喜欢折腾造轮子，不定时更新 github 小项目。</li>
                         <li>热爱前端这份工作，也热爱一切美好的事物，对于我来说，是一种责任、是一种快乐。</li>
@@ -42,7 +70,7 @@
                     </div>
                     <dl class="info content">
                         <dt class="header">
-                            <p>武汉永乐永乐云商 <span>web前端工程师</span></p>
+                            <p>武汉永乐云商 <span>web前端工程师</span></p>
                             <p class="text-muted">2015-12 - 至今</p>
                         </dt>
                         <dd>
@@ -58,7 +86,7 @@
                     </dl>
                     <dl class="info content">
                         <dt class="header">
-                            <p>武汉纺友网<span>web前端工程师</span></p>
+                            <p>武汉纺友技术有限公司<span>web前端工程师</span></p>
                             <p class="text-muted">2015.03 - 2015-12</p>
                         </dt>
                         <dd>
@@ -95,16 +123,19 @@
                         <i class="fs-lg icon-tools"></i><span class="mobile-title">技能评价</span>
                     </div>
                     <p class="content">
-                        <span class="skill-targ">HTML</span>
-                        <span class="skill-targ">CSS</span>
-                        <span class="skill-targ">Javascript</span>
-                        <span class="skill-targ">Sass</span>
-                        <span class="skill-targ">Postcss</span>
-                        <span class="skill-targ">Gulp</span>
-                        <span class="skill-targ">Webpack</span>
-                        <span class="skill-targ">Angular</span>
-                        <span class="skill-targ">React</span>
-                        <span class="skill-targ">Nodejs</span>
+                        <span class="skill-targ">html</span>
+                        <span class="skill-targ">css</span>
+                        <span class="skill-targ">js</span>
+                        <span class="skill-targ">less/scss</span>
+                        <span class="skill-targ">vue.js</span>
+                        <span class="skill-targ">underscore.js</span>
+                        <span class="skill-targ">webpack</span>
+                        <span class="skill-targ">gulp</span>
+                        <span class="skill-targ">mongoose</span>
+                        <span class="skill-targ">node.js</span>
+                        <span class="skill-targ">es6</span>
+                        <span class="skill-targ">react</span>
+                        <span class="skill-targ">react-native</span>
                     </p>
                 </div>
             </div>
@@ -114,7 +145,7 @@
         <div class="about-body">
         <aside class="profile-card" @click="viewDetials">
             <header>
-                <div class="profile-card-photo"><img src="../images/tx.gif"></div>
+                <div class="profile-card-photo"><img src="https://avatars2.githubusercontent.com/u/9925435?v=4&s=400&u=0a2b1bbb9e804619070e9f020f34db30f63d7902"></div>
                 <div class="profile-card-text">
                     <h1>{{user.name}}</h1>
                     <h2>{{user.location}} {{user.job}}</h2>
@@ -186,7 +217,7 @@
                         text:'武汉市江汉区新华小区'
                     }
                 ],
-                skills:['html','css','js','less/scss','vue.js','underscore.js','webpack','gulp','mongoose','node.js','react','react-native'],
+                skills:['html','css','js','less/scss','vue.js','underscore.js','webpack','gulp','mongoose','node.js','es6','react','react-native'],
                 profile:'本人毕业于景德镇学院数学与信息工程系，有4年的前端开发工作经验，喜欢关注 web 前端相关新技术，对于新技术有很强的学习兴趣。',
                 experience:[
                     {data:'',job:'',content:'',conpany:''}

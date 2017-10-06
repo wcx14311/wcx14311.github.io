@@ -376,7 +376,44 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
 }
 .full-layout .panel-left{
     width:300px;
-    background: #2a2b39;
+    background: #1f1f2a;
+    color: #b4b8cc;
+}
+.full-layout .panel-left a{
+    color: inherit;
+    text-decoration: none;
+    font-style: normal;
+}
+.full-layout .panel-left a:hover{
+    color: #ff4259;
+}
+.panel-left .profile-card-photo{
+    padding-top:50px;
+    text-align: center;
+}
+.panel-left .profile-card-photo img{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    border-radius: 100px;
+}
+.panel-left .profile-card-text{
+    padding-top:10px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+.panel-left .profile-card-text p{
+    line-height:1.2;
+    margin: 0;
+}
+.panel-left .profile-card-text .bt{
+    font-size:30px;
+}
+.panel-left .contact-details{
+    padding-left:30px;
+}
+.panel-left .contact-details .detail{
+    padding:10px;
 }
 .full-layout .panel-right{
     flex:1;
