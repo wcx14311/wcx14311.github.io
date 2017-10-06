@@ -6,6 +6,7 @@
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui">
+    <title>个人简历</title>
     <link rel="stylesheet" href="../css/resume.css">
     <link rel="stylesheet" href="../css/theme.css">
 </head>
@@ -16,12 +17,14 @@
     <template id="profile">
         <div class="full-layout">
             <div class="panel-left">
-                <div class="profile-card-photo">
-                    <img src="https://avatars2.githubusercontent.com/u/9925435?v=4&s=400&u=0a2b1bbb9e804619070e9f020f34db30f63d7902">
-                </div>
-                <div class="profile-card-text">
-                    <p class="bt">吴长新</p>
-                    <p>web前端工程师</p>
+                <div class="profile-card-t">
+                    <div class="profile-card-photo">
+                        <img src="https://avatars2.githubusercontent.com/u/9925435?v=4&s=400&u=0a2b1bbb9e804619070e9f020f34db30f63d7902">
+                    </div>
+                    <div class="profile-card-text">
+                        <p class="bt">吴长新</p>
+                        <p>web前端工程师</p>
+                    </div>
                 </div>
                 <div class="contact-details">
                     <div class="detail">
@@ -71,7 +74,7 @@
                     <dl class="info content">
                         <dt class="header">
                             <p>武汉永乐云商 <span>web前端工程师</span></p>
-                            <p class="text-muted">2015-12 - 至今</p>
+                            <p class="text-muted">2015.12 - 至今</p>
                         </dt>
                         <dd>
                             <ul>
@@ -87,7 +90,7 @@
                     <dl class="info content">
                         <dt class="header">
                             <p>武汉纺友技术有限公司<span>web前端工程师</span></p>
-                            <p class="text-muted">2015.03 - 2015-12</p>
+                            <p class="text-muted">2015.03 - 2015.12</p>
                         </dt>
                         <dd>
                             <ul>
@@ -178,8 +181,8 @@
                     <div class="card-body-line">
                         <div class="l"></div><div class="r bi-title">工作经历</div>
                     </div>
-                    <div class="card-body-line">
-                        <div class="l time">2016.04</div><div class="r"><span>武汉市江小区</span></div>
+                    <div class="card-body-line" v-for="item in experience">
+                        <div class="l time">{{item.startDate}}</div><div class="r"><span>{{item.conpany}}</span></div>
                     </div>
                 </div> 
                 <div class="card-body-line"><div class="l"><br></div><div class="r"></div></div>
@@ -220,7 +223,9 @@
                 skills:['html','css','js','less/scss','vue.js','underscore.js','webpack','gulp','mongoose','node.js','es6','react','react-native'],
                 profile:'毕业于景德镇学院数学与信息工程系，有4年的前端开发工作经验，喜欢关注 web 前端相关新技术，对于新技术有很强的学习兴趣。',
                 experience:[
-                    {data:'',job:'',content:'',conpany:''}
+                    {startDate:'2015.12',endDate:'至今',conpany:'武汉永乐云商'},
+                    {startDate:'2015.03',endDate:'2015.12',conpany:'武汉纺友技术有限公司'},
+                    {startDate:'2013.11',endDate:'2015.02',conpany:'上海昕鼎网络科技有限公司'}
                 ],
                 project:[]
             }
