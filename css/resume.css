@@ -792,11 +792,12 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
         margin-left:16px;
     }
     .profile-card{
+        -webkit-overflow-scrolling: touch
         overflow:auto;
     }
     .profile-card .card-body{
         height:auto;
-        overflow: scroll;
+        overflow:none;
     }
     .profile-card:hover header {
         height: 140px;
@@ -809,9 +810,8 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
         opacity:1;
     }
     .profile-card:hover .card-body{
-
         height:auto;
-        overflow:auto;
+        overflow:none;
     }
     @-webkit-keyframes materia {
         0% {
