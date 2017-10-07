@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui">
     <title>个人简历</title>
     <link rel="stylesheet" href="../css/resume.css">
-    <link rel="stylesheet" href="../css/theme.css">
 </head>
 <body> 
     <div id="app" style="height:100%">
@@ -18,7 +17,7 @@
         <div class="full-layout">
             <div class="panel-left">
                 <div class="profile-card-t">
-                    <div class="profile-card-photo">
+                    <div class="profile-card-photo" @click="backCard">
                         <img src="https://avatars2.githubusercontent.com/u/9925435?v=4&s=400&u=0a2b1bbb9e804619070e9f020f34db30f63d7902">
                     </div>
                     <div class="profile-card-text">
@@ -49,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <div class="panel-right">
+            <div class="panel-right" id="panelRight">
                 <!-- 自我描述 -->
                 <div class="card background-card">
                     <div class="icon">
@@ -131,7 +130,7 @@
                     <dl class="info content">
                         <dt class="header">
                             <p>永乐惠充app</p>
-                            <p class="common-p">技术栈：cordova + jquery + gulp + less + nginx</p>
+                            <p class="common-p">技术：cordova + jquery + gulp + less + nginx + shell</p>
                         </dt>
                         <dd>
                             <ul>
@@ -156,7 +155,7 @@
                     <dl class="info content">
                         <dt class="header">
                             <p>永乐生活微信站</p>
-                            <p class="common-p">技术栈：微信JSSDK + jquery + jsp</p>
+                            <p class="common-p">技术：微信JSSDK + jquery + jsp + svn + shell + ftp</p>
                         </dt>
                         <dd>
                             <ul>
@@ -199,6 +198,7 @@
                     </p>
                 </div>
             </div>
+            <a class="dlown"><i class="glyphicon glyphicon-download-alt"></i></a>
         </div>
     </template>
     <template id="index">
@@ -251,6 +251,8 @@
 <script type="text/javascript" src="../js/vue.min.js"></script>
 <script type="text/javascript" src="../js/vue-router.min.js"></script>
 <script type="text/javascript" src="../js/vue-resource.min.js"></script>
+<!-- <script type="text/javascript" src="../js/jspdf.min.js"></script>
+<script type="text/javascript" src="../js/html2canvas.js"></script> -->
 <script type="text/javascript">
     "use strict";
     var resume = { 
@@ -289,7 +291,7 @@
         },
         methods:{
             viewDetials:function() {
-                router.push('profile')
+                router.push('/profile')
             }
         }
     };
@@ -298,6 +300,39 @@
         data:function(){
             return {}
         },
+        methods:{
+            backCard:function(){
+                router.push('/')
+            }
+            // renderHTMLtoPDF:function(){
+            //     html2canvas(document.getElementById('panelRight'),{
+            //         onrendered: function(canvas){                
+            //             var contentWidth = canvas.width;                
+            //             var contentHeight = canvas.height;              
+            //             var pageHeight = contentWidth / 592.28 * 841.89;
+            //             var leftHeight = contentHeight;
+            //             var position = 0 ;               
+            //             var imgWidth = 595.28   ;             
+            //             var imgHeight = 592.28 / contentWidth * contentHeight;                
+            //             var pageData = canvas.toDataURL('image/jpeg', 1.0);                
+            //             var pdf = new jsPDF('', 'pt', 'a4') ;               
+            //             if (leftHeight < pageHeight) {                    
+            //                 pdf.addImage(pageData, 'JPEG', 0, 0, imgWidth, imgHeight)                
+            //             } else {                    
+            //                 while (leftHeight > 0) {                        
+            //                     pdf.addImage(pageData, 'JPEG', 0, position, imgWidth, imgHeight)
+            //                     leftHeight -= pageHeight;
+            //                     position -= 841.89;                       
+            //                     if (leftHeight > 0) {
+            //                         pdf.addPage()                        
+            //                     }                    
+            //                 }                
+            //             }                
+            //             pdf.save('吴长新-web前端.pdf')            
+            //         }     
+            //     })   
+            // }
+        }
     }
     var routes = [
         { 
