@@ -242,6 +242,14 @@
                         <div class="l time">{{item.startDate}}</div><div class="r"><span>{{item.conpany}}</span></div>
                     </div>
                 </div> 
+                <div>
+                    <div class="card-body-line">
+                        <div class="l"></div><div class="r bi-title">项目经验</div>
+                    </div>
+                    <div class="card-body-line" v-for="item in project">
+                        <div class="l time">  →</div><div class="r"><span>{{item.proName}}</span></div>
+                    </div>
+                </div> 
                 <div class="card-body-line"><div class="l"><br></div><div class="r"></div></div>
             </section>
         </aside>
@@ -286,7 +294,16 @@
                     {startDate:'2015.03',endDate:'2015.12',conpany:'武汉纺友技术有限公司'},
                     {startDate:'2013.11',endDate:'2015.02',conpany:'上海昕鼎网络科技有限公司'}
                 ],
-                project:[]
+                project:[
+                    {proName:'永乐惠充app'},
+                    {proName:'永乐收钱宝'},
+                    {proName:'永乐生活微信站'},
+                    {proName:'永乐惠充微信站'},
+                    {proName:'永乐惠充微信小程序'},
+                    {proName:'怡乐购pc端'},
+                    {proName:'怡乐购微信端'},
+                    {proName:'怡乐购app'}
+                ]
             }
         },
         methods:{
