@@ -798,7 +798,18 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
         height:auto;
         overflow: scroll;
     }
+    .profile-card:hover header {
+        height: 140px;
+        padding: 40px 20px 40px 40px;
+    }
+    .profile-card:hover header .profile-card-photo {
+        opacity:1;
+    }
+    .profile-card:hover header .profile-card-text {
+        opacity:1;
+    }
     .profile-card:hover .card-body{
+
         height:auto;
         overflow:auto;
     }
