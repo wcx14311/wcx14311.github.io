@@ -14,7 +14,7 @@
         <transition name="fade"><router-view></router-view></transition>
     </div>
     <template id="profile">
-        <div class="full-layout">
+        <div class="full-layout width-1000">
             <div class="panel-left">
                 <div class="profile-card-t">
                     <div class="profile-card-photo" @click="backCard">
@@ -55,9 +55,10 @@
                         <i class="fs-lg icon-board"></i><span class="mobile-title">自我描述</span>
                     </div>
                     <ul class="info content mop-wrapper">
-                        <li>个人主攻 web 前端和 nodejs 开发，4年+前端开发经验。</li>
-                        <li>喜欢关注 web 前端相关新技术，对于新技术有很强的学习兴趣。</li>
-                        <li>喜欢折腾造轮子，不定时更新 github 小项目。</li>
+                        <li>个人主攻 web 前端开发，4年+前端开发经验。</li>
+                        <li>熟练掌握 使用vue.js前端技术,周边ui组件库</li>
+                        <li>了解并掌握cordova混合开发，以及纯前端+官方插件的直接使用前端技术开发app</li>
+                        <li>喜欢关注 web 前端相关新技术，对于新技术有很强的学习兴趣。喜欢折腾造轮子，不定时更新 github 小项目。</li>
                         <li>热爱前端这份工作，也热爱一切美好的事物，对于我来说，是一种责任、是一种快乐。</li>
                     </ul>
                 </div>
@@ -83,8 +84,8 @@
                                 <li>根据UI设计稿编写静态页面</li>
                                 <li>根据产品需求文档，进行 web 前端开发，前端主体框架选型，搭建基础框架</li>
                                 <li>使用webpack、gulp、node管理维护前端代码</li>
-                                <li>微信小程序，微信</li>
-                                <li>使用vue.js全家桶，实施前后端分离，提升用户体验，和开发效率</li>
+                                <li>微信小程序开发，使用微信jssdk开发微信内嵌网页</li>
+                                <li>使用vue.js全家桶，对接后端restful api，浏览器端渲染页面，实施前后端分离，提升用户体验，和开发效率</li>
                                 <li>负责配合后台开发人员，完成页面的交互及接口对接，数据渲染</li>
                                 <li>负责前端技术的完善，以用户为中心，不断尝试前端新技术，提升团队水平</li>
                             </ul>
@@ -130,11 +131,27 @@
                     <dl class="info content">
                         <dt class="header">
                             <p>永乐惠充app</p>
-                            <p class="common-p">技术：cordova + jquery + gulp + less + nginx + shell</p>
+                            <p class="common-p">技术：cordova + jquery + gulp + less + nginx + shell + https</p>
+                        </dt>
+                        <dd>描述：提供给公司代理商使用的手机app</dd>
+                        <dd>
+                            <ul>
+                                <li>将app所有页面换成纯静态html页面交互</li>
+                                <li>测试ios\Android开发的cordova原生功能插件，将这些插件封装成便于使用js函数</li>
+                                <li>本地mock数据实现页面交互、数据绑定、数据提交、文件上传、在线支付等功能</li>
+                                <li>接入后端restful api,放到测试环境、测试联调</li>
+                                <li>生产环境，使用nginx代码部署在阿里云上</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="info content">
+                        <dt class="header">
+                            <p>永乐业务管理平台</p>
+                            <p class="common-p">技术：vue全家桶 + es6 + lodash + nginx + shell + https</p>
                         </dt>
                         <dd>
                             <ul>
-                                <li>将app所有页面</li>
+                                <li>使用vue-cli开发</li>
                                 <li>独自mock数据实现页面交互、数据绑定、数据提交、文件上传、在线支付等功能</li>
                                 <li>接入后端、测试联调</li>
                             </ul>
@@ -154,40 +171,7 @@
                     </dl>
                     <dl class="info content">
                         <dt class="header">
-                            <p>永乐生活微信站</p>
-                            <p class="common-p">技术：微信JSSDK + jquery + jsp + svn + shell + ftp</p>
-                        </dt>
-                        <dd>
-                            <ul>
-                                <li>......</li>
-                            </ul>
-                        </dd>
-                    </dl>
-                    <dl class="info content">
-                        <dt class="header">
-                            <p>永乐生活代理商前台</p>
-                            <p class="common-p">技术：jquery + jsp</p>
-                        </dt>
-                        <dd>
-                            <ul>
-                                <li>......</li>
-                            </ul>
-                        </dd>
-                    </dl>
-                    <dl class="info content">
-                        <dt class="header">
                             <p>永乐收钱宝</p>
-                            <p class="common-p">技术：jquery + jsp</p>
-                        </dt>
-                        <dd>
-                            <ul>
-                                <li>......</li>
-                            </ul>
-                        </dd>
-                    </dl>
-                    <dl class="info content">
-                        <dt class="header">
-                            <p>永乐惠充微信站</p>
                             <p class="common-p">技术：jquery + jsp</p>
                         </dt>
                         <dd>
@@ -209,7 +193,7 @@
                     </dl>
                     <dl class="info content">
                         <dt class="header">
-                            <p>怡乐购微信端</p>
+                            <p>怡乐购app</p>
                             <p class="common-p">技术：jquery + jsp</p>
                         </dt>
                         <dd>
@@ -220,11 +204,24 @@
                     </dl>
                     <dl class="info content">
                         <dt class="header">
-                            <p>怡乐购app</p>
-                            <p class="common-p">技术：jquery + jsp</p>
+                            <p>永乐生活微信站</p>
+                            <p class="common-p">技术：微信JSSDK + jquery + jsp + svn + shell + ftp</p>
                         </dt>
                         <dd>
                             <ul>
+                                <li>......</li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl class="info content">
+                        <dt class="header">
+                            <p>永乐生活代理商前台</p>
+                            <p class="common-p">技术：jquery + jsp + shell + ftp + svn</p>
+                        </dt>
+                        <dd>
+                            <ul>
+                                <li>公司代理商平台日常维护</li>
+                                <li>长期的功能迭代</li>
                                 <li>......</li>
                             </ul>
                         </dd>
@@ -253,7 +250,6 @@
                     </p>
                 </div>
             </div>
-            <a class="dlown"><i class="glyphicon glyphicon-download-alt"></i></a>
         </div>
     </template>
     <template id="index">
