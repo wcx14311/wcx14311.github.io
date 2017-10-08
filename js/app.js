@@ -68,7 +68,6 @@
                 };
                 this.$http.get(this.apiUrl).then(function(response){
                     var resData = JSON.parse(response.body);
-                    console.log(resData)
                     if(resData.status){
                         if(this.user.username==resData.result.username && this.user.password==resData.result.password){
                             this.$notify({
