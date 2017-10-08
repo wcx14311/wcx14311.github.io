@@ -777,7 +777,6 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
     }
     .panel-left .contact-details .detail{
         padding: 5px 10px 0;
-        display: inline-block;
         margin-right:20px;
     }
     .full-layout .panel-right{
