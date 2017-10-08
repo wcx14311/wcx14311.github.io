@@ -50,7 +50,7 @@
                 user:{
                     username:'admin',
                     password:'admin',
-                    vCode:''
+                    vCode:'6077'
                 },
                 serverData:{},
                 apiUrl: '/js/datass.json'
