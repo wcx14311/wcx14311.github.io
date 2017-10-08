@@ -764,6 +764,7 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
         display: -moz-flex;
         display: -ms-flexbox;
         display: flex;
+        padding-bottom:5px;
     }
     .panel-left .profile-card-photo{
         padding: 0;
@@ -775,6 +776,7 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
         padding-top:20px;
     }
     .panel-left .contact-details .detail{
+        padding: 5px 10px 0;
         display: inline-block;
         margin-right:20px;
     }
