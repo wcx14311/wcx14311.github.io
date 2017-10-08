@@ -453,12 +453,12 @@ html{height:100%;overflow:hidden;}
 	.head-bar .logo img{padding-top:3px}
 	.head-bar .operateicon span.icon{margin:15px 0;}
 	.body-box{top:60px;}
-	.left-bar{width:190px;}
+	.left-bar{width:230px;}
 	.top-nav-tabs{font-size:15px;}
 	.top-nav-tabs li{width:16.666666666%;float:left;}
 	.top-nav-tabs li a{height:50px;line-height:50px;}
 	.top-nav-tabs .icon{padding-left:25px;background-size:23px;}
-	.right-content{margin-left:190px;}
+	.right-content{margin-left:230px;}
     .order-statistics-body li{width:25%;}
     .order-statistics-body li .order-statistics-item{padding:20px;font-size:12px;}
     .order-statistics-body li .item-top{padding-bottom:20px;}
@@ -478,14 +478,14 @@ html{height:100%;overflow:hidden;}
 	.head-bar .logo img{padding-top:3px}
 	.head-bar .operateicon span.icon{margin:15px 0;}
 	.body-box{top:60px;}
-	.left-bar{width:160px;}
+	.left-bar{width:190px;}
 	.left-bar span.icon{margin-left:0;}
 	.user-info{margin:10px 0 10px 20px;}
 	.top-nav-tabs{font-size:15px;}
 	.top-nav-tabs li{width:16.666666666%;float:left;}
 	.top-nav-tabs li a{height:50px;line-height:50px;}
 	.top-nav-tabs .icon{padding-left:25px;background-size:23px;}
-	.right-content{margin-left:160px;}
+	.right-content{margin-left:190px;}
     .order-statistics-body li{width:33.33333%;}
     .order-statistics-body li .order-statistics-item{padding:20px;font-size:12px;}
     .order-statistics-body li .item-top{padding-bottom:20px;}
