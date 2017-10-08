@@ -53,7 +53,7 @@
                     vCode:''
                 },
                 serverData:{},
-                apiUrl: '/api/datass.json'
+                apiUrl: '/js/datass.json'
             }
         },
         methods:{
@@ -280,7 +280,7 @@
     var routes = [
         { 
             path: '/', 
-            redirect: '/home/index' ,
+            redirect: '/login' ,
         },{ 
             path: '/home', 
             component: Home, 
