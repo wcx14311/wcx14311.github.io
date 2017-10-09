@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui">
     <title>个人简历</title>
-    <link rel="stylesheet" href="../css/resume.css">
+    <link rel="stylesheet" href="../css/resumePDF.css">
 </head>
 <body> 
     <div id="app" style="height:100%">
@@ -44,7 +44,7 @@
                     </div>
                     <div class="detail">
                         <span class="icon"><i class="icon fs-lg icon-link"></i></span>
-                        <span class="info"><a href="https://github.com/wcx14311" target="_blank">https://github.com/wcx14311</a></span>
+                        <span class="info"><a href="https://github.com/wcx14311" style="color:#ff475e" target="_blank">https://github.com/wcx14311</a></span>
                     </div>
                 </div>
             </div>
@@ -273,7 +273,6 @@
                     </p>
                 </div>
             </div>
-            <<a href="../吴长新-前端开发-个人简历.pdf" class="dlown">下载</a>
         </div>
     </template>
     <template id="index">
@@ -430,7 +429,7 @@
     var routes = [
         { 
             path: '/', 
-            component: resume,
+            component: profile,
             name:'简历卡片'
         },{ 
             path: '/profile', 

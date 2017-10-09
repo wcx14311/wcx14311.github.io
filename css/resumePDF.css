@@ -621,11 +621,9 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: none;
     -webkit-print-color-adjust: exact;
-    position: absolute;
     left: 0;
     width:100%;
     top:0;
-    height: 100%;
     display: -webkit-box;
     display: -moz-box;
     display: -webkit-flex;
@@ -634,7 +632,7 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
     display: flex;
 }
 .full-layout .panel-left{
-    width:300px;
+    width:25%;
     background: #1f1f2a;
     color: #b4b8cc;
 }
@@ -671,10 +669,13 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
     margin-bottom:5px;
 }
 .panel-left .contact-details{
-    padding-left:30px;
+    padding-left:5%;
 }
 .panel-left .contact-details .detail{
     padding:10px;
+}
+.panel-left .contact-details .detail .info{
+    word-break:break-all
 }
 .full-layout .panel-right{
     -webkit-box-flex:1;
@@ -683,13 +684,13 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
     height: 100%;
     overflow: auto;
     box-sizing: border-box;
-    padding: 20px 20px 0;
-    background: #f1f2f6;
+    padding:0 20px 0;
+    background: #fff;
 }
 .background-card{
     color: #707070;
     background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     padding:20px 30px 20px 20px;
     margin:0 0 20px; 
 }
@@ -727,18 +728,14 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
 }
 .dlown{
     position: fixed;
-    width:50px;
-    height:50px;
+    width:60px;
+    height:60px;
     border-radius:40px;
     background:#ff4e63;
     color:#fff;
     bottom:20px;
     right:20px;
-    font-size:14px;
-    line-height:50px;
-    text-align:center;
-    box-shadow: 0 0 10px rgba(119, 5, 5, 0.65);
-    text-decoration: none;
+    font-size:30px;
 }
 @media screen and (max-width:800px) {
     .dlown{
