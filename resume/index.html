@@ -8,6 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui">
     <title>个人简历</title>
     <link rel="stylesheet" href="../css/resume.css">
+    <!--[if lt IE 10]>
+        <script type="text/javascript">
+            function isIE() {
+                if (!!window.ActiveXObject || "ActiveXObject" in window){
+                    document.write('<div style="margin-top:30px;color:#c00;font-size:60px;text-align:center">不支持ie10以下的浏览器浏览，请安装其他浏览器</div>');
+                }
+            }
+            isIE()
+        </script>
+    <![endif]-->
 </head>
 <body> 
     <div id="app" style="height:100%">
@@ -44,7 +54,7 @@
                     </div>
                     <div class="detail">
                         <span class="icon"><i class="icon fs-lg icon-link"></i></span>
-                        <span class="info"><a href="https://github.com/wcx14311" target="_blank">https://github.com/wcx14311</a></span>
+                        <span class="info"><a href="https://github.com/wcx14311" style="color:#ff475e" target="_blank">https://github.com/wcx14311</a></span>
                     </div>
                 </div>
             </div>
@@ -55,11 +65,15 @@
                         <i class="fs-lg icon-board"></i><span class="mobile-title">自我描述</span>
                     </div>
                     <ul class="info content mop-wrapper">
-                        <li>个人主攻 web 前端开发，4年+前端开发经验（3年jquery+1年vue）</li>
-                        <li>熟练掌握 使用vue.js前端技术,周边ui组件库</li>
-                        <li>熟系react.js使用及组件开发</li>
-                        <li>了解并掌握cordova混合开发，以及纯前端+官方插件的直接使用前端技术开发app</li>
-                        <li>喜欢关注 web 前端相关新技术，对于新技术有很强的学习兴趣。喜欢折腾造轮子，不定时更新 github 小项目。</li>
+                        <li>个人主攻 web 前端开发，4年+前端开发经验</li>
+                        <li>熟练使用html，css/css3，JavaScript，DOM/BOM</li>
+                        <li>熟悉ES6，熟练node.js+mongoDB入门级，了解前端生态中各种工具与框架</li>
+                        <li>熟练掌握Vue+webpack开发模式，掌握vue.js周边前端技术栈及各大ui组件库</li>
+                        <li>能够使用react.js开发入门项目，短时间内可以融入react团队</li>
+                        <li>了解并掌握cordova混合开发，以及直接使用纯前端技术、webview、官方插件开发webapp</li>
+                        <li>可自己配置基于gulp、webpack高效可控的，前端构建工具，实现开发流程自动化和工程化。方便团队协作开发</li>
+                        <li>喜欢关注web前端相关新技术，不断尝试前端新技术，对于新技术有很强的学习兴趣。喜欢折腾造轮子，不定时更新github小项目。</li>
+                        <li>熟练使用git、svn、shell工具</li>
                         <li>热爱前端这份工作，也热爱一切美好的事物，对于我来说，是一种责任、是一种快乐。</li>
                     </ul>
                 </div>
@@ -69,6 +83,28 @@
                         <i class="fs-lg icon-graduation-cap"></i><span class="mobile-title">教育经历</span>
                     </div>
                     <p class="info content">景德镇学院 —— 数学与信息工程系 —— 数字多媒体专业</p>
+                </div>
+                <!-- 技能标签 -->
+                <div class="card background-card">
+                    <div class="icon">
+                        <i class="fs-lg icon-tools"></i><span class="mobile-title">技能标签</span>
+                    </div>
+                    <p class="content">
+                        <span class="skill-targ">html</span>
+                        <span class="skill-targ">css</span>
+                        <span class="skill-targ">js</span>
+                        <span class="skill-targ">jquery/zepto</span>
+                        <span class="skill-targ">less/scss</span>
+                        <span class="skill-targ">vue.js</span>
+                        <span class="skill-targ">underscore.js</span>
+                        <span class="skill-targ">webpack</span>
+                        <span class="skill-targ">gulp</span>
+                        <span class="skill-targ">mongodb</span>
+                        <span class="skill-targ">node.js</span>
+                        <span class="skill-targ">es6</span>
+                        <span class="skill-targ">react</span>
+                        <span class="skill-targ">react-native</span>
+                    </p>
                 </div>
                 <!-- 工作经历 -->
                 <div class="card background-card">
@@ -84,7 +120,7 @@
                             <ul>
                                 <li>根据UI设计稿编写静态页面</li>
                                 <li>根据产品需求文档，进行 web 前端开发，前端主体框架选型，搭建基础框架</li>
-                                <li>使用webpack、gulp、node管理维护前端代码</li>
+                                <li>使用node,gulp,webpack搭建自动化的前端的开发环境</li>
                                 <li>微信小程序开发，使用微信jssdk开发微信内嵌网页</li>
                                 <li>使用vue.js全家桶，对接后端restful api，浏览器端渲染页面，实施前后端分离，提升用户体验，和开发效率</li>
                                 <li>负责配合后台开发人员，完成页面的交互及接口对接，数据渲染</li>
@@ -132,14 +168,17 @@
                     <dl class="info content">
                         <dt class="header">
                             <p>永乐惠充app</p>
-                            <p class="common-p">技术：cordova + jquery + gulp + less + nginx + shell + https</p>
+                            <p class="common-p">技术：cordova + jquery + gulp + webpack + less + nginx + shell + https</p>
                         </dt>
                         <dd>
                             <ul>
                                 <li>将app所有页面换成纯静态html页面交互</li>
+                                <li>使用gulp，webpack配置自动化的开发环境</li>
+                                <li>实现开发环境，实现监听文件变动，自动刷客户端页面 (LiveReload)</li>
                                 <li>测试ios\Android开发的cordova原生功能插件，将这些插件封装成便于使用js函数</li>
                                 <li>本地mock数据实现页面交互、数据绑定、数据提交、文件上传、在线支付等功能</li>
                                 <li>接入后端restful api,放到测试环境、测试联调</li>
+                                <li>部署生产环境 css,js合并压缩 去缓存文件 Reversion (MD5) 解决方案</li>
                                 <li>生产环境，使用nginx代码部署在阿里云上，反向代理后端api</li>
                             </ul>
                         </dd>
@@ -250,30 +289,8 @@
                         </dd>
                     </dl>
                 </div>
-                <!-- 技能标签 -->
-                <div class="card background-card">
-                    <div class="icon">
-                        <i class="fs-lg icon-tools"></i><span class="mobile-title">技能标签</span>
-                    </div>
-                    <p class="content">
-                        <span class="skill-targ">html</span>
-                        <span class="skill-targ">css</span>
-                        <span class="skill-targ">js</span>
-                        <span class="skill-targ">jquery/zepto</span>
-                        <span class="skill-targ">less/scss</span>
-                        <span class="skill-targ">vue.js</span>
-                        <span class="skill-targ">underscore.js</span>
-                        <span class="skill-targ">webpack</span>
-                        <span class="skill-targ">gulp</span>
-                        <span class="skill-targ">mongoose</span>
-                        <span class="skill-targ">node.js</span>
-                        <span class="skill-targ">es6</span>
-                        <span class="skill-targ">react</span>
-                        <span class="skill-targ">react-native</span>
-                    </p>
-                </div>
             </div>
-            <<a href="../吴长新-前端开发-个人简历.pdf" class="dlown">下载</a>
+            <a href="../吴长新-前端开发-个人简历.pdf" class="dlown">下载</a>
         </div>
     </template>
     <template id="index">
