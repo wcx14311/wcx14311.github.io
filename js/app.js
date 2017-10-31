@@ -21,6 +21,9 @@
     };
     var Home = { 
         template: '#home',
+        mounted:function(){
+            console.log('首页  将获取用户信息的ajax操作放在该位置')
+        },
         data: function () {
             return {
                 collapsed:false,
@@ -119,6 +122,9 @@
     var index = { template: '#index' };
     var order = { 
         template: '#order',
+        mounted:function(){
+            console.log('订单')
+        },
         data:function(){
             return {
                 pickerOptions2: {
@@ -161,6 +167,9 @@
     };
     var total = { 
         template: '#total',
+        mounted:function(){
+            console.log('统计')
+        },
         methods:{
             goDetial:function(){
                 this.$router.push({ path: '/home/order/detial' });
@@ -169,6 +178,9 @@
     };
     var totalTableDetial = {
         template:'#totalTableDetial',
+        mounted:function(){
+            console.log('统计详情')
+        },
         data:function() {
             return {
                 tableData:[
@@ -221,6 +233,9 @@
     var otosy = { template: '#otosy' };
     var accont = { 
         template: '#accont',
+        mounted:function(){
+            console.log('账户')
+        },
         data:function(){
             return {
                 tableData: [
@@ -239,7 +254,7 @@
     var s3 = { template: '#s3' };
     var cavse = { 
         template: '#cavse',
-        ready:function(){
+        mounted:function(){
             console.log(this.$route.params.id);
         },
         data:function(){

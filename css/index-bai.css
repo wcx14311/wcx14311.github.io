@@ -18,7 +18,7 @@ html {overflow-y:hidden;}
 .clearfix{ *zoom:1;}
 .f-left{float:left;}
 .f-right{float:right;}
-body{height:100%;overflow:auto;}
+body{height:100%;overflow:auto;}   
 html{height:100%;overflow:hidden;}
 #box{position:absolute;top:0;left:0;width:100%;height:100%;}
 
@@ -173,7 +173,7 @@ html{height:100%;overflow:hidden;}
 .user-info-test i.ds1{background:url(../images/dengji-co.png) no-repeat center;}
 .user-info-test p{color:#8386a0;font-size:12px;}
 
-.rightbarcontent{width:250px;bottom:0;top:1px;right:0;position:absolute; background:#fff;border-left:1px solid #eaeef1;overflow:auto;}
+.rightbarcontent{width:240px;bottom:0;top:1px;right:0;position:absolute; background:#fff;border-left:1px solid #eaeef1;overflow:auto;}
 .rightbarcontent .rightbox h5{font-size:14px;}
 .rightbarcontent .rightbox1{padding:30px;border-bottom:1px solid #eaeef1;}
 .rightbarcontent .rightbox4{padding:30px;border-bottom:1px solid #eaeef1;}
@@ -184,7 +184,7 @@ html{height:100%;overflow:hidden;}
 .rightbarcontent .rightbox1 p.servertime{margin-top:5px;font-family: "微软雅黑";font-size:12px;}
 .rightbarcontent .rightbox2{padding:30px;padding-bottom:0;}
 .rightbarcontent .rightbox3{padding:0 20px;}
-.rightbarcontent .rightbox3 .toolitem{display:inline-block;width:70px;float:left;text-align:center;font-size:12px;color:#a8a8a8;margin-top:34px;}
+.rightbarcontent .rightbox3 .toolitem{display:inline-block;width:66px;float:left;text-align:center;font-size:12px;color:#a8a8a8;margin-top:34px;}
 .rightbarcontent .rightbox3 .toolitem span{display:inline-block;}
 .rightbarcontent .rightbox3 .toolitem .icon{width:32px;height:32px;background:url(../images/icons.png) no-repeat;-webkit-transition-duration:200ms;transition-duration:200ms;}
 .rightbarcontent .rightbox3 .toolitem1 .icon{background-position:-82px 0;}

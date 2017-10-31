@@ -8,6 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui">
     <title>个人简历</title>
     <link rel="stylesheet" href="../css/resumePDF.css">
+    <style type="text/css">
+        .full-layout{
+            max-width:1200px;
+            margin: auto;
+        }
+        .full-layout .panel-left{
+            color: #606163;
+            background:transparent;
+            border-right:10px solid #eee;
+            background: #fff;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body> 
     <div id="app" style="height:100%">
@@ -415,35 +428,35 @@
         methods:{
             backCard:function(){
                 router.push('/')
+            },
+            renderHTMLtoPDF:function(){
+                html2canvas(document.getElementById('panelRight'),{
+                    onrendered: function(canvas){                
+                        var contentWidth = canvas.width;                
+                        var contentHeight = canvas.height;              
+                        var pageHeight = contentWidth / 592.28 * 841.89;
+                        var leftHeight = contentHeight;
+                        var position = 0 ;               
+                        var imgWidth = 595.28   ;             
+                        var imgHeight = 592.28 / contentWidth * contentHeight;                
+                        var pageData = canvas.toDataURL('image/jpeg', 1.0);                
+                        var pdf = new jsPDF('', 'pt', 'a4') ;               
+                        if (leftHeight < pageHeight) {                    
+                            pdf.addImage(pageData, 'JPEG', 0, 0, imgWidth, imgHeight)                
+                        } else {                    
+                            while (leftHeight > 0) {                        
+                                pdf.addImage(pageData, 'JPEG', 0, position, imgWidth, imgHeight)
+                                leftHeight -= pageHeight;
+                                position -= 841.89;                       
+                                if (leftHeight > 0) {
+                                    pdf.addPage()                        
+                                }                    
+                            }                
+                        }                
+                        pdf.save('吴长新-web前端.pdf')            
+                    }     
+                })   
             }
-            // renderHTMLtoPDF:function(){
-            //     html2canvas(document.getElementById('panelRight'),{
-            //         onrendered: function(canvas){                
-            //             var contentWidth = canvas.width;                
-            //             var contentHeight = canvas.height;              
-            //             var pageHeight = contentWidth / 592.28 * 841.89;
-            //             var leftHeight = contentHeight;
-            //             var position = 0 ;               
-            //             var imgWidth = 595.28   ;             
-            //             var imgHeight = 592.28 / contentWidth * contentHeight;                
-            //             var pageData = canvas.toDataURL('image/jpeg', 1.0);                
-            //             var pdf = new jsPDF('', 'pt', 'a4') ;               
-            //             if (leftHeight < pageHeight) {                    
-            //                 pdf.addImage(pageData, 'JPEG', 0, 0, imgWidth, imgHeight)                
-            //             } else {                    
-            //                 while (leftHeight > 0) {                        
-            //                     pdf.addImage(pageData, 'JPEG', 0, position, imgWidth, imgHeight)
-            //                     leftHeight -= pageHeight;
-            //                     position -= 841.89;                       
-            //                     if (leftHeight > 0) {
-            //                         pdf.addPage()                        
-            //                     }                    
-            //                 }                
-            //             }                
-            //             pdf.save('吴长新-web前端.pdf')            
-            //         }     
-            //     })   
-            // }
         }
     }
     var routes = [

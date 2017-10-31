@@ -6,6 +6,7 @@
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui">
+    <title>永乐生活</title>
     <link rel="stylesheet" type="text/css" href="css/element-ui.css">
     <link rel="stylesheet" type="text/css" href="css/index-bai.css">
 </head>
@@ -20,9 +21,9 @@
                 <div class="logo"><router-link to="/home/index"><img src="images/logo.jpg" alt=""></router-link></div>
                 <div class="m-logo"><img src="images/logo.jpg" alt=""></div>
                 <div class="personaloperate">
-                    <div class="operateicon operateicon5" onClick="fullScreen()">
+                   <!--  <div class="operateicon operateicon5" onClick="fullScreen()">
                         <span class="von icon"></span>
-                    </div>
+                    </div> -->
                     <div class="operateicon operateicon1">
                         <span class="icon"><i></i></span>
                     </div>
@@ -83,12 +84,12 @@
                     </div>
                     <div class="right links">
                         <ul>
-                            <li><a href="sever.html">首页</a></li>
-                            <li><a href="map.html">加盟合作</a></li>
-                            <li><a href="aboutus.html">解决方案</a></li>
-                            <li><a href="aboutus.html">永乐产品</a></li>
-                            <li><a href="aboutus.html">开放API</a></li>          
-                            <li><a href="aboutus.html">关于我们</a></li>
+                            <li><a>首页</a></li>
+                            <li><a>加盟合作</a></li>
+                            <li><a>解决方案</a></li>
+                            <li><a>永乐产品</a></li>
+                            <li><a>开放API</a></li>          
+                            <li><a>关于我们</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1031,12 +1032,10 @@
     <template id="totalTableDetial">
         <div class="accont-mt20 tableDetial-content">
             <el-table :data="tableData" border style="width: 100%">
-                <el-table-column prop='sid' label="流水号"></el-table-column>
                 <el-table-column prop='phone' label="账号"></el-table-column>
                 <el-table-column prop='product' label="产品"></el-table-column>
                 <el-table-column prop='spirce' label="单价" width="100"></el-table-column>
                 <el-table-column prop='rcount' label="数量" width="70"></el-table-column>
-                <el-table-column prop='' label="总价"></el-table-column>
                 <el-table-column prop="date" label="时间"></el-table-column>
                 <el-table-column prop='status' label="状态" width="100"></el-table-column>
                 <el-table-column label="操作">
@@ -1067,20 +1066,8 @@
     <!-- 首页模板 -->
     <template id="index">
         <div>
-            <div style="margin-right:250px">
-                <el-row :gutter="20">
-                    <el-col :span="6"><div class="demo-color-box bg-info">Blue<div class="value">#20A0FF</div><br><br><br></div></el-col>
-                    <el-col :span="6"><div class="demo-color-box bg-success">Success<div class="value">#13CE66</div><br><br><br></div></el-col>
-                    <el-col :span="6"><div class="demo-color-box bg-warning">Warning<div class="value">#F7BA2A</div><br><br><br></div></el-col>
-                    <el-col :span="6"><div class="demo-color-box bg-danger">Danger<div class="value">#FF4949</div><br><br><br></div></el-col>
-                </el-row>
-                <br>
-                <el-row :gutter="20">
-                    <el-col :span="6"><el-progress type="circle" :percentage="0"></el-progress></el-col>
-                    <el-col :span="6"><el-progress type="circle" :percentage="25"></el-progress></el-col>
-                    <el-col :span="6"><el-progress type="circle" :percentage="100" status="success"></el-progress></el-col>
-                    <el-col :span="6"><el-progress type="circle" :percentage="50" status="exception"></el-progress></el-col>
-                </el-row>
+            <div style="margin-right:240px">
+                
             </div>
             <div class="rightbarcontent">
                 <div class="rightbox rightbox1"><h5>客服热线</h5><p class="telnumber">400 7366 118</p><a class="qqservice">在线客服</a><p class="servertime txtcolor999">服务时间 8:00-22:00</p></div><div class="rightbox rightbox4"><a><img src="images/app-download-phone.png" alt=""/></a><a style="margin-top:10px;"><img src="images/app-download-erweima.png" alt=""/></a></div><div class="rightbox rightbox2"><h5>常用工具</h5></div><div class="rightbox rightbox3"><div class="toollist clearfix"><a class="toolitem toolitem1"><span class="icon"></span><br/><span>列车时刻</span></a><a class="toolitem toolitem2"><span class="icon"></span><br/><span>公交查询</span></a><a class="toolitem toolitem3"><span class="icon"></span><br/><span>交通违章</span></a><a class="toolitem toolitem4"><span class="icon"></span><br/><span>机票查询</span></a><a class="toolitem toolitem5"><span class="icon"></span><br/><span>天气预报</span></a><a class="toolitem toolitem6"><span class="icon"></span><br/><span>万年历</span></a><a class="toolitem toolitem7"><span class="icon"></span><br/><span>外卖订餐</span></a><a class="toolitem toolitem8"><span class="icon"></span><br/><span>物流快递</span></a><a class="toolitem toolitem9"><span class="icon"></span><br/><span>股票行情</span></a><a class="toolitem toolitem10"><span class="icon"></span><br/><span>房贷计算器</span></a></div></div>
