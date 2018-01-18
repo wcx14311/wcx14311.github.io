@@ -125,7 +125,7 @@
         mounted:function(){
             console.log('订单')
         },
-        data:function(){
+        'data':function () {
             return {
                 pickerOptions2: {
                     shortcuts: [{
