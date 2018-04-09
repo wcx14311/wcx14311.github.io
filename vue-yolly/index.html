@@ -1,0 +1,32 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>vue-yolly</title><script type=text/javascript>;(function(win, lib) {
+            var doc = win.document;
+            var docEl = doc.documentElement;
+            var tid;
+
+            function refreshRem() {
+                // android原生浏览器定义screen.width为物理像素，android下chrome定义为px像素
+                var width = window.innerWidth;
+                var rem = width / 10;
+                docEl.style.fontSize = rem + 'px';
+            }
+
+            win.addEventListener('resize', function() {
+                clearTimeout(tid);
+                tid = setTimeout(refreshRem, 300);
+            }, false);
+            win.addEventListener('pageshow', function(e) {
+                if (e.persisted) {
+                    clearTimeout(tid);
+                    tid = setTimeout(refreshRem, 300);
+                }
+            }, false);
+
+            if (doc.readyState === 'complete') {
+                refreshRem();
+            } else {
+                doc.addEventListener('DOMContentLoaded', function(e) {
+                    refreshRem();
+                }, false);
+            }
+            refreshRem();
+        })(window, window['lib'] || (window['lib'] = {}));</script><link href=./static/css/app.04c3bd161533dc714a96374c58758756.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.3ad1d5771e9b13dbdad2.js></script><script type=text/javascript src=./static/js/vendor.068a1556dc6b6496f797.js></script><script type=text/javascript src=./static/js/app.a84c639f9a8b969348ff.js></script></body></html>
