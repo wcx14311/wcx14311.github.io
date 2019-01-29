@@ -1,0 +1,41 @@
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-touch-fullscreen content=yes><link rel=icon href=/favicon.ico><link rel=apple-touch-icon href=https://wcx14311.github.io/vue-yolly/static/img/apple-touch-icon.png><title>jiwufu</title><script>;(function (win) {
+            var doc = win.document;
+            var docEl = doc.documentElement;
+            var metaEl = doc.querySelector('meta[name="viewport"]');
+            var dpr = 1;
+            var scale = 1;
+            var tid;
+
+            function refreshRem() {
+                var fixWidth = screen.width / win.devicePixelRatio;
+                if (fixWidth < 320) {
+                    fixWidth = screen.width;
+                }
+                var width = docEl.getBoundingClientRect().width || fixWidth;
+                if (width / dpr > 540) {
+                    width = 540 * dpr;
+                }
+                var rem = width / 10;
+                docEl.style.fontSize = rem + 'px';
+            }
+
+            win.addEventListener('resize', function () {
+                clearTimeout(tid);
+                tid = setTimeout(refreshRem, 300);
+            }, false);
+            win.addEventListener('pageshow', function (e) {
+                if (e.persisted) {
+                    clearTimeout(tid);
+                    tid = setTimeout(refreshRem, 300);
+                }
+            }, false);
+
+            if (doc.readyState === 'complete') {
+                doc.body.style.fontSize = 12 * dpr + 'px';
+            } else {
+                doc.addEventListener('DOMContentLoaded', function (e) {
+                    doc.body.style.fontSize = 12 * dpr + 'px';
+                }, false);
+            }
+            refreshRem();
+        })(window);</script><link href=/js/chunk-2d22d746.35366b59.js rel=prefetch><link href=/css/app.4c403d3e.css rel=preload as=style><link href=/css/chunk-vendors.f5b88734.css rel=preload as=style><link href=/js/app.9b045d00.js rel=preload as=script><link href=/js/chunk-vendors.fd4d02aa.js rel=preload as=script><link href=/css/chunk-vendors.f5b88734.css rel=stylesheet><link href=/css/app.4c403d3e.css rel=stylesheet></head><body><div id=app></div><script src=/js/chunk-vendors.fd4d02aa.js></script><script src=/js/app.9b045d00.js></script></body></html>
