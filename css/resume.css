@@ -621,22 +621,21 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: none;
     -webkit-print-color-adjust: exact;
-    position: absolute;
-    left: 0;
-    width:100%;
-    top:0;
-    height: 100%;
     display: -webkit-box;
     display: -moz-box;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flexbox;
     display: flex;
+    width:1000px;
+    margin: auto;
 }
-.full-layout .panel-left{
-    width:300px;
-    background: #1f1f2a;
-    color: #b4b8cc;
+.full-layout .panel-left {
+    width:250px;
+    /* background: #1f1f2a;
+    color: #b4b8cc; */
+    background: #fff;
+    color: #1f1f2a;
 }
 .full-layout .panel-left a{
     color: inherit;
@@ -725,21 +724,39 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
     font-size:14px;
     color:#333;
 }
-.dlown{
+.fixed-btn {
     position: fixed;
     width:50px;
     height:50px;
     border-radius:40px;
-    background:#ff4e63;
     color:#fff;
-    bottom:20px;
     right:20px;
     font-size:14px;
     line-height:50px;
     text-align:center;
-    box-shadow: 0 0 10px rgba(119, 5, 5, 0.65);
     text-decoration: none;
+    cursor: pointer;
 }
+.cardd {
+    box-shadow: 0 0 20px rgba(253, 30, 8, 0.57);
+    background-image: linear-gradient(90deg, #FD1E08 0%, #FF7242 100%);
+    bottom: 50%;
+}
+.dlown {
+    box-shadow: 0 0 20px rgba(80, 164, 255, 0.88);
+    background-image: linear-gradient(90deg, #2187F5 0%, #50A4FF 100%);
+    bottom: 50%;
+    margin-bottom: -60px;
+}
+@media screen and (max-width:1200px) {
+    .fixed-btn {
+        display: none;
+    }
+    .full-layout .panel-left {
+        width: 250px;
+    }
+}
+
 @media screen and (max-width:800px) {
     .dlown{
         display:none;
@@ -749,6 +766,11 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
         -webkit-flex-direction:column;
         flex-direction:column;
         height: auto;
+        position: absolute;
+        left: 0;
+        width:100%;
+        top:0;
+        height: 100%;
     }
     .full-layout .panel-left{
         padding:30px 0 0;
