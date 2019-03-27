@@ -6,60 +6,289 @@
     <meta name="renderer" content="webkit">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui">
     <style>
+        html,
         body {
-            background: #E0E0E0;
+            height: 100%;
+        }
+
+        body {
+            align-items: center;
+            background: #642B73;
+            background: linear-gradient(to bottom, #C6426E, #642B73);
+            display: flex;
+            font-family: 'Open Sans', sans;
+            justify-content: center;
+            overflow: hidden;
+            -webkit-perspective: 1800px;
+            perspective: 1800px;
             text-align: center;
-            text-rendering: optimizeLegibility;
-            -webkit-font-smoothing: antialiased;
-            font-family: "Avenir Next", "Helvetica Neue", sans-serif;
+            margin: 0 20px;
         }
 
-        .font,
-        .font span {
-            font-size: 100px;
-            transition: 2s;
-            font-weight: 500;
+        h1 {
+            color: #3e3e42;
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 30px;
+            -webkit-transform: translateZ(35px);
+            transform: translateZ(35px);
         }
 
-        .font {
+        h3 {
+            color: #eb285d;
+            font-size: 16px;
+            margin-bottom: 6px;
+            -webkit-transform: translateZ(25px);
+            transform: translateZ(25px);
+        }
+
+        .cards {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px 20px rgba(0, 0, 0, 0.17);
+            display: inline-block;
+            padding: 30px 35px;
+            -webkit-perspective: 1800px;
+            perspective: 1800px;
+            text-align: left;
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transform: rotateX(11deg) rotateY(16.5deg);
+            transform: rotateX(11deg) rotateY(16.5deg);
+            min-width: 595px;
+        }
+
+        .card {
+            border-radius: 15px;
+            box-shadow: 5px 5px 20px -5px rgba(0, 0, 0, 0.6);
+            display: inline-block;
+            height: 250px;
+            overflow: hidden;
+            -webkit-perspective: 1200px;
+            perspective: 1200px;
+            position: relative;
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transform: translatez(35px);
+            transform: translatez(35px);
+            transition: -webkit-transform 200ms ease-out;
+            transition: transform 200ms ease-out;
+            transition: transform 200ms ease-out, -webkit-transform 200ms ease-out;
+            width: 175px;
+            text-align: center;
+        }
+
+        .card:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        .card__img {
+            position: relative;
+            height: 100%;
+        }
+
+        .card__bg {
+            bottom: -50px;
+            left: -50px;
+            position: absolute;
+            right: -50px;
+            top: -50px;
+            -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+            -webkit-transform: translateZ(-50px);
+            transform: translateZ(-50px);
+            z-index: 0;
+        }
+
+        .card__one .card_./
+ a es          right: -10px;
+            height: 110%;
+        }
+
+        .card__one .card__bg {
+            background: url("./images/3dr_monobg.jpg") center/cover no-repeat;
+        }
+
+        .card__two .card__img {
+            top: 25px;
+        }
+
+        .card__two .card__bg {
+            background: url("./images/3dr_spirited.jpg") center/cover no-repeat;
+        }
+
+        .card__three .card__img {
+            top: 5px;
+            left: -4px;
+            height: 110%;
+        }
+
+        .card__three .card__bg {
+            background: url("./images/3dr_howlbg.jpg") center/cover no-repeat;
+        }
+        .card__four .card__bg {
+            background: url("./images/bg_2timg.jpg") center/cover no-repeat;
+        }
+        .card__five .card__bg {
+            background: url("./images/bg_1timg.jpg") center/cover no-repeat;
+        }
+        .card__text {
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            height: 70px;
+            justify-content: center;
+            position: absolute;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .card__title {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 0 10px;
+            margin-bottom: 3px;
+        }
+
+        .notice {
+            background: gold;
+            border-top-left-radius: 6px;
+            bottom: 0;
+            font-family: monospace;
+            font-size: 14px;
+            padding: 8px 10px;
+            position: absolute;
+            right: -20px;
+        }
+
+        .twitter__link {
             cursor: pointer;
-            -webkit-transform: translate3d(0, 50%, 0) rotate(0deg);
-            color: #E0E0E0;
-            text-shadow: -1px 1px 0 rgba(160, 160, 160, 0.1), 1px -1px 0 rgba(255, 255, 255, 0.1), 1px -1px 25px white, -1px 1.9px 1px #a0a0a0, -2px 3.8px 2px #a0a0a0, -3px 5.7px 3px rgba(160, 160, 160, 0.66667), -4px 7.6px 4px rgba(160, 160, 160, 0.5), -5px 9.5px 5px rgba(160, 160, 160, 0.4), -6px 11.4px 6px rgba(160, 160, 160, 0.33333), -7px 13.3px 7px rgba(160, 160, 160, 0.28571), -8px 15.2px 8px rgba(160, 160, 160, 0.25), -9px 17.1px 9px rgba(160, 160, 160, 0.22222), -10px 19px 10px rgba(160, 160, 160, 0.2), -11px 20.9px 11px rgba(160, 160, 160, 0.18182), -12px 22.8px 12px rgba(160, 160, 160, 0.16667), -13px 24.7px 13px rgba(160, 160, 160, 0.15385), -14px 26.6px 14px rgba(160, 160, 160, 0.14286), -15px 28.5px 15px rgba(160, 160, 160, 0.13333), -16px 30.4px 16px rgba(160, 160, 160, 0.125), -17px 32.3px 17px rgba(160, 160, 160, 0.11765), -18px 34.2px 18px rgba(160, 160, 160, 0.11111), -19px 36.1px 19px rgba(160, 160, 160, 0.10526), -20px 38px 20px rgba(160, 160, 160, 0.1), -21px 39.9px 21px rgba(160, 160, 160, 0.09524), -22px 41.8px 22px rgba(160, 160, 160, 0.09091), -23px 43.7px 23px rgba(160, 160, 160, 0.08696), -24px 45.6px 24px rgba(160, 160, 160, 0.08333), -25px 47.5px 25px rgba(160, 160, 160, 0.08);
+            position: absolute;
+            right: -10px;
+            top: 12px;
+            z-index: -1;
+            background: #00aced;
+            border-radius: 20px;
+            height: 30px;
+            text-decoration: none;
+            padding-right: 10px;
+            justify-content: space-between;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            font-size: 14px;
+            width: 74px;
+            opacity: 0.15;
         }
 
-        .font span {
-            color: salmon;
-            text-shadow: -1px 1px 0 rgba(147, 118, 115, 0.1), 1px -1px 0 rgba(252, 172, 163, 0.1), 1px -1px 25px #fcaca3, -1px 1.9px 1px #937673, -2px 3.8px 2px #937673, -3px 5.7px 3px rgba(147, 118, 115, 0.66667), -4px 7.6px 4px rgba(147, 118, 115, 0.5), -5px 9.5px 5px rgba(147, 118, 115, 0.4), -6px 11.4px 6px rgba(147, 118, 115, 0.33333), -7px 13.3px 7px rgba(147, 118, 115, 0.28571), -8px 15.2px 8px rgba(147, 118, 115, 0.25), -9px 17.1px 9px rgba(147, 118, 115, 0.22222), -10px 19px 10px rgba(147, 118, 115, 0.2), -11px 20.9px 11px rgba(147, 118, 115, 0.18182), -12px 22.8px 12px rgba(147, 118, 115, 0.16667), -13px 24.7px 13px rgba(147, 118, 115, 0.15385), -14px 26.6px 14px rgba(147, 118, 115, 0.14286), -15px 28.5px 15px rgba(147, 118, 115, 0.13333), -16px 30.4px 16px rgba(147, 118, 115, 0.125), -17px 32.3px 17px rgba(147, 118, 115, 0.11765), -18px 34.2px 18px rgba(147, 118, 115, 0.11111), -19px 36.1px 19px rgba(147, 118, 115, 0.10526), -20px 38px 20px rgba(147, 118, 115, 0.1), -21px 39.9px 21px rgba(147, 118, 115, 0.09524), -22px 41.8px 22px rgba(147, 118, 115, 0.09091), -23px 43.7px 23px rgba(147, 118, 115, 0.08696), -24px 45.6px 24px rgba(147, 118, 115, 0.08333), -25px 47.5px 25px rgba(147, 118, 115, 0.08);
+        .twitter__link:hover {
+            opacity: 1;
+        }
+
+        .twitter__icon {
+            height: 30px;
         }
     </style>
 </head>
 
 <body>
-    <div class="font">wcx14311<span>.</span>github.io</div>
+    <!-- <div class="font">wcx14311<span>.</span>github.io</div>
+    <br>
+    <br>
+    <br>
+    <br>
     <div class="content">
-        <p><a href="/admin/">
-                <span> - admin</span>
-            </a>
-        </p>
-        <p><a href="/vue-yolly/">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-                <span> - alpay</span>
-            </a>
-        </p>
-        <p><a href="/pullDownRefrash/">
-                <i class="fa fa-google-plus" aria-hidden="true"></i>
-                <span> - 下拉刷新</span>
-            </a>
-        </p>
-        <p><a href="/indexlist/gameList.html">
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-                <span> - 游戏列表</span>
-            </a>
-        </p>
+        <p><a href="/admin/">- admin管理平台 -</a></p>
+        <p><a href="/vue-yolly/">- 支付宝h5版 -</a></p>
+        <p><a href="/pullDownRefrash/">- 下拉刷新 -</a></p>
+        <p><a href="/indexlist/gameList.html">- 游戏列表 -</a></p>
+        <p><a href="/indexlist/gameList.html">- 音乐播放器h5 -</a></p>
+    </div> -->
+    <div class="cards">
+        <h2>宫崎骏动画</h2>
+        <div class="card card__one">
+            <div class="card__bg"></div>
+            <img class="card__img" src="./images/3dr_mono.png" />
+            <div class="card__text">
+                <p class="card__title">幽灵公主</p>
+            </div>
+        </div>
+        <div class="card card__two">
+            <div class="card__bg"></div>
+            <img class="card__img" src="./images/3dr_chihiro.png" />
+            <div class="card__text">
+                <p class="card__title">千与千寻</p>
+            </div>
+        </div>
+        <div class="card card__three">
+            <div class="card__bg"></div>
+            <img class="card__img" src="./images/3dr_howlcastle.png" />
+            <div class="card__text">
+                <p class="card__title">哈尔的移动城堡</p>
+            </div>
+        </div>
+        <div class="card card__four">
+            <div class="card__bg"></div>
+            <img class="card__img" src="./images/bg_2.png" />
+            <div class="card__text">
+                <p class="card__title">天空之城</p>
+            </div>
+        </div>
+        <div class="card card__five">
+            <div class="card__bg"></div>
+            <img class="card__img" src="./images/bg_1.png" />
+            <div class="card__text">
+                <p class="card__title">龙猫</p>
+            </div>
+        </div>
     </div>
 </body>
+<script>
+    var cards = document.querySelector(".cards");
+    var images = document.querySelectorAll(".card__img");
+    var backgrounds = document.querySelectorAll(".card__bg");
+    var range = 40;
+
+    // const calcValue = (a, b) => (((a * 100) / b) * (range / 100) -(range / 2)).toFixed(1);
+    var calcValue = function calcValue(a, b) {
+        return (a / b * range - range / 2).toFixed(1);
+    }; // thanks @alice-mx
+
+    var timeout = void 0;
+    document.addEventListener('mousemove', function (_ref) {
+        var x = _ref.x,
+            y = _ref.y;
+        if (timeout) {
+            window.cancelAnimationFrame(timeout);
+        }
+
+        timeout = window.requestAnimationFrame(function () {
+            var yValue = calcValue(y, window.innerHeight);
+            var xValue = calcValue(x, window.innerWidth);
+            console.log(xValue, yValue);
+            cards.style.transform = "rotateX(" + yValue + "deg) rotateY(" + xValue + "deg)";
+
+            [].forEach.call(images, function (image) {
+                image.style.transform = "translateX(" + -xValue + "px) translateY(" + yValue +
+                    "px)";
+            });
+
+            [].forEach.call(backgrounds, function (background) {
+                background.style.backgroundPosition = xValue * .45 + "px " + -yValue * .45 +
+                    "px";
+            });
+        });
+    }, false);
+</script>
 
 </html>
