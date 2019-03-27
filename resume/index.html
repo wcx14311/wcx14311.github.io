@@ -10,7 +10,7 @@
     <meta name="apple-touch-fullscreen" content="yes">
     <title>个人简历</title>
     <link rel="apple-touch-icon" href="../app-icon.png"> 
-    <link rel="stylesheet" href="../css/resume.css">
+    <link rel="stylesheet" href="../css/resume.css?sas=dss">
     <!--[if lt IE 10]>
         <script type="text/javascript">
             function isIE() {
@@ -376,8 +376,8 @@
                     </dl>
                 </div>
             </div>
-            <a v-if="showbtn==1" @click="backCard" class="fixed-btn cardd">卡片</a>
-            <a v-if="showbtn==1" href="../吴长新-前端开发-个人简历.pdf" class="fixed-btn dlown">下载</a>
+            <a @click="backCard" class="fixed-btn cardd">卡片</a>
+            <a href="../吴长新-前端开发-个人简历.pdf" class="fixed-btn dlown">下载</a>
         </div>
     </template>
     <template id="index">
@@ -494,11 +494,6 @@
     };
     var profile = {
         template:'#profile',
-        data: function () {
-            return {
-                showbtn: this.$route.query.b
-            }
-        },
         methods:{
             backCard:function(){
                 router.push('/')
