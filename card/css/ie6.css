@@ -1,0 +1,4 @@
+.warp{height:100%;width:100%;}
+.toparea{height:80px;background:#fff;position:relative;z-index:10;}
+.leftbar{width:250px;background:#2b303b;float:left;height:100%;position:absolute;top:0;left:0;}
+.mainbox{margin-left:250px;}

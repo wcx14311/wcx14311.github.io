@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	</head>
+	<body>
+		<div class="m-t-20 rechange-box">
+			<div>
+				<div class="head">
+					<a class="lps on" data-link="流量充值.html">流量充值</a>
+					<span class="f-right near-order-link iconq">查看近期订单</span>
+					<div class="order-list-dialogbox" style="display:none;">
+						
+					</div>
+				</div>
+				<div class="body">
+					<div class="conteiner">
+						<div class="lines lines40">
+							<span class="p-left-titlebig">充值号码：</span><!--	
+						--><div class="p-right-box">
+								<div style="height:50px;">
+									<div class="input">
+										<input type="text" name="" id="PhoneRechange" placeholder="请输入11位正确手机号码" class="phone-no" maxlength="13" onkeyup="this.value = this.value.replace(/[\s]/g, '').replace(/^[^1]/g, '').replace(/((^\d{3})(?=\d)|(\d{4})(?=\d))/g, '$1 ')"/>
+										<span class="guishudi">湖北武汉电信</span>
+									</div>
+									<span id="information"></span>
+								</div>
+							</div>
+						</div>
+						<div class="lines lines40">
+							<span class="p-left-title">适用范围：</span><!--	
+						--><div class="p-right-box">
+								<div class="select-out isrechange">
+									<span class="on">全国</span>&nbsp;&nbsp;
+									<span>省内</span>
+								</div>
+							</div>
+						</div>
+						<div class="lines lines40">
+							<span class="p-left-title">充值金额：</span><!--	
+						--><div class="p-right-box">
+								<div class="miane-list clearfix">
+									<a>10M</a><a class="on">10M</a><a>10M</a><a class="othermiane">
+										<span class="select-val">其他面额</span>
+										<ul class="hideOption" style="display:none;">
+											<li>100M</li>
+											<li>1G</li>
+											<li>1G</li>
+											<li>2G</li>
+											<li>2.G</li>
+										</ul>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="lines lines40">
+							<span class="p-left-title">折扣进价：</span><!--	
+						--><div class="p-right-box">
+								<div class="zhekoujinjia zkeffect">
+									<span class="bacx2" style="display:none;">进价折扣99.6%</span>
+									<a class="bacx3">查询</a>
+								</div>
+							</div>
+						</div>
+						<div class="lines lines40">
+							<span class="p-left-title">应付金额：</span><!--	
+						--><div class="p-right-box">
+								<span class="txtcolorred pirce">88.60元</span>
+							</div>
+						</div>
+						<div class="lines lines40">
+							<span class="p-left-title"></span><!--	
+						--><div class="p-right-box">
+								<div class="submitbtn">
+									<a>立即充值</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/tools.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		
+		
+		var information=$('#information');
+		$('#PhoneRechange').blur(function(){
+			var errorHtml='<span class="icon-error">手机号格式不对</span>';
+			var rightHtml='<span class="icon-access"></span>';
+			var inputNumber=$(this).val().replace(/[^\d]/g, '');
+			if(isMobile(inputNumber)){
+				information.html(rightHtml);
+			}else{
+				information.html(errorHtml);
+			}
+		}).focus(function(){
+			information.html('');
+		});
+		
+	});
+</script>

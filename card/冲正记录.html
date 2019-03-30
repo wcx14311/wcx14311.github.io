@@ -1,0 +1,160 @@
+<link rel="stylesheet" type="text/css" href="css/calendar.css"/>
+<div class="main-content">
+	<div class="link-break">首页 - 充值中心</div>
+	<div class="order-center-box">
+		<div class="order-center-body box-shadow">
+			<div class="head">
+				<a class="lps" data-link="冲正申请.html" onclick="linkto(this)">冲正申请</a>
+				<a class="lps on" data-link="冲正记录.html" onclick="linkto(this)">冲正记录</a>
+			</div>
+			<div class="m-t-30">
+				<div class="order-search-options m-l-57">
+					<div class="clearfix">
+						<div class="input-tt f-left">
+							<a>充值号码：</a>
+						</div>
+						<div class="input-bd f-left m-r-20">
+							<input type="text" name="" id="" value=""/>
+						</div>
+						<div class="input-bd f-left">
+							<input class="ci1" type="text" name="" id="" value="" placeholder="选择开始时间"/>
+							<div class="cd1"></div>
+						</div>
+						<div class="input-tt f-left m-lr-5">-</div>
+						<div class="input-bd f-left m-r-10">
+							<input class="ci2" type="text" name="" id="" value="" placeholder="选择结束时间"/>
+							<div class="cd2"></div>
+						</div>
+						<div class="input-tt f-left">
+							<a class="a-submit">查询</a>
+						</div>
+					</div>
+				</div>
+				<div class="order-center-data-table m-l-40 m-r-40 m-t-20">
+					<table>
+						<thead>
+							<tr>
+								<td>充值账号</td>
+								<td>充值金额</td>
+								<td>操作员</td>
+								<td>充值时间</td>
+								<td>冲正时间</td>
+								<td>状态</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>13578145246</td>
+								<td>99元</td>
+								<td>操作员</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>冲正申请</td>
+							</tr>
+							<tr>
+								<td>13578145246</td>
+								<td>99元</td>
+								<td>操作员</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>冲正申请</td>
+							</tr>
+							<tr>
+								<td>13578145246</td>
+								<td>99元</td>
+								<td>操作员</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>冲正申请</td>
+							</tr>
+							<tr>
+								<td>13578145246</td>
+								<td>99元</td>
+								<td>操作员</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>冲正申请</td>
+							</tr>
+							<tr>
+								<td>13578145246</td>
+								<td>99元</td>
+								<td>操作员</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>冲正申请</td>
+							</tr>
+							<tr>
+								<td>13578145246</td>
+								<td>99元</td>
+								<td>操作员</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>冲正申请</td>
+							</tr>
+							<tr>
+								<td>13578145246</td>
+								<td>99元</td>
+								<td>操作员</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>冲正申请</td>
+							</tr>
+							<tr>
+								<td>13578145246</td>
+								<td>99元</td>
+								<td>操作员</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>冲正申请</td>
+							</tr>
+							<tr>
+								<td>13578145246</td>
+								<td>99元</td>
+								<td>操作员</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>冲正申请</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	
+				<div class="spage">
+					<a>上一页</a>
+					<a class="on">1</a>
+					<a>2</a>
+					<a>3</a>
+					<a>4</a>
+					<a>5</a>
+					<span>...</span>
+					<a>下一页</a>
+				</div>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+			</div>
+		</div>	
+	</div>
+</div>
+<script src="js/date.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/tools.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(function(){
+    	$('.cd1').calendar({
+	        trigger:'.ci1',
+	        zIndex: 999,
+			format: 'yyyy-MM-dd hh:mm:ss',
+	        onSelected: function (view, date, data){},
+	        onClose: function (view, date, data){}
+	    });
+	    $('.cd2').calendar({
+	        trigger:'.ci2',
+	        zIndex: 999,
+			format: 'yyyy-MM-dd hh:mm:ss',
+	        onSelected: function (view, date, data) {},
+	        onClose: function (view, date, data) {}
+	    });
+	    
+	    //
+    })
+</script>

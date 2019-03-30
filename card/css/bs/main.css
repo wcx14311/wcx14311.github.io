@@ -1,0 +1,531 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: "microsoft yahei";
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+em {
+  font-style: normal;
+}
+a:link {
+  text-decoration: none;
+  color: black;
+}
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+a:active {
+  text-decoration: none;
+  color: black;
+}
+.button {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 2px;
+  text-decoration: none;
+  background-color: #ff5f4e;
+  color: white;
+  font-size: 14px;
+}
+.button.transparent {
+  color: #177bbb;
+  background: transparent;
+}
+div.header {
+  width: 100vw;
+  min-width: 1100px;
+  height: 79px;
+  position: relative;
+  background-color: white;
+  margin-bottom: 20px;
+  border-bottom: solid 1px #eaeef1;
+  font-size: 14px;
+}
+div.header > div.center {
+  width: 1100px;
+  line-height: 80px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+}
+div.header > div.center > div {
+  display: inline-block;
+  height: 80px;
+}
+div.header > div.center > div.l {
+  float: left;
+}
+div.header > div.center > div.r {
+  float: right;
+}
+div.header > div.center > div.icon {
+  margin-top: 14px;
+  background-image: url(../../images/logo.jpg);
+  width: 171px;
+  height: 51px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+div.header > div.center > div.diver {
+  width: 1px;
+  height: 23px;
+  margin-top: 29px;
+  margin-left: 10px;
+  margin-right: 20px;
+  background-color: #eaeef1;
+}
+div.container {
+  min-width: 880px;
+  max-width: 1100px;
+  box-shadow: 1px 1px 7px rgba(4, 0, 0, 0.05);
+  -webkit-box-shadow: 1px 1px 7px rgba(4, 0, 0, 0.05);
+  background-color: white;
+}
+div.container.center {
+  text-align: center;
+}
+div.container.padding-top {
+  padding-top: 165px;
+}
+div.container.red-top {
+  border-top: solid 2px #ff5f4e;
+}
+div.container.green-top {
+  border-top: solid 2px #1dc499;
+}
+div.container h1.pay-success {
+  margin-top: 165px;
+  display: inline-block;
+  height: 60px;
+  font-size: 36px;
+  color: #1dc499;
+}
+div.container h1.pay-success img {
+  display: inline-block;
+  height: 45px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+div.container h1.pay-success span {
+  display: inline;
+  vertical-align: middle;
+}
+div.container p.margin-top {
+  margin-top: 35px;
+  font-size: 16px;
+  color: #595959;
+}
+div.container p.margin-top em {
+  color: #ff5f4e;
+}
+div.container a.button {
+  margin-top: 68px;
+}
+div.container a.button.active {
+  color: white;
+}
+body {
+  background-color: #f2f4f8;
+}
+div.container.pay {
+  padding: 36px 40px;
+  height: 150px;
+  background-color: white;
+  font-size: 14px;
+}
+div.container.pay span.title {
+  font-size: 16px;
+}
+div.container.pay span.dropdown {
+  display: inline-block;
+  width: 178px;
+  height: 30px;
+  border: solid 1px #d8dde5;
+  border-radius: 2px;
+  color: #595959;
+}
+div.container.pay span.dropdown a.dropdown-show {
+  display: block;
+  position: relative;
+  text-indent: 20px;
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  line-height: 30px;
+}
+div.container.pay span.dropdown a.dropdown-show span.caret {
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+div.container.pay span.dropdown * {
+  vertical-align: middle;
+}
+div.container.pay span.dropdown a:link {
+  color: #595959;
+}
+div.container.pay span.dropdown a:visited {
+  color: #595959;
+}
+div.container.pay span.dropdown a:hover {
+  color: #595959;
+}
+div.container.pay span.dropdown a:active {
+  color: #595959;
+}
+div.container.pay span.dropdown ul {
+  left: -1px;
+  top: 29px;
+  width: 178px;
+  border: solid 1px #d8dde5;
+  border-radius: 2px;
+  background-color: white;
+}
+div.container.pay span.dropdown ul li {
+  height: 30px;
+}
+div.container.pay span.dropdown ul li a {
+  height: 100%;
+  margin-left: 0;
+}
+div.container.pay span.dropdown ul li a:hover {
+  background-color: #f2f4f8;
+}
+div.container.pay div.amount {
+  height: 40px;
+}
+div.container.pay div.amount span {
+  margin-right: 40px;
+}
+div.container.pay div.amount span em {
+  color: #177bbb;
+}
+div.container.pay div.coupons {
+  height: 40px;
+  width: 100%;
+  position: relative;
+}
+div.container.pay div.coupons span em {
+  color: #ff5f4e;
+}
+div.container.pay div.coupons span.right {
+  float: right;
+}
+div.container.pay div.coupons span.right em.big {
+  font-size: 30px;
+}
+div.container.with-tab {
+  padding-top: 50px;
+  position: relative;
+  border: solid 1px #eaeef1;
+  background-color: white;
+}
+div.container.with-tab ul.tabs {
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #f9fafc;
+  border-bottom: solid 1px #EAEEF1;
+}
+div.container.with-tab ul.tabs li {
+	cursor: pointer;
+  float: left;
+  display: block;
+  width: 200px;
+  line-height: 50px;
+  text-align: center;
+  border-right: solid 1px #EAEEF1;
+}
+div.container.with-tab ul.tabs li.on {
+  background-color: white;
+}
+div.container.pay2 {
+  font-size: 14px;
+  margin-top: 20px;
+  padding-top: 90px;
+  padding-bottom: 40px;
+}
+div.container.pay2 div.tab {
+  position: relative;
+}
+div.container.pay2 .hide {
+  display: none;
+}
+div.container.pay2 div.balance div.left div.row {
+  height: 40px;
+  margin-bottom: 25px;
+  position: relative;
+}
+div.container.pay2 div.balance div.left div.row * {
+  vertical-align: middle;
+  height: 40px;
+  line-height: 40px;
+  float: left;
+}
+div.container.pay2 div.balance div.left div.row .row_l {
+  width: 23%;
+}
+div.container.pay2 div.balance div.left div.row .row_m {
+  width: 180px;
+  color: #a8a8a8;
+}
+div.container.pay2 div.balance div.left div.row .row_m em {
+  font-size: 20px;
+  color: #FF5F4E;
+}
+div.container.pay2 div.balance div.left div.row .row_m input {
+  padding-left: 15px;
+  width: 100%;
+  outline: none;
+  border: solid 1px #d8dde5;
+  border-radius: 2px;
+  color: black;
+}
+div.container.pay2 div.balance div.left div.row .row_m a.button {
+  margin-top: 15px;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  width: 120px;
+  height: 40px;
+}
+div.container.pay2 div.balance div.left div.row .row_r {
+  margin-left: 10px;
+}
+div.container.pay2 div.balance div.left div.row .row_r a:link {
+  color: #177bbb;
+}
+div.container.pay2 div.balance div.left div.row .row_r a:visited {
+  color: #177bbb;
+}
+div.container.pay2 div.balance div.left div.row .row_r a:hover {
+  color: #177bbb;
+}
+div.container.pay2 div.balance div.left div.row .row_r a:active {
+  color: #177bbb;
+}
+div.container.pay2 div.scan div.left div.selector {
+  position: absolute;
+  top: 22px;
+  left: 30%;
+  height: 50px;
+}
+div.container.pay2 div.scan div.left div.selector span {
+  display: inline-block;
+  width: 140px;
+  height: 50px;
+  border: solid 1px #d8dde5;
+  border-radius: 2px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  position: relative;
+}
+div.container.pay2 div.scan div.left div.selector span.alipay {
+  background-image: url(../../images/ali-pay.png);
+}
+div.container.pay2 div.scan div.left div.selector span.wechat-pay {
+  background-image: url(../../images/wechat-pay.png);
+}
+div.container.pay2 div.scan div.left div.selector span.on div.selected {
+  width: 140px;
+  height: 50px;
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  background-repeat: no-repeat;
+  background-image: url(../../images/selector-on.png);
+}
+div.container.pay2 div.scan div.qrcode {
+  position: absolute;
+  margin-top: 29px;
+  left: 30%;
+}
+div.container.pay2 div.scan div.qrcode div.img {
+  width: 192px;
+  height: 192px;
+  border: solid 1px #d8dde5;
+  border-radius: 3px;
+  position: relative;
+}
+div.container.pay2 div.scan div.qrcode div.img img {
+  width: 144px;
+  height: 144px;
+  margin-top: 23px;
+  margin-left: 23px;
+}
+div.container.pay2 div.scan div.qrcode p.instr {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 20px;
+}
+div.container.pay2 div.left {
+  width: 60%;
+  height: 415px;
+  padding-left: 65px;
+  padding-top: 22px;
+  position: relative;
+}
+div.container.pay2 div.left span.title {
+  line-height: 50px;
+}
+div.container.pay2 div.right {
+  height: 415px;
+  width: 40%;
+  padding-top: 40px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-left: solid 1px #eaeef1;
+}
+div.container.pay2 div.right div.content {
+  font-size: 14px;
+  position: absolute;
+  left: 30px;
+  right: 60px;
+  line-height: 150%;
+  color: #a8a8a8;
+}
+div.container.pay2 div.right div.content p.title {
+  color: #595959;
+  margin-bottom: 12px;
+}
+/*# sourceMappingURL=main.css.map */

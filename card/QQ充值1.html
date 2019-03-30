@@ -1,0 +1,87 @@
+
+		<div class="m-t-20 rechange-box">
+			<div>
+				<div class="head">
+					<a class="lps on" data-link="QQ充值1 .html">QQ充值</a><a class="lps" data-link="QQ充值2.html">QQ服务</a>
+					<span class="f-right near-order-link iconq">查看近期订单</span>
+					<div class="order-list-dialogbox" style="display:none;">
+						
+					</div>
+				</div>
+			</div>
+			<div class="body">
+				<div class="conteiner">
+					<div class="lines lines40">
+						<span class="p-left-titlebig">QQ号码：</span><!--	
+						--><div class="p-right-box">
+							<div>
+								<div class="input">
+									<input type="text" name="" id="QQrechange" placeholder="请输入QQ号" class="phone-no" maxlength="13"/>
+								</div>
+								<span id="information"></span>
+							</div>
+						</div>
+					</div>
+					<div class="lines lines40">
+						<span class="p-left-title">充值数量：</span><!--	
+						--><div class="p-right-box">
+							<div class="buy-count goumaishuliang-input">
+								<div class="buy-count-input-style changecunt" style="float:left;">
+									<input type="text" name="" id="" value="10" />
+								</div>
+								<span class="m-l-20">Q币 <span style="color:#999;">（1Q币=10Q点）</span><span class="txtcolorblue m-l-10">Q币交易安全设置</span></span>
+							</div>
+						</div>
+					</div>
+					<div class="lines lines20">
+						<span class="p-left-title"></span><!--	
+						--><div class="p-right-box">
+							<div class="miane-list clearfix">
+								<a class="on">10个</a><a>20个</a><a>30个</a><a>50个</a><br/><a>100个</a><a>300个</a><a>500个</a><a class="other">其他数量</a>
+							</div>
+						</div>
+					</div>
+					<div class="lines lines40">
+						<span class="p-left-title">折扣进价：</span><!--	
+						--><div class="p-right-box">
+							<div class="zhekoujinjia zkeffect">
+								<span class="bacx2" style="display:none;">进价折扣99.6%</span>
+								<a class="bacx3">查询</a>
+							</div>
+						</div>
+					</div>
+					<div class="lines lines40">
+						<span class="p-left-title">支付金额：</span><!--	
+						--><div class="p-right-box">
+							<span class="txtcolorred pirce">88.6元</span>
+						</div>
+					</div>
+					<div class="lines lines40">
+						<span class="p-left-title"></span>
+						<div class="p-right-box">
+							<div class="submitbtn">
+								<a>提交订单</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/tools.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(document).ready(function(){
+				var information=$('#information');
+				$('#QQrechange').blur(function(){
+					var errorHtml='<span class="icon-error">QQ号格式不对</span>';
+					var rightHtml='<span class="icon-access"></span>';
+					var inputNumber=$(this).val().replace(/[^\d]/g, '');
+					if(isQQ(inputNumber)){
+						information.html(rightHtml);
+					}else{
+						information.html(errorHtml);
+					}
+				}).focus(function(){
+					information.html('');
+				});
+			})
+		</script>

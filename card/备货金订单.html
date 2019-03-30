@@ -1,0 +1,144 @@
+<link rel="stylesheet" type="text/css" href="css/calendar.css"/>
+<div class="stylelay"></div>
+<div class="main-content">
+	<div class="link-break">首页 - 备货金</div>
+	<div class="order-center-box">
+		<div class="order-center-body box-shadow m-t-20">
+			<div class="head">
+				<a class="lps on">备货金管理</a>
+			</div>
+			<div class="m-t-40">
+				<div class="order-search-options m-l-57">
+					<div class="clearfix">
+						<div class="input-bd f-left">
+							<input class="ci1" type="text" name="" id="" value="" placeholder="选择开始时间"/>
+							<div class="cd1"></div>
+						</div>
+						<div class="input-tt f-left m-lr-5">-</div>
+						<div class="input-bd f-left m-r-20">
+							<input class="ci2" type="text" name="" id="" value="" placeholder="选择结束时间"/>
+							<div class="cd2"></div>
+						</div>
+						<div class="input-bd f-left m-r-20">
+							<div class="">
+								<input type="text" class="select-val" name="" id="orderState" value="" placeholder="选择期限"/>
+								<ul class="hideOption" style="display:none;">
+									<li>失败</li>
+									<li>成功</li>
+								</ul>
+							</div>
+						</div>
+						<div class="input-bd f-left m-r-10">
+							<div class="">
+								<input type="text" class="select-val" name="" id="orderState" value="" placeholder="选择状态"/>
+								<ul class="hideOption" style="display:none;">
+									<li>失败</li>
+									<li>成功</li>
+								</ul>
+							</div>
+						</div>
+						<div class="input-bt f-left">
+							<a class="a-submit">查询</a>
+						</div>
+					</div>
+				</div>
+				<div class="order-center-data-table m-l-40 m-r-40 m-t-20">
+					<table>
+						<thead>
+							<tr>
+								<td>备货金额</td>
+								<td>产品名称</td>
+								<td>循环期数</td>
+								<td>每期</td>
+								<td>收益率</td>
+								<td>当前收益</td>
+								<td>备货时间</td>
+								<td>收益时间</td>
+								<td>产品类型</td>
+								<td>状态</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>11500元</td>
+								<td>员工福利金（第一期）</td>
+								<td>1期</td>
+								<td>5天</td>
+								<td>10.00%</td>
+								<td>15.75元</td>
+								<td>2015-10-15  12:20</td>
+								<td>2015-10-15  12:20</td>
+								<td>定期</td>
+								<td>已转出</td>
+							</tr>
+							<tr>
+								<td>11500元</td>
+								<td>员工福利金（第一期）</td>
+								<td>1期</td>
+								<td>5天</td>
+								<td>10.00%</td>
+								<td>15.75元</td>
+								<td>2015-10-15  12:20</td>
+								<td>2015-10-15  12:20</td>
+								<td>定期</td>
+								<td>已转出</td>
+							</tr>
+							<tr>
+								<td>11500元</td>
+								<td>员工福利金（第一期）</td>
+								<td>1期</td>
+								<td>5天</td>
+								<td>10.00%</td>
+								<td>15.75元</td>
+								<td>2015-10-15  12:20</td>
+								<td>2015-10-15  12:20</td>
+								<td>定期</td>
+								<td>已转出</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	
+				<div class="spage">
+					<a>上一页</a>
+					<a class="on">1</a>
+					<a>2</a>
+					<a>3</a>
+					<a>4</a>
+					<a>5</a>
+					<span>...</span>
+					<a>下一页</a>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+<script src="js/date.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/tools.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	if($(document).width()<1400){
+		$('div.stylelay').append('<link rel="stylesheet" href="css/screen1366.css"/>')
+	};
+    $(function(){
+    	$('.cd1').calendar({
+	        trigger:'.ci1',
+	        zIndex: 999,
+			format: 'yyyy-MM-dd hh:mm:ss',
+	        onSelected: function (view, date, data){
+	        	console.log(date,view,data);
+	        },
+	        onClose: function (view, date, data){}
+	    });
+	    $('.cd2').calendar({
+	        trigger:'.ci2',
+	        zIndex: 999,
+			format: 'yyyy-MM-dd hh:mm:ss',
+	        onSelected: function (view, date, data) {},
+	        onClose: function (view, date, data) {}
+	    });
+	    
+	    //
+	    $('#orderState').on('change',function(){
+	    	console.log($(this).val());
+	    })
+    })
+</script>

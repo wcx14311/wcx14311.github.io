@@ -1,0 +1,165 @@
+<link rel="stylesheet" type="text/css" href="css/calendar.css"/>
+<div class="stylelay"></div>
+<div class="main-content">
+	<div class="link-break">首页 - 财务管理</div>
+	<div class="order-center-box">
+		<div class="order-center-head box-shadow">
+			<div class="clearfix">
+				<div class="f-left m-l-40">
+					<a class="m-r-40">冻结账户：<span class="fonts30 txtcolorred" style="vertical-align:bottom;">85754.00</span>　元</a>
+				</div>
+			</div>
+		</div>
+		<div class="order-center-body box-shadow m-t-20">
+			<div class="head">
+				<a class="lps on">转入</a>
+				<a class="lps">转出</a>
+			</div>
+			<div class="m-t-30">
+				<div class="order-search-options m-l-57">
+					<div class="clearfix">
+						<div class="input-bd f-left">
+							<input class="ci1" type="text" name="" id="" value="" placeholder="选择开始时间"/>
+							<div class="cd1"></div>
+						</div>
+						<div class="input-tt f-left m-lr-5">-</div>
+						<div class="input-bd f-left m-r-20">
+							<input class="ci2" type="text" name="" id="" value="" placeholder="选择结束时间"/>
+							<div class="cd2"></div>
+						</div>
+						<div class="input-bt f-left m-r-20">
+							<a class="a-submit">查询</a>
+						</div>
+						<a class="input-tt txtcolorblue m-r-10" href="#">今天</a>
+						<a class="input-tt txtcolorblue" href="#">近7天订单</a>
+					</div>
+				</div>
+				<div class="order-center-data-table m-l-40 m-r-40 m-t-20">
+					<table>
+						<thead>
+							<tr>
+								<td>业务名称</td>
+								<td>转入金额</td>
+								<td>转入后余额</td>
+								<td>创建时间</td>
+								<td>业务流水号</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>备货金到期返还本金</td>
+								<td>9.9元</td>
+								<td>9.9元</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>568654565456554566</td>
+							</tr>
+							<tr>
+								<td>备货金到期返还本金</td>
+								<td>9.9元</td>
+								<td>9.9元</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>568654565456554566</td>
+							</tr>
+							<tr>
+								<td>备货金到期返还本金</td>
+								<td>9.9元</td>
+								<td>9.9元</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>568654565456554566</td>
+							</tr>
+							<tr>
+								<td>备货金到期返还本金</td>
+								<td>9.9元</td>
+								<td>9.9元</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>568654565456554566</td>
+							</tr>
+							<tr>
+								<td>备货金到期返还本金</td>
+								<td>9.9元</td>
+								<td>9.9元</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>568654565456554566</td>
+							</tr>
+							<tr>
+								<td>备货金到期返还本金</td>
+								<td>9.9元</td>
+								<td>9.9元</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>568654565456554566</td>
+							</tr>
+							<tr>
+								<td>备货金到期返还本金</td>
+								<td>9.9元</td>
+								<td>9.9元</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>568654565456554566</td>
+							</tr>
+							<tr>
+								<td>备货金到期返还本金</td>
+								<td>9.9元</td>
+								<td>9.9元</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>568654565456554566</td>
+							</tr>
+							<tr>
+								<td>备货金到期返还本金</td>
+								<td>9.9元</td>
+								<td>9.9元</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>568654565456554566</td>
+							</tr>
+							<tr>
+								<td>备货金到期返还本金</td>
+								<td>9.9元</td>
+								<td>9.9元</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>568654565456554566</td>
+							</tr>
+							<tr>
+								<td>备货金到期返还本金</td>
+								<td>9.9元</td>
+								<td>9.9元</td>
+								<td>2016-03-18  16:35:58</td>
+								<td>568654565456554566</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	
+				<div class="spage">
+					<a>上一页</a>
+					<a class="on">1</a>
+					<a>2</a>
+					<a>3</a>
+					<a>4</a>
+					<a>5</a>
+					<span>...</span>
+					<a>下一页</a>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+<script src="js/date.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/tools.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	if($(document).width()<1400){
+		$('div.stylelay').append('<link rel="stylesheet" href="css/screen1366.css"/>')
+	};
+    $(function(){
+    	$('.cd1').calendar({
+	        trigger:'.ci1',
+	        zIndex: 999,
+			format: 'yyyy-MM-dd hh:mm:ss',
+	        onSelected: function (view, date, data){},
+	        onClose: function (view, date, data){}
+	    });
+	    $('.cd2').calendar({
+	        trigger:'.ci2',
+	        zIndex: 999,
+			format: 'yyyy-MM-dd hh:mm:ss',
+	        onSelected: function (view, date, data) {},
+	        onClose: function (view, date, data) {}
+	    });
+    })
+</script>

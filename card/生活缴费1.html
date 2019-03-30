@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	</head>
+	<body>
+		<div class="m-t-20 rechange-box">
+			<div class="head">
+				<a class="lps on" data-link="生活缴费.html">缴电费</a>
+				<a class="lps" data-link="生活缴费.html">缴水费</a>
+				<a class="lps" data-link="生活缴费.html">缴燃气费</a>
+				<span class="f-right near-order-link iconq">查看近期订单</span>
+				<div class="order-list-dialogbox" style="display:none;">
+					
+				</div>
+			</div>
+			<div class="body">
+				<div class="conteiner living-payment">
+					<div class="lines lines40">
+						<span class="p-left-title">选择城市：</span><!--	
+						--><div class="p-right-box">
+							<div class="selectgameeqr select-ctiy">
+								<span class="select-val" data-code="420000">湖北省</span>
+								<div class="hideOption select-ctiy-box" style="display:none;">
+									
+								</div>
+							</div>
+							<div class="selectgameeqr m-l-10 select-ctiyer">
+								<span class="select-val">武汉市</span>
+								<div class="hideOption select-ctiyer-box" style="display:none;"></div>
+							</div>
+						</div>
+					</div>
+					<div class="lines lines40">
+						<span class="p-left-title">缴费单位：</span><!--	
+						--><div class="p-right-box">
+							<div class="selectgameeqr">
+								<span class="select-val">武汉市电力有限公司</span>
+								<ul class="hideOption" style="display:none;">
+									<li>武汉市电力有限公司1</li>
+									<li>武汉市电力有限公司2</li>
+									<li>武汉市电力有限公司3</li>
+									<li>武汉市电力有限公司4</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="lines lines40 lineheight50">
+						<span class="p-left-titlebig">用户编号：</span><!--	
+						--><div class="p-right-box">
+							<div>
+								<div class="input">
+									<input type="text" class="phone-no" placeholder="缴费单编号"/>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="lines lines40">
+						<span class="p-left-title">联系电话：</span><!--	
+						--><div class="p-right-box">
+							<div class="rechange-accmont">
+								<div class="input-style">
+									<input type="text" name="" id="" value="">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="lines lines40">
+						<span class="p-left-title"></span><!--	
+								--><div class="p-right-box">
+							<div class="submitbtn">
+								<span class="query">查询</span>
+							</div>
+						</div>
+					</div>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/citydata.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/cityliandong.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/tools.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		$('.submitbtn .query').click(function(){
+			$('#mainchengebox').load('生活缴费2.html');
+		});
+	})
+</script>

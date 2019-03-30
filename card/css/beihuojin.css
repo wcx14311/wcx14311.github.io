@@ -1,0 +1,497 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "微软雅黑";
+}
+ul {
+  list-style: none;
+}
+div.beihuojin {
+  padding: 0 20px 40px 20px;
+  height: 100vh;
+  background-color: #F2F4F8;
+}
+div.beihuojin > .title {
+  height: 45px;
+  padding-top: 7px;
+  line-height: 38px;
+  font-size: 14px;
+  color: #626262;
+}
+div.beihuojin > .header {
+  height: 80px;
+  background-color: white;
+  position: relative;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+  padding-right: 450px;
+  padding-left: 40px;
+  box-sizing: border-box;
+}
+div.beihuojin > .header > ul {
+  height: 80px;
+  float: left;
+  width: 100%;
+}
+div.beihuojin > .header > ul li {
+  float: left;
+  display: block;
+  width: 33.333333%;
+  height: 100%;
+  padding: auto;
+}
+div.beihuojin > .header > ul li .icon {
+  float: left;
+  width: 52px;
+  height: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+div.beihuojin > .header > ul li .icon.money {
+  background-image: url(../images/money.png);
+}
+div.beihuojin > .header > ul li .icon.person {
+  background-image: url(../images/person.png);
+}
+div.beihuojin > .header > ul li .icon.profit {
+  background-image: url(../images/profit.png);
+}
+div.beihuojin > .header > ul li .right {
+  padding-left: 10px;
+  padding-top: 20px;
+  float: left;
+}
+div.beihuojin > .header > ul li .right .r-title {
+  font-size: 14px;
+  color: #a8a8a8;
+}
+div.beihuojin > .header > ul li .right .r-num {
+  font-size: 18px;
+  color: #626262;
+}
+div.beihuojin > .header .right-box {
+  position: absolute;
+  right: 0;
+}
+div.beihuojin > .header .right-box img {
+  height: 100%;
+}
+div.beihuojin > ul.content li.bar {
+  box-sizing: border-box;
+  height: 180px;
+  padding-left: 40px;
+  padding-right: 60px;
+  padding-right: 510px;
+  margin-bottom: 20px;
+  background-color: white;
+  position: relative;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+}
+div.beihuojin > ul.content li.bar:hover {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.35);
+}
+div.beihuojin > ul.content li.bar.saling .bar-header .h-status {
+  display: inline;
+}
+div.beihuojin > ul.content li.bar.waiting .bar-content ul li.r-button a {
+  background-color: #ffa800;
+}
+div.beihuojin > ul.content li.bar.waiting .bar-header .h-time {
+  color: #ffa800;
+  width: 120px;
+  height: 100%;
+  padding-left: 10px;
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../images/timer.png);
+}
+div.beihuojin > ul.content li.bar.cycle .bar-content ul li.r-button a {
+  background-color: #1dc499;
+}
+div.beihuojin > ul.content li.bar.sold-out .bar-content ul li.r-button a {
+  background-color: #999999;
+}
+div.beihuojin > ul.content li.bar.sold-out ul.content li.bar .bar-content ul li .c-key.em {
+  color: #a6a6a6;
+}
+div.beihuojin > ul.content li.bar .bar-header {
+  height: 77px;
+  line-height: 77px;
+  color: #595959;
+  position: relative;
+}
+div.beihuojin > ul.content li.bar .bar-header .h-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+div.beihuojin > ul.content li.bar .bar-header .h-status {
+  display: none;
+  background-color: #ffa800;
+  height: 22px;
+  margin-left: 20px;
+  font-size: 14px;
+  padding: 0px 13px;
+  color: white;
+  border-radius: 2px;
+}
+div.beihuojin > ul.content li.bar .bar-header .h-time {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #595959;
+  font-size: 12px;
+}
+div.beihuojin > ul.content li.bar .bar-content {
+  padding-top: 8px;
+}
+div.beihuojin > ul.content li.bar .bar-content ul {
+  display: block;
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+}
+div.beihuojin > ul.content li.bar .bar-content ul li {
+  position: relative;
+  height: 100%;
+  border-left: solid 1px #eaeef1;
+  padding-right: 30px;
+  padding-left: 20px;
+  float: left;
+}
+div.beihuojin > ul.content li.bar .bar-content ul li.li-01 {
+  padding-left: 0;
+  border-left: none;
+}
+div.beihuojin > ul.content li.bar .bar-content ul li .c-key {
+  height: 30px;
+  color: #A8A8A8;
+  font-size: 14px;
+}
+div.beihuojin > ul.content li.bar .bar-content ul li .c-value {
+  height: 30px;
+  line-height: 30px;
+  color: #626262;
+  font-size: 16px;
+}
+div.beihuojin > ul.content li.bar .bar-content ul li .c-value.em {
+  color: #ff5f4e;
+  font-size: 24px;
+}
+div.beihuojin > ul.content li.bar .bar-content ul li.r-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  height: auto;
+}
+div.beihuojin > ul.content li.bar .bar-content ul li.r-button a {
+  display: block;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 2px;
+  font-size: 14px;
+  background-color: #ff5f4e;
+  color: white;
+  text-decoration: none;
+}
+div.beihuojin > ul.content li.bar .bar-content ul li.r-button a:link {
+  color: white;
+}
+div.beihuojin > ul.content li.bar .bar-content ul li.r-button a:visited {
+  color: white;
+}
+div.beihuojin > ul.content li.bar .bar-right-box {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+div.beihuojin div.detail-content {
+  height: 300px;
+  box-sizing: border-box;
+  padding-right: 60px;
+  padding-right: 462px;
+  margin-bottom: 20px;
+  background-color: white;
+  position: relative;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+}
+div.beihuojin div.detail-content.saling .bar-header .h-status {
+  display: inline;
+}
+div.beihuojin div.detail-content.waiting .bar-content ul li.r-button a {
+  background-color: #ffa800;
+}
+div.beihuojin div.detail-content.waiting .bar-header .h-time {
+  color: #ffa800;
+  width: 120px;
+  height: 100%;
+  padding-left: 10px;
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../images/timer.png);
+}
+div.beihuojin div.detail-content.cycle .bar-content ul li.r-button a {
+  background-color: #1dc499;
+}
+div.beihuojin div.detail-content.sold-out .bar-content ul li.r-button a {
+  background-color: #999999;
+}
+div.beihuojin div.detail-content.sold-out ul.content li.bar .bar-content ul li .c-key.em {
+  color: #a6a6a6;
+}
+div.beihuojin div.detail-content .bar-header {
+  padding-left: 40px;
+  height: 79px;
+  line-height: 79px;
+  color: #595959;
+  position: relative;
+  overflow: hidden;
+}
+div.beihuojin div.detail-content .bar-header .h-title {
+  float: left;
+  font-weight: bold;
+}
+div.beihuojin div.detail-content .bar-header .h-status {
+  float: left;
+  display: none;
+  background-color: #ffa800;
+  height: 22px;
+  line-height: 22px;
+  margin-top: 27px;
+  margin-left: 20px;
+  font-size: 14px;
+  padding: 0px 13px;
+  color: white;
+  border-radius: 2px;
+}
+div.beihuojin div.detail-content .bar-header .h-time {
+  float: left;
+  color: #595959;
+  font-size: 12px;
+  margin-left: 15px;
+}
+div.beihuojin div.detail-content .bar-content ul {
+  display: block;
+  height: 77px;
+  padding-top: 23px;
+  position: relative;
+  overflow: hidden;
+  background-color: #f9fafc;
+  min-width: 500px;
+}
+div.beihuojin div.detail-content .bar-content ul li {
+  position: relative;
+  height: 59px;
+  border-left: solid 1px #eaeef1;
+  padding-right: 10px;
+  padding-left: 20px;
+  float: left;
+}
+div.beihuojin div.detail-content .bar-content ul li.li-01 {
+  padding-left: 40px;
+  border-left: none;
+}
+div.beihuojin div.detail-content .bar-content ul li .c-key {
+  height: 30px;
+  color: #626262;
+  font-size: 14px;
+}
+div.beihuojin div.detail-content .bar-content ul li .c-value {
+  height: 30px;
+  line-height: 30px;
+  color: #626262;
+  font-size: 16px;
+  font-weight: bold;
+}
+div.beihuojin div.detail-content .bar-content ul li .c-value.em {
+  color: #ff5f4e;
+  font-size: 24px;
+  font-weight: normal;
+}
+div.beihuojin div.detail-content .bhj-instructions {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px 20px 0px 40px;
+  line-height: 23px;
+  font-size: 12px;
+  color: #A8A8A8;
+}
+div.beihuojin div.detail-content .bar-right-box {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 462px;
+  border-left: solid 1px #eaeef1;
+  background-color: white;
+}
+div.beihuojin div.detail-content .bar-right-box .br-header {
+  height: 79px;
+  line-height: 79px;
+  border-bottom: dotted 1px #EAEEF1;
+  padding-right: 40px;
+  font-size: 14px;
+  text-align: right;
+  color: #595959;
+}
+div.beihuojin div.detail-content .bar-right-box .br-header .icon.eye {
+  background-image: url(../images/view.png);
+  background-position: center;
+  background-size: cover;
+  width: 21px;
+  height: 14px;
+  background-repeat: no-repeat;
+}
+div.beihuojin div.detail-content .bar-right-box .br-header .charge {
+  color: #177BBB;
+  margin-left: 40px;
+  text-decoration: none;
+}
+div.beihuojin div.detail-content .bar-right-box .br-header .charge:link {
+  color: #177BBB;
+}
+div.beihuojin div.detail-content .bar-right-box .br-header .charge:visited {
+  color: #177BBB;
+}
+div.beihuojin div.detail-content .bar-right-box .br-bottom {
+  font-size: 12px;
+}
+div.beihuojin div.detail-content .bar-right-box .br-bottom .progress {
+  height: 34px;
+  padding: 23px 40px;
+}
+div.beihuojin div.detail-content .bar-right-box .br-bottom .progress .pg-top {
+  color: #626262;
+}
+div.beihuojin div.detail-content .bar-right-box .br-bottom .progress .pg-top .r {
+  float: right;
+}
+div.beihuojin div.detail-content .bar-right-box .br-bottom .progress .progress-bar {
+  box-sizing: border-box;
+  width: 100%;
+  height: 5px;
+  background-color: #e8e9f4;
+  border-radius: 2px;
+  margin-top: 13px;
+  position: relative;
+}
+div.beihuojin div.detail-content .bar-right-box .br-bottom .progress .progress-bar span {
+  display: block;
+  width: 0%;
+  height: 5px;
+  background-color: #ff5f4e;
+  border-radius: 2px;
+}
+div.beihuojin div.detail-content .bar-right-box .br-bottom .bottom {
+  padding: 11px 40px;
+}
+div.beihuojin div.detail-content .bar-right-box .br-bottom .bottom p {
+  height: 32px;
+  line-height: 32px;
+  color: #626262;
+}
+div.beihuojin div.detail-content .bar-right-box .br-bottom .bottom p.b {
+  color: #a8a8a8;
+}
+div.beihuojin div.detail-content .bar-right-box .br-bottom .bottom p.b span {
+  color: #FF5F4E;
+}
+div.beihuojin div.detail-content .bar-right-box .br-bottom .bottom .input-area {
+  height: 50px;
+  padding-right: 156px;
+  position: relative;
+  font-size: 16px;
+}
+div.beihuojin div.detail-content .bar-right-box .br-bottom .bottom .input-area input {
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  border: solid 1px #d8dde5;
+  border-radius: 4px;
+  color: #626262;
+  outline: none;
+  padding-left: 16px;
+  box-sizing: bborder-box;
+}
+div.beihuojin div.detail-content .bar-right-box .br-bottom .bottom .input-area input::-webkit-input-placeholder {
+  font-size: 16px;
+}
+div.beihuojin div.detail-content .bar-right-box .br-bottom .bottom .input-area a.commit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 50px;
+  line-height: 50px;
+  width: 120px;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  background-color: #ff5f4e;
+  border-radius: 4px;
+  text-decoration: none;
+}
+div.beihuojin div.detail-content .bar-right-box .br-bottom .bottom .input-area a.commit:link {
+  color: white;
+}
+div.beihuojin div.detail-content .bar-right-box .br-bottom .bottom .input-area a.commit:visited {
+  color: white;
+}
+div.beihuojin div.detail-content .bar-right-box .br-bottom .bottom .input-area div.yuan {
+  position: absolute;
+  top: 0;
+  right: 156px;
+  height: 50px;
+  line-height: 50px;
+  color: #A8A8A8;
+}
+div.beihuojin div.detail-content.introduce {
+  padding: 15px 40px;
+  font-size: 14px;
+  color: #626262;
+}
+div.beihuojin div.detail-content.introduce h2 {
+  font-size: inherit;
+  font-weight: bold;
+  line-height: 44px;
+}
+div.beihuojin div.detail-content.introduce p {
+  line-height: 30px;
+}
+body.screen1366 .beihuojin ul.content li.bar {
+  padding-right: 285px;
+}
+body.screen1366 .beihuojin ul.content li.bar .bar-right-box {
+  width: 225px;
+  overflow: hidden;
+}
+body.screen1366 .beihuojin .header {
+  padding-right: 225px;
+}
+body.screen1366 .beihuojin .header .right-box {
+  width: 225px;
+  overflow: hidden;
+}
+body.screen1366 .beihuojin .detail-content .bar-right-box .br-header {
+  padding-right: 20px;
+}
+body.screen1366 .beihuojin .detail-content .bar-right-box .br-bottom .progress {
+  padding: 23px 20px;
+}
+body.screen1366 .beihuojin .detail-content .bar-right-box .br-bottom .bottom {
+  padding: 11px 20px;
+}
+body.screen1366 .beihuojin .detail-content .bhj-instructions {
+  padding: 20px 20px 0px 40px;
+}
+body.screen1366 .beihuojin .detail-content {
+  padding-right: 422px;
+}
+body.screen1366 .beihuojin .detail-content .bar-right-box {
+  width: 422px;
+}
+/*# sourceMappingURL=beihuojin.css.map */

@@ -1,0 +1,39 @@
+.screen1366 .topbar .logo {padding-left: 10px;height: 79px;padding-right: 20px;}
+.screen1366 .top-nav-tabs{background:#fff;font-size:20px;box-shadow:0px 0 15px rgba(0,0,0,0.08);overflow:hidden;}
+.screen1366 .top-nav-tabs ul{margin-right:-1px;margin-bottom:-1px;}
+.screen1366 .top-nav-tabs li{width:16.66666666%;float:left;border-bottom:1px solid #eaeef1;overflow:hidden;}
+.screen1366 .top-nav-tabs li a:hover{background:#f9fafc;}
+.screen1366 .top-nav-tabs li a{color:#6f738c;display:block;text-align:center;border-right:1px solid #eaeef1;height:40px;line-height:40px;margin-top:-2px;}
+.screen1366 .top-nav-tabs li a.on{background:#FF5F4E;color:#fff;}
+.screen1366 .top-nav-tabs .icon{background-size:24px;padding-left:28px;font-size:15px}
+
+.screen1366 .top-nav-tabs .icon1{background-image:url(../images/tab-nav/screen1366/a-1-1.png);}
+.screen1366 .top-nav-tabs .icon2{background-image:url(../images/tab-nav/screen1366/a-2-1.png);}
+.screen1366 .top-nav-tabs .icon3{background-image:url(../images/tab-nav/screen1366/a-3-1.png);}
+.screen1366 .top-nav-tabs .icon4{background-image:url(../images/tab-nav/screen1366/a-4-1.png);}
+.screen1366 .top-nav-tabs .icon5{background-image:url(../images/tab-nav/screen1366/a-5-1.png);}
+.screen1366 .top-nav-tabs .icon6{background-image:url(../images/tab-nav/screen1366/a-6-1.png);}
+.screen1366 .top-nav-tabs .icon7{background-image:url(../images/tab-nav/screen1366/a-7-1.png);}
+.screen1366 .top-nav-tabs .icon8{background-image:url(../images/tab-nav/screen1366/a-8-1.png);}
+.screen1366 .top-nav-tabs .icon9{background-image:url(../images/tab-nav/screen1366/a-9-1.png);}
+.screen1366 .top-nav-tabs .icon10{background-image:url(../images/tab-nav/screen1366/a-10-1.png);}
+.screen1366 .top-nav-tabs .icon11{background-image:url(../images/tab-nav/screen1366/a-11-1.png);}
+.screen1366 .top-nav-tabs a.on .icon1{background-image:url(../images/tab-nav/screen1366/a-1-2.png);}
+.screen1366 .top-nav-tabs a.on .icon2{background-image:url(../images/tab-nav/screen1366/a-2-2.png);}
+.screen1366 .top-nav-tabs a.on .icon3{background-image:url(../images/tab-nav/screen1366/a-3-2.png);}
+.screen1366 .top-nav-tabs a.on .icon4{background-image:url(../images/tab-nav/screen1366/a-4-2.png);}
+.screen1366 .top-nav-tabs a.on .icon5{background-image:url(../images/tab-nav/screen1366/a-5-2.png);}
+.screen1366 .top-nav-tabs a.on .icon6{background-image:url(../images/tab-nav/screen1366/a-6-2.png);}
+.screen1366 .top-nav-tabs a.on .icon7{background-image:url(../images/tab-nav/screen1366/a-7-2.png);}
+.screen1366 .top-nav-tabs a.on .icon8{background-image:url(../images/tab-nav/screen1366/a-8-2.png);}
+.screen1366 .top-nav-tabs a.on .icon9{background-image:url(../images/tab-nav/screen1366/a-9-2.png);}
+.screen1366 .top-nav-tabs a.on .icon10{background-image:url(../images/tab-nav/screen1366/a-10-2.png);}
+.screen1366 .top-nav-tabs a.on .icon11{background-image:url(../images/tab-nav/screen1366/a-11-2.png);}
+.screen1366 .rechange-box .body .lines40{padding-top:25px;}
+
+.screen1366 .leftbar{width:200px;}
+.screen1366 .leftbarcontent li.fu a.ftxt span.text{width:80px;}
+.screen1366 .rightbar{width:180px;}
+.screen1366 .mainbox {padding-right:180px;margin-left:200px;}
+.screen1366 .rightbarcontent .rightbox1 p.telnumber {font-size: 18px;}
+.screen1366 .rechange-box .body .lines .phone-no{font-size:25px;}

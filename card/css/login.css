@@ -1,0 +1,105 @@
+html{overflow:auto;}
+.login{background:#fff}
+.login .shuxian{padding:0 10px;}
+.login .left{float:left;}
+.login .left a{color:#fff}
+.login .right{float:right;}
+.login .topbar{height:45px;background:#2b303b;color:#fff;line-height:45px;font-size:12px;}
+.login .w1200{width:1200px;margin:auto;}
+.login .header{height:130px;}
+.login .header .logo{background:url(../images/img-logo.jpg) no-repeat;height:83px;width:442px;margin-top:20px;}
+.login .header .links{font-size:16px;color:#40444a;margin-top:52px;margin-right:-25px;}
+.login .header .links li{float:left;margin:0 25px;}
+.login .header .links li.c{padding:0 30px;}
+.login .header .links li a span{color:#b0b1b4;}
+.login .header .links{color:#40444a;margin-top:50px;}
+.login .header .links li{float:left;}
+.login .header .links li.c{padding:0 30px;}
+.login .header .links li a{font-size:18px;}
+.login .header .links li a span{color:#b0b1b4;}
+.login .banner{height:480px;position:relative;}
+.login .banner .bannerslide{position:absolute;width:100%;height:480px;}
+.login .banner .bd{height:480px;}
+.login .banner .bd li{height:480px;}
+.login .banner .hd{position:absolute;bottom:30px;width:100%;text-align:center;}
+.login .banner .hd li{width:12px;height:12px;display:inline-block;margin:0 4px;cursor:pointer;display: inline-block;*display: inline; zoom:1;background:center no-repeat;background-image:url(../images/banner-dot.png);}
+.login .banner .hd li.on{background-image:url(../images/banner-dot-on.png);}
+.login .banner .weizhi{left:50%;margin-left:600px;height:480px;position:absolute;}
+
+.loginbox{width:280px;padding:30px;position:absolute;right:0;top:50px;background:url(../images/bg-lgbox.png);height:310px;}
+.loginbox h4{color:#33363c;font-size:18px;font-weight:bolder;padding-bottom:10px;}
+.loginbox .input input{border:none;display:block;width:100%;outline:none;height:40px;}
+.loginbox .input .dinput{display:block;outline:none;height:40px;padding-left:45px;border:1px solid #eaeef1;background:no-repeat #fff;width:233px;margin-bottom:10px;}
+.loginbox .input .dinput.as1{background-image:url(../images/icon-ad-1.png);background-position:16px 10px;}
+.loginbox .input .dinput.as2{background-image:url(../images/icon-ad-2.png);background-position:18px 10px;}
+.loginbox .input .jianyan{}
+.loginbox .input .jianyan .dinput.as3{padding-left:10px;width:120px;display:inline-block;margin:0;vertical-align: top;}
+.loginbox .input .jianyan .checkcode{vertical-align:top;margin-left:10px;display:inline-block;}
+.loginbox .input .jianyan .checkcode img{display:block;overflow:hidden;height:41px;}
+.loginbox .input .jianyan .dinput.as3{padding-left:10px;width:88px;display:inline-block;margin:0;vertical-align: top;}
+.loginbox .input .jianyan .getCheckNo{display:inline-block;height:42px;width:160px;background:#e2e2e2;line-height:42px;text-align:center;border-radius:5px;margin-left:10px;}
+.loginbox .option{padding-top:18px;height:20px;padding-bottom:8px;}
+.loginbox .option a.letf{color:#9c9c9c;line-height:14px;vertical-align: top;display:inline;float:left;}
+.loginbox .option label{vertical-align: top;}
+.loginbox .option label input{vertical-align:middle;background:#fff;height:14px;margin-right:5px;width:20px;float:left;}
+.loginbox .lgbtn{padding-top:10px;}
+.loginbox .lgbtn a{color:#fff;background:#ff5f4e;display:block;text-align:center;border-radius:5px;height:40px;line-height:40px;}
+.loginbox p{font-size:12px;}
+.loginbox p span.red{color:#ff5f4e;}
+
+.login .xiaoNo{background:#f1f2f8;height:80px;}
+.login .xiaoNo .w1200 div{padding-left:45px;background:no-repeat;background-position:1px 10px;width:350px;display:inline-block;float:left;margin-top:14px;}
+.login .xiaoNo .w1200 div p{font-size:14px;color:#797c95;padding:2px 0 1px;}
+.login .xiaoNo .w1200 div p span{font-size:24px;font-weight:bolder;padding-right:5px;}
+.login .xiaoNo div.panno1{background-image:url(../images/icon-nu-1.png)}
+.login .xiaoNo div.panno2{background-image:url(../images/icon-nu-2.png)}
+.login .xiaoNo div.panno3{background-image:url(../images/icon-nu-3.png)}
+
+.lgbody .w1200{padding:20px 0;}
+.boxcom .boxtit{position:relative;padding:30px 0 20px;}
+.boxcom div.boxtit:after{height:1px;background:#f1f2f8;width:100%;top:50%;content:'';position:absolute;}
+.boxcom div.boxtit .centerr{background:#fff;margin:auto;width:300px;position:relative;z-index:10;}
+.boxcom .boxtit h2{color:#ff5f4e;font-size:30px;text-align:center;background:#fff;}
+.boxcom .boxtit p{color:#9a9ba0;font-size:14px;text-align:center;background:#fff;padding-top:5px;}
+.boxcom .boxbody{padding:20px 0;}
+
+.boxone .boxbody ul{margin-left:-55px;}
+.boxone .boxbody ul li{background:no-repeat;padding-top:175px;width:154px;text-align:center;float:left;background-position:center 1px;margin:40px 0 20px 55px;}
+.boxone .boxbody ul li.icon1{background-image:url(../images/icon-mc-1.png);}
+.boxone .boxbody ul li.icon2{background-image:url(../images/icon-mc-2.png);}
+.boxone .boxbody ul li.icon3{background-image:url(../images/icon-mc-3.png);}
+.boxone .boxbody ul li.icon4{background-image:url(../images/icon-mc-4.png);}
+.boxone .boxbody ul li.icon5{background-image:url(../images/icon-mc-5.png);}
+.boxone .boxbody ul li.icon6{background-image:url(../images/icon-mc-6.png);}
+.boxone .boxbody ul li.icon7{background-image:url(../images/icon-mc-7.png);}
+.boxone .boxbody ul li.icon8{background-image:url(../images/icon-mc-8.png);}
+.boxone .boxbody ul li.icon9{background-image:url(../images/icon-mc-9.png);}
+.boxone .boxbody ul li.icon10{background-image:url(../images/icon-mc-10.png);}
+.boxone .boxbody ul li.icon11{background-image:url(../images/icon-mc-11.png);}
+.boxone .boxbody ul li.icon12{background-image:url(../images/icon-mc-12.png);}
+
+.boxtwo .boxbody ul{margin-left:-64px;}
+.boxtwo .boxbody ul li{width:188px;float:left;margin-left:63px;}
+.boxtwo .boxbody ul li span{background:no-repeat;padding-top:195px;text-align:center;background-position:center 1px;display:block;}
+.boxtwo .boxbody ul li span.icon1{background-image:url(../images/icon-re-1.png);}
+.boxtwo .boxbody ul li span.icon2{background-image:url(../images/icon-re-2.png);}
+.boxtwo .boxbody ul li span.icon3{background-image:url(../images/icon-re-3.png);}
+.boxtwo .boxbody ul li span.icon4{background-image:url(../images/icon-re-4.png);}
+.boxtwo .boxbody ul li span.icon5{background-image:url(../images/icon-re-5.png);}
+.boxtwo .boxbody ul li h5{text-align:center;font-size:18px;color:#000;padding:15px 0 12px;}
+.boxtwo .boxbody ul li p{text-align:center;font-size:14px;color:#9a9ba0;line-height:25px;}
+
+.boxtree .boxbody ul li{width:270px;float:left;margin:0 65px;}
+.boxtree .boxbody ul li span{background:no-repeat;padding-top:195px;text-align:center;background-position:center;display:block;}
+.boxtree .boxbody ul li span.icon1{background-image:url(../images/icon-st-1.png);}
+.boxtree .boxbody ul li span.icon2{background-image:url(../images/icon-st-2.png);}
+.boxtree .boxbody ul li span.icon3{background-image:url(../images/icon-st-3.png);}
+.boxtree .boxbody ul li h5{text-align:center;font-size:25px;color:#000;padding:15px 0 12px;}
+.boxtree .boxbody ul li p{text-align:center;font-size:14px;color:#9a9ba0;line-height:25px;}
+
+.login .lgfoot{color:#b3b6ba;font-size:12px;}
+.login .shuxian{padding:0 10px;}
+.login .lgfoot a{color:#b3b6ba;}
+
+.login .lgfoot .ds1{background:#40444a;height:60px;line-height:60px;}
+.login .lgfoot .ds2{background:#33363c;height:70px;line-height:70px;}

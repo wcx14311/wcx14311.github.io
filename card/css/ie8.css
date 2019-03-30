@@ -1,0 +1,14 @@
+.warp{height:100%;width:100%;}
+.toparea{height:80px;background:#fff;position:relative;z-index:10;}
+.leftbar{width:250px;background:#2b303b;float:left;height:100%;position:absolute;top:0;left:0;}
+.mainbox{margin-left:250px;}
+
+.hideOption{border:1px solid #ddd;margin-left:-1px;}
+.loginbox .input input{display:block;outline:none;height:15px;padding:12px 0 0 0;}
+.loginbox .option{position:relative;padding-bottom:10px;}
+.loginbox .option label input{float:left;width:20px;margin-top:0;padding-top:0;}
+.loginbox .option .right{position:absolute;right:0;top:14px;}
+.jianyan{height:42px}
+.jianyan .dinput{float:left;}
+.jianyan .getCheckNo{float:left;display:inline-block;}
+.jianyan .checkcode{float:left;display:inline-block;}

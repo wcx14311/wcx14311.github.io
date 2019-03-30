@@ -1,0 +1,186 @@
+<link rel="stylesheet" type="text/css" href="css/calendar.css"/>
+<div class="stylelay"></div>
+<div class="statistic-content">
+	<div class="link-break">首页 - 订单统计</div>
+	<div class="order-statistics-box">
+		<div class="order-statistics-head box-shadow">
+			<div class="clearfix order-search-options p-l-40">
+				<div class="input-bd f-left">
+					<input class="ci1" type="text" name="" id="" value="" placeholder="选择开始时间"/>
+					<div class="cd1"></div>
+				</div>
+				<div class="input-tt f-left m-lr-5"> - </div>
+				<div class="input-bd f-left m-r-10">
+					<input class="ci2" type="text" name="" id="" value="" placeholder="选择结束时间"/>
+					<div class="cd2"></div>
+				</div>
+				<div class="input-bt f-left m-r-10">
+					<a class="a-submit">查询</a>
+				</div>
+				<a class="input-tt txtcolorblue m-r-10 m-l-10" href="#">今天</a>
+				<a class="input-tt txtcolorblue" href="#">近7天订单</a>
+			</div>
+		</div>
+		<div class="order-statistics-body m-t-10">
+			<ul class="clearfix">
+				<li>
+					<div class="order-statistics-item box-shadow txdd">
+						<div class="item-top">
+							<h3>通讯订单</h3>
+							<p>话费、流量、固话、宽带</p>
+						</div>
+						<p class="m-t-15">
+							总笔数：
+							<span class="txtcolorred">1340</span>
+							<span class="f-right">
+								总金额：
+								<span class="txtcolorred">56568.00</span>元
+							</span>
+						</p>
+					</div>
+				</li>
+				<li>
+					<div class="order-statistics-item box-shadow wlcz">
+						<div class="item-top">
+							<h3>网络充值</h3>
+							<p>QQ、网游、支付宝</p>
+						</div>
+						<p class="m-t-15">
+							总笔数：
+							<span class="txtcolorred">1340</span>
+							<span class="f-right">
+								总金额：
+								<span class="txtcolorred">56568.00</span>元
+							</span>
+						</p>
+					</div>
+				</li>
+				<li>
+					<a class="" href="#">
+						<div class="order-statistics-item box-shadow shfw">
+							<div class="item-top">
+								<h3>生活服务</h3>
+								<p>话费、流量、固话、宽带</p>
+							</div>
+							<p class="m-t-15">
+								总笔数：
+								<span class="txtcolorred">1340</span>
+								<span class="f-right">
+									总金额：
+									<span class="txtcolorred">56568.00</span>元
+								</span>
+							</p>
+						</div>
+					</a>
+				</li>
+				<li>
+					<div class="order-statistics-item box-shadow czka">
+						<div class="item-top">
+							<h3>充值卡</h3>
+							<p>话费充值卡、中石化加油卡</p>
+						</div>
+						<p class="m-t-15">
+							总笔数：
+							<span class="txtcolorred">1340</span>
+							<span class="f-right">
+								总金额：
+								<span class="txtcolorred">56568.00</span>元
+							</span>
+						</p>
+					</div>
+				</li>
+				<li>
+					<div class="order-statistics-item box-shadow xyka">
+						<div class="item-top">
+							<h3>信用卡还款</h3>
+							<p>信用卡还款</p>
+						</div>
+						<p class="m-t-15">
+							总笔数：
+							<span class="txtcolorred">1340</span>
+							<span class="f-right">
+								总金额：
+								<span class="txtcolorred">56568.00</span>元
+							</span>
+						</p>
+					</div>
+				</li>
+				<li>
+					<div class="order-statistics-item box-shadow ywbl">
+						<div class="item-top">
+							<h3>业务办理</h3>
+							<p>话费、宽带、流量、ITV</p>
+						</div>
+						<p class="m-t-15">
+							总笔数：
+							<span class="txtcolorred">1340</span>
+							<span class="f-right">
+								总金额：
+								<span class="txtcolorred">56568.00</span>元
+							</span>
+						</p>
+					</div>
+				</li>
+				<li>
+					<div class="order-statistics-item box-shadow slfw">
+						<div class="item-top">
+							<h3>商旅服务</h3>
+							<p>火车、汽车、飞机</p>
+						</div>
+						<p class="m-t-15">
+							总笔数：
+							<span class="txtcolorred">1340</span>
+							<span class="f-right">
+								总金额：
+								<span class="txtcolorred">56568.00</span>元
+							</span>
+						</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script src="js/date.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/tools.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(function(){
+    	resizescreen();
+    	$(window).resize(function(){
+    		resizescreen()
+    	});
+    	function resizescreen(){
+    		var screenwidth = $(document).width();
+	    	if(screenwidth<1000){
+	    		$('.order-statistics-body ul').attr('class','clearfix line1')
+	    	}
+	    	else if(screenwidth<1400&&screenwidth>1000){
+				$('.order-statistics-body ul').attr('class','clearfix line2')
+			}else if(screenwidth<1800&&screenwidth>1400){
+				$('.order-statistics-body ul').attr('class','clearfix line3')
+			}else{
+				$('.order-statistics-body ul').attr('class','clearfix line4')
+			}
+		};
+    	
+    	$('.cd1').calendar({
+	        trigger:'.ci1',
+	        zIndex: 999,
+			format: 'yyyy-MM-dd hh:mm:ss',
+	        onSelected: function (view, date, data){},
+	        onClose: function (view, date, data){}
+	    });
+	    $('.cd2').calendar({
+	        trigger:'.ci2',
+	        zIndex: 999,
+			format: 'yyyy-MM-dd hh:mm:ss',
+	        onSelected: function (view, date, data) {},
+	        onClose: function (view, date, data) {}
+	    });
+	    
+	    //
+	    $('.order-statistics-item').click(function(){
+			$(".mainbox").load('订单中心.html');
+	    })
+    })
+</script>

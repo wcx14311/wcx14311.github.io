@@ -1,0 +1,35 @@
+<div class="stylelay"></div>
+<div class="main-content">
+	<div class="link-break">首页 - 充值中心</div>
+	<div class="top-nav-tabs">
+		<div>
+			<ul class="clearfix">
+				<li><a><span class="icon icon1" data-link="手机充值1.html">话费充值</span></a></li>
+				<li><a><span class="icon icon2" data-link="流量充值.html">流量充值</span></a></li>
+				<li><a><span class="icon icon3" data-link="QQ充值1.html">QQ充值</span></a></li>
+				<li><a><span class="icon icon4" data-link="网游充值1.html">网游充值</span></a></li>
+				<li><a><span class="icon icon5" data-link="固话充值.html">固话充值</span></a></li>
+				<li><a><span class="icon icon6" data-link="宽带充值.html">宽带充值</span></a></li>
+				<li><a class="on"><span class="icon icon7" data-link="网络充值.html">支付宝充值</span></a></li>
+				<li><a><span class="icon icon8" data-link="信用卡还款.html">信用卡还款</span></a></li>
+				<li><a><span class="icon icon9" data-link="加油卡.html">加油卡</span></a></li>
+				<li><a><span class="icon icon10" data-link="话费卡1.html">话费卡</span></a></li>
+				<li><a><span class="icon icon11" data-link="生活缴费1.html">生活缴费</span></a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="mainchengebox"></div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		$('#mainchengebox').load('手机充值1.html');
+		$('.top-nav-tabs li').click(function(){
+			var dlink = $(this).find('span').attr('data-link');
+			setTimeout(function(){
+				$('#mainchengebox').load(dlink);
+			})
+			$('.top-nav-tabs li a').removeClass('on');
+			$(this).find('a').addClass('on');
+		})
+	})
+</script>
