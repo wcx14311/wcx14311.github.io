@@ -424,10 +424,11 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
     display: inline-block;
     background: #29c8cf;
     color: #fff;
-    border-radius: 10px;
-    margin-right: 5px;
+    font-size: 18px;
+    border-radius: 100px;
+    margin-right: 2px;
     margin-bottom: 5px;
-    padding: 0 7px 2px;
+    padding: 3px 15px 5px;
     line-height: 1;
 }
 @-webkit-keyframes init {
@@ -682,13 +683,13 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
     height: 100%;
     overflow: auto;
     box-sizing: border-box;
-    padding: 20px 20px 0;
+    padding: 0 20px 0;
     background: #f1f2f6;
 }
 .background-card{
     color: #707070;
     background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); */
     padding:20px 30px 20px 20px;
     margin:0 0 20px; 
 }
@@ -802,7 +803,8 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
         padding:20px 10px 0;
     }
     .background-card{
-        margin-bottom:10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
     }
     .background-card .mobile-title{
         margin-left:5px;
