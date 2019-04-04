@@ -385,6 +385,15 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
 	padding-top:12px;
     font-size: 14px;
 }
+.profile-card .card-body .card-body-line .r .skill-targ {
+    margin-left: 0;
+}
+.profile-card .card-body .card-body-line .r .skill-targ {
+    background: #323452;
+}
+.profile-card .card-body .card-body-line .r .skill-targ p {
+    background: #5e64b7;
+}
 .bi-title{
     color:#ff4259;
     font-weight:bold;
@@ -420,17 +429,27 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
 	height:280px;
 	overflow: auto;
 }
-.skill-targ{
+.skill-box {
+    margin-left: 0;
+}
+.skill-box .skill-targ {
+    width: 300px;
     display: inline-block;
+    vertical-align: top;
+    margin: 14px 0 0 20px;
+    overflow: hidden;
+    border-radius: 100px;
+    background: #ddd;
+}
+.skill-box .skill-targ p{
+    margin: 0;
+    box-sizing: border-box;
     background: #29c8cf;
     color: #fff;
-    font-size: 18px;
-    border-radius: 100px;
-    margin-right: 2px;
-    margin-bottom: 5px;
-    padding: 3px 15px 5px;
+    padding: 0px 15px 2px;
     line-height: 1;
 }
+
 @-webkit-keyframes init {
     0% {
         width: 0px;
@@ -759,6 +778,10 @@ h1,h2,h3,h4,h5,h6{margin:0;padding:0;}
 }
 
 @media screen and (max-width:800px) {
+    .skill-box .skill-targ {
+        width: auto;
+        display: block;
+    }
     .dlown{
         display:none;
     }

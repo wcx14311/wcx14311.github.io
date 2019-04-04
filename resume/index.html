@@ -93,27 +93,23 @@
                     <div class="icon">
                         <i class="fs-lg icon-tools"></i><span class="mobile-title">技能标签</span>
                     </div>
+                    <div class="skill-box">
+                        <div class="skill-targ"><p style="width:90%">vue.js</p></div>
+                        <div class="skill-targ"><p style="width:86%">es6</p></div>
+                        <div class="skill-targ"><p style="width:90%">less/scss</p></div>
+                        <div class="skill-targ"><p style="width:90%">小程序</p></div>
+                        <div class="skill-targ"><p style="width:80%">webpack</p></div>
+                        <div class="skill-targ"><p style="width:70%">gulp</p></div>
+                        <div class="skill-targ"><p style="width:95%">jquery/zepto</p></div>
+                        <div class="skill-targ"><p style="width:80%">lodash/underscore</p></div>
+                        <div class="skill-targ"><p style="width:70%">react/react-native</p></div>
+                        <div class="skill-targ"><p style="width:95%">html/css/js</p></div>
+                        <div class="skill-targ"><p style="width:80%">photoshop</p></div>
+                        <div class="skill-targ"><p style="width:60%">weex</p></div>
+                        <div class="skill-targ"><p style="width:65%">node.js</p></div>
+                    </div>
                     <p class="content">
-                        
-                        <span class="skill-targ">vue.js</span>
-                        <span class="skill-targ">es6</span>
-                        <span class="skill-targ">less/scss</span>
-                        <span class="skill-targ">小程序</span>
-                        <span class="skill-targ">weex</span>
-                        <span class="skill-targ">node.js</span>
-                        <span class="skill-targ">webpack</span>
-                        <span class="skill-targ">gulp</span>
-                        <span class="skill-targ">jquery/zepto</span>
-                        <span class="skill-targ">underscore.js</span>
-                        
-                        <span class="skill-targ">mongodb</span>
-                        
-                        
-                        <span class="skill-targ">react</span>
-                        <span class="skill-targ">react-native</span>
-                        <span class="skill-targ">html</span>
-                        <span class="skill-targ">css</span>
-                        <span class="skill-targ">js</span>
+                    
                     </p>
                 </div>
                 <!-- 工作经历 -->
@@ -415,8 +411,11 @@
                         <div class="l"></div><div class="r bi-title">个人技能</div>
                     </div>
                     <div class="card-body-line">
-                        <div class="l"></div><div class="r">
-                            <span v-for="skill in skills" class="skill-targ">{{skill}}</span>
+                        <div class="l"></div>
+                        <div class="r">
+                            <div class="skill-box">
+                                <div v-for="skill in skills" class="skill-targ"><p :style="'width:'+ skill.width+'%'">{{skill.text}}</p></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -473,7 +472,46 @@
                         text:'武汉市江汉区新华小区'
                     }
                 ],
-                skills:['html','css','js','less/scss','vue.js','underscore.js','webpack','gulp','mongoose','node.js','es6','react','react-native'],
+                skills:[{
+                    width: 90,
+                    text: 'vue.js'
+                }, {
+                    width: 86,
+                    text: 'es6'
+                }, {
+                    width: 90,
+                    text: 'less/scss'
+                }, {
+                    width: 90,
+                    text: '小程序'
+                }, {
+                    width: 80,
+                    text: 'webpack'
+                }, {
+                    width: 70,
+                    text: 'gulp'
+                }, {
+                    width: 95,
+                    text: 'jquery/zepto'
+                }, {
+                    width: 80,
+                    text: 'lodash/underscore'
+                }, {
+                    width: 70,
+                    text: 'react/react-native'
+                }, {
+                    width: 95,
+                    text: 'html/css/js'
+                }, {
+                    width: 80,
+                    text: 'photoshop'
+                }, {
+                    width: 60,
+                    text: 'weex'
+                }, {
+                    width: 65,
+                    text: 'node.js'
+                }],
                 profile:'毕业于景德镇学院数学与信息工程系，有4年的前端开发工作经验，喜欢关注 web 前端相关新技术，对于新技术有很强的学习兴趣。',
                 experience:[
                     {startDate:'2015.12',endDate:'至今',conpany:'武汉永乐云商'},
